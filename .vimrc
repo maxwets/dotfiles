@@ -17,7 +17,7 @@ set noswapfile
 
 " Hotkey config for NERDTree
 nmap ù :NERDTreeToggle
-
+nmap ; .
 " Theme config (for gvim too)
 colorscheme slate
 highlight Normal guifg=white guibg=black
