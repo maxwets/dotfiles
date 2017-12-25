@@ -15,9 +15,13 @@ set colorcolumn=110
 set nobackup
 set noswapfile
 
-" Hotkey config for NERDTree
+" Config for NERDTree
 nmap ù :NERDTreeToggle
+let NERDTreeShowHidden=1
+
+" Make an alias for . because it's easier to use ; than . on my kb
 nmap ; .
+
 " Theme config (for gvim too)
 colorscheme slate
 highlight Normal guifg=white guibg=black
