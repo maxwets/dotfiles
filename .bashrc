@@ -46,6 +46,9 @@ alias nowdate='date +"%m-%d-%Y"'
 
 # swap esc and caps lock (for wim usage)
 alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
+alias vim='esc;vim'
+# for tmux usage
+alias tmux='tmux -u'
 
 # show open ports
 alias ports='netstat -tulanp'
@@ -66,6 +69,7 @@ alias ifconfig='sudo ifconfig'
 # root aliases
 alias ss='sudo su'
 alias apt-get='sudo apt-get'
+alias apt='sudo apt'
 alias reboot='sudo reboot'
 
 
