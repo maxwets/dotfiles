@@ -1,13 +1,10 @@
 # This is a simple .bashrc file that i use on my own machine
 
-
 export HISTSIZE=10000
-
 
 #bind "set completion-ignore-case on"
 shopt -s cdspell
 shopt -s checkwinsize
-
 
 # Command prompt
 if [ $(whoami) = root ]; then
@@ -47,6 +44,7 @@ alias nowdate='date +"%m-%d-%Y"'
 # swap esc and caps lock (for wim usage)
 alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
 alias vim='esc;vim'
+
 # for tmux usage
 alias tmux='tmux -u'
 
@@ -59,7 +57,7 @@ alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
 alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
-alias firewall=iptlist
+alias firewall='iptlist'
 
 
 # IP aliases
