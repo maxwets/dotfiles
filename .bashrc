@@ -1,10 +1,11 @@
 # This is a simple .bashrc file that i use on my own machine
 
+# Set size of history
 export HISTSIZE=10000
 
-#bind "set completion-ignore-case on"
-shopt -s cdspell
-shopt -s checkwinsize
+# Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
 
 # Command prompt
 if [ $(whoami) = root ]; then
@@ -38,7 +39,7 @@ alias fgrep='fgrep --color=auto'
 # date command aliases
 alias d='date +%F'
 alias now='date +"%T"'
-alias nowtime=now
+alias nowtime='now'
 alias nowdate='date +"%m-%d-%Y"'
 
 # swap esc and caps lock (for wim usage)
@@ -50,7 +51,6 @@ alias tmux='tmux -u'
 
 # show open ports
 alias ports='netstat -tulanp'
-
 
 # iptables aliases
 alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
