@@ -16,7 +16,7 @@ set nobackup
 set noswapfile
 
 " Config for NERDTree
-nmap ù :NERDTreeToggle
+nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
 " Make an alias for . because it's easier to use ; than . on my kb
