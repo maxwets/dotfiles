@@ -47,7 +47,10 @@ alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
 alias vim='esc;vim'
 
 # for tmux usage
-alias tmux='tmux -u'
+tmux attach &> /dev/null
+if [[ ! $TERM =~ screen  ]]; then
+	    exec tmux -u
+fi
 
 # show open ports
 alias ports='netstat -tulanp'
