@@ -1,5 +1,5 @@
 # dotfiles
-Contains my .bashrc config and my .vimrc config.
+I use bash, vim and tmux in my terminal. In this repo you will find all my config files for these tools.
 
 ## How to contribute
 If you want to clone my repositrory for your own usage, you can do this !
