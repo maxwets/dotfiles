@@ -15,6 +15,13 @@ else
 fi
 
 
+# For tmux usage
+tmux attach &> /dev/null
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
+
 # ALIASES
 
 # ls command aliases
@@ -45,11 +52,6 @@ alias nowdate='date +"%m-%d-%Y"'
 # swap esc and caps lock (for wim usage)
 alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
 alias vim='esc;vim'
-
-# for tmux usage
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
 
 # show open ports
 alias ports='netstat -tulanp'
