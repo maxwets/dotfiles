@@ -47,9 +47,8 @@ alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
 alias vim='esc;vim'
 
 # for tmux usage
-tmux attach &> /dev/null
-if [[ ! $TERM =~ screen  ]]; then
-	    exec tmux -u
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
 fi
 
 # show open ports
@@ -61,7 +60,6 @@ alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
 alias firewall='iptlist'
-
 
 # IP aliases
 alias ip='curl ipecho.net/plain;echo'
