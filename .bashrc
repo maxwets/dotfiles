@@ -67,12 +67,20 @@ alias firewall='iptlist'
 alias ip='curl ipecho.net/plain;echo'
 alias ifconfig='sudo ifconfig'
 
+# Networking aliases
+alias ssh_start='sudo /etc/init.d/ssh start'
+alias ssh_stop='sudo /etc/init.d/ssh stop'
+
 # root aliases
 alias ss='sudo su'
 alias apt-get='sudo apt-get'
 alias apt='sudo apt'
 alias reboot='sudo reboot'
 
+# Totem alias
+alias ttf='totem --fullscreen'
+# Evince alias
+alias evince='evince 2> /dev/null'
 
 # Aliases for the vim configuration
 alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp'
