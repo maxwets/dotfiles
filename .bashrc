@@ -36,6 +36,10 @@ alias cd.2='cd ../..'
 alias cd.3='cd ../../..'
 alias cd.4='cd ../../../..'
 
+# Security aliases
+alias rm='rm --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
 
 # grep command aliases
 alias grep='grep --color=auto'
