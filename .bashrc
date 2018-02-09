@@ -16,11 +16,10 @@ fi
 
 
 # For tmux usage
-tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
-
+alias tks='tmux kill-session -t'
 
 # ALIASES
 
@@ -80,6 +79,8 @@ alias ss='sudo su'
 alias apt-get='sudo apt-get'
 alias apt='sudo apt'
 alias reboot='sudo reboot'
+
+
 
 # Totem alias
 alias ttf='totem --fullscreen'
