@@ -31,6 +31,7 @@ alias la='ls -lArth'
 
 # cd command aliases
 alias cd..='cd ..'
+alias cd.1='cd ..'
 alias cd.2='cd ../..'
 alias cd.3='cd ../../..'
 alias cd.4='cd ../../../..'
@@ -80,17 +81,22 @@ alias apt-get='sudo apt-get'
 alias apt='sudo apt'
 alias reboot='sudo reboot'
 
-
+# gcc alias
+alias gww='gcc -Wall -Werror -DC99 -ICTester'
 
 # Totem alias
 alias ttf='totem --fullscreen'
 # Evince alias
 alias evince='evince 2> /dev/null'
 
+# LTSpice alias
+alias lts='env WINEPREFIX="/home/maxwets/.wine" wine C:\\Program\ Files\\LTC\\LTspiceXVII\\XVIIx64.exe > /dev/null &'
+
 # Aliases for the vim configuration
-alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp'
+alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp;dl_vim_markdown'
 alias dl_pathogen='mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
 alias dl_autopairs='git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs'
 alias dl_nerdtree='git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree'
 alias dl_ctrlp='git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim'
+alias dl_vim_markdown='git clone https://github.com/plasticboy/vim-markdown.git'
