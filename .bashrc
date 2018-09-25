@@ -8,7 +8,7 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
 # Command prompt
-if [ $(whoami) = root ]; then
+if [ $USER = root ]; then
 	export PS1="\[\033[38;5;14m\][\t]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\h\[$(tput sgr0)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;6m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 else 
 	export PS1="\[\033[38;5;14m\][\t]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\h\[$(tput sgr0)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;6m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
@@ -89,14 +89,10 @@ alias ttf='totem --fullscreen'
 # Evince alias
 alias evince='evince 2> /dev/null'
 
-# LTSpice alias
-alias lts='env WINEPREFIX="/home/maxwets/.wine" wine C:\\Program\ Files\\LTC\\LTspiceXVII\\XVIIx64.exe > /dev/null &'
-
 # Aliases for the vim configuration
-alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp;dl_vim_markdown'
+alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp'
 alias dl_pathogen='mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
 alias dl_autopairs='git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs'
 alias dl_nerdtree='git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree'
 alias dl_ctrlp='git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim'
-alias dl_vim_markdown='git clone https://github.com/plasticboy/vim-markdown.git'
