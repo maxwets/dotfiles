@@ -20,6 +20,8 @@ set tabstop=4
 set colorcolumn=110
 set nobackup
 set noswapfile
+set laststatus=2
+set mouse=a
 
 " Config for NERDTree
 nmap ù :NERDTreeToggle<ENTER>
@@ -31,3 +33,7 @@ nmap ; .
 " Theme config (for gvim too)
 colorscheme slate
 highlight Normal guifg=white guibg=black
+
+if !has('gui_running')
+  set t_Co=256
+endif

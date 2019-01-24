@@ -1,6 +1,7 @@
 BASHRC=~/.bashrc
 VIMRC=~/.vimrc
 TMUXCONF=~/.tmux.conf
+VIMPLUG=~/.vim/autoload/plug.vim
 BACKUP_DIR=~/dotfiles_backup
 
 all: backup BASHRC VIMRC TMUXCONF 
