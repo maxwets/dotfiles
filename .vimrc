@@ -1,4 +1,10 @@
-execute pathogen#infect()
+call plug#begin()
+Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/w0rp/ale'
+Plug 'https://github.com/jiangmiao/auto-pairs'
+call plug#end()
 
 filetype plugin indent on
 syntax on

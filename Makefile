@@ -3,6 +3,8 @@ VIMRC=~/.vimrc
 TMUXCONF=~/.tmux.conf
 BACKUP_DIR=~/dotfiles_backup
 
+all: backup BASHRC VIMRC TMUXCONF 
+
 BASHRC:
 	cp .bashrc $(BASHRC)
 VIMRC: 
@@ -18,5 +20,4 @@ backup: $(BACKUP_DIR)
 BACKUP_DIR:
 	mkdir ~/dotfiles_backup
 
-all: backup BASHRC VIMRC TMUXCONF 
 

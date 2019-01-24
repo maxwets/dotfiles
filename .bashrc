@@ -1,5 +1,3 @@
-# This is a simple .bashrc file that i use on my own machine
-
 # Set size of history
 export HISTSIZE=10000
 
@@ -28,13 +26,8 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -lArth'
 
-
 # cd command aliases
 alias cd..='cd ..'
-alias cd.1='cd ..'
-alias cd.2='cd ../..'
-alias cd.3='cd ../../..'
-alias cd.4='cd ../../../..'
 
 # Security aliases
 alias rm='rm --preserve-root'
@@ -45,13 +38,6 @@ alias chown='chown --preserve-root'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-
-# date command aliases
-alias d='date +%F'
-alias now='date +"%T"'
-alias nowtime='now'
-alias nowdate='date +"%m-%d-%Y"'
 
 # swap esc and caps lock (for wim usage)
 alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
@@ -68,10 +54,9 @@ alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
 alias firewall='iptlist'
 
 # IP aliases
-alias ip='curl ipecho.net/plain;echo'
 alias ifconfig='sudo ifconfig'
 
-# Networking aliases
+# SSH aliases
 alias ssh_start='sudo /etc/init.d/ssh start'
 alias ssh_stop='sudo /etc/init.d/ssh stop'
 
@@ -83,11 +68,6 @@ alias reboot='sudo reboot'
 
 # gcc alias
 alias gww='gcc -Wall -Werror -DC99 -ICTester'
-
-# Totem alias
-alias ttf='totem --fullscreen'
-# Evince alias
-alias evince='evince 2> /dev/null'
 
 # Aliases for the vim configuration
 alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp'
