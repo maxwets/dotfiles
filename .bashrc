@@ -67,11 +67,3 @@ alias reboot='sudo reboot'
 
 # gcc alias
 alias gww='gcc -Wall -Werror -DC99 -ICTester'
-
-# Aliases for the vim configuration
-alias getvimconfig='dl_pathogen;dl_autopairs;dl_nerdtree;dl_ctrlp'
-alias dl_pathogen='mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
-alias dl_autopairs='git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs'
-alias dl_nerdtree='git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree'
-alias dl_ctrlp='git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim'
