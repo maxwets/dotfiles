@@ -18,6 +18,9 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 alias tks='tmux kill-session -t'
 
+# For vim
+export EDITOR=vim
+
 # ALIASES
 
 # ls command aliases
@@ -41,6 +44,7 @@ alias fgrep='fgrep --color=auto'
 # swap esc and caps lock (for wim usage)
 alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
 alias vim='esc;vim'
+alias emacs='esc;emacs'
 
 # show open ports
 alias ports='netstat -tulanp'
