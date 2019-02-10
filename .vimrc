@@ -27,8 +27,10 @@ set laststatus=2
 nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
-" Make an alias for . because it's easier to use ; than . on my kb
-nmap ; .
+" Make an alias for w because it's easier to use z than w on my kb
+nmap z w
+nmap <C-n> :tabnew<ENTER>
+nmap <C-w> :tabclose<ENTER>
 
 " Theme config (for gvim too)
 colorscheme slate

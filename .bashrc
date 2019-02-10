@@ -41,11 +41,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# swap esc and caps lock (for wim usage)
-alias esc='/usr/bin/setxkbmap -option "caps:swapescape"'
-alias vim='esc;vim'
-alias emacs='esc;emacs'
-
 # show open ports
 alias ports='netstat -tulanp'
 
