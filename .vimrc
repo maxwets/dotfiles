@@ -29,8 +29,12 @@ let NERDTreeShowHidden=1
 
 " Make an alias for w because it's easier to use z than w on my kb
 nmap z w
-nmap <C-n> :tabnew<ENTER>
+
+" Tab management
+nmap <C-t> :tabnew<ENTER>
 nmap <C-w> :tabclose<ENTER>
+nmap <C-n> :tabnext<ENTER>
+nmap <C-p> :tabprev<ENTER>
 
 " Theme config (for gvim too)
 colorscheme slate
