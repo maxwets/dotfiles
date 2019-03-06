@@ -12,12 +12,6 @@ else
 	export PS1="\[\e[32m\]\u\[\e[m\]\[\e[31m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\]\[\e[36m\]:\[\e[m\]\[\e[36m\]\w\[\e[m\]\[\e[36m\]\\$\[\e[m\] "
 fi
 
-# For tmux
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
-alias tks='tmux kill-session -t'
-
 # For vim
 export EDITOR=vim
 

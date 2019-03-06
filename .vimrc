@@ -32,7 +32,6 @@ nmap z w
 
 " Tab management
 nmap <C-t> :tabnew<ENTER>
-nmap <C-q> :tabclose<ENTER>
 nmap <C-n> :tabnext<ENTER>
 nmap <C-p> :tabprev<ENTER>
 
