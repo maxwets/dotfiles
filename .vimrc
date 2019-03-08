@@ -38,7 +38,6 @@ nmap <C-p> :tabprev<ENTER>
 " Theme config (for gvim too)
 colorscheme slate
 highlight Normal guifg=white guibg=black
-
 if !has('gui_running')
   set t_Co=256
 endif

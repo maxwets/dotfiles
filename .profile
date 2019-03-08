@@ -17,4 +17,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # swap ESC and CAPS keys
-setxkbmap -option caps:swapescape
+setxkbmap -option caps:swapescape 
+
+# For getting a random wallpaper for each login
+feh --randomize --bg-fill ~/Pictures/wallpapers/*
