@@ -12,7 +12,7 @@ BASHRC:
 VIMRC: 
 	cp .vimrc $(VIMRC)
 I3:
-	cp -r .i3 $(I3)
+	cp .i3/config $(I3)
 TMUXCONF: 
 	cp .tmux.conf $(TMUXCONF)
 EMACS:

@@ -57,16 +57,12 @@ bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
-# toggle splitting windows horizontally/vertically
-bindsym $mod+t split toggle
+# split windows horizontally/vertically
+bindsym $mod+t 		 split h
+bindsym $mod+Shift+t split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -104,10 +100,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize windows
-bindsym $mod+y resize grow   width  5 px or 5 ppt
-bindsym $mod+u resize grow   height 5 px or 5 ppt
-bindsym $mod+i resize shrink height 5 px or 5 ppt
-bindsym $mod+o resize shrink width  5 px or 5 ppt
+bindsym $mod+u 		 resize grow   width  5 px or 5 ppt
+bindsym $mod+Shift+u resize shrink width  5 px or 5 ppt
+bindsym $mod+i 		 resize grow   height 5 px or 5 ppt
+bindsym $mod+Shift+i resize shrink height 5 px or 5 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
