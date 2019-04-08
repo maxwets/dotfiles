@@ -1,10 +1,9 @@
 call plug#begin()
 Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/w0rp/ale'
 Plug 'https://github.com/jiangmiao/auto-pairs'
-Plug 'https://github.com/Procrat/oz.vim'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/Valloric/YouCompleteMe'
 call plug#end()
 
 filetype plugin indent on
