@@ -59,4 +59,4 @@ alias apt='sudo apt'
 alias reboot='sudo reboot'
 
 # gcc alias
-alias gww='gcc -Wall -Werror -DC99 -ICTester'
+alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
