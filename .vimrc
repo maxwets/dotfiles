@@ -4,6 +4,7 @@ Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/Valloric/YouCompleteMe'
+Plug 'https://github.com/Procrat/oz.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -26,7 +27,7 @@ set laststatus=2
 nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
-" Make an alias for w because it's easier to use z than w on my kb
+" Swap w and z
 nmap z w
 
 " Tab management
