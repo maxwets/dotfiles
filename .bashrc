@@ -2,7 +2,6 @@
 export HISTSIZE=10000
 
 # Environment variables
-export TERMINAL=st
 export EDITOR=vim
 
 # Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
@@ -15,6 +14,9 @@ if [ $USER = root ]; then
 else 
 	export PS1="\[\e[32m\]\u\[\e[m\]\[\e[31m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\]\[\e[36m\]:\[\e[m\]\[\e[36m\]\w\[\e[m\]\[\e[36m\]\\$\[\e[m\] "
 fi
+
+# Adds ~/.scripts and all subdirectories to $PATH
+export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
