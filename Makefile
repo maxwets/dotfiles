@@ -1,21 +1,32 @@
-BASHRC=~/.bashrc
-VIMRC=~/.vimrc
-EMACS=~/.emacs
-TMUXCONF=~/.tmux.conf
-I3=~/.i3
-PROFILE=~/.profile
+PROFILE  = ~/.profile
+BASHRC   = ~/.bashrc
+VIMRC    = ~/.vimrc
+EMACS    = ~/.emacs
+TMUXCONF = ~/.tmux.conf
+CONFIG   = ~/.config/
 
-all: I3 BASHRC VIMRC EMACS PROFILE TMUXCONF 
+all: profile bashrc vimrc emacs tmuxconf i3 mutt ranger
 
-BASHRC:
-	cp .bashrc $(BASHRC)
-VIMRC: 
-	cp .vimrc $(VIMRC)
-I3:
-	cp .i3/config $(I3)
-TMUXCONF: 
-	cp .tmux.conf $(TMUXCONF)
-EMACS:
-	cp .emacs $(EMACS)
-PROFILE: 
+profile: 
 	cp .profile $(PROFILE)
+
+bashrc:
+	cp .bashrc $(BASHRC)
+
+vimrc: 
+	cp .vimrc $(VIMRC)
+
+emacs:
+	cp .emacs $(EMACS)
+
+tmuxconf: 
+	cp .tmux.conf $(TMUXCONF)
+
+i3: 
+	cp -r .config/i3 $(CONFIG).
+
+mutt:
+	cp -r .config/mutt $(CONFIG).
+
+ranger:
+	cp -r .config/ranger $(CONFIG).
