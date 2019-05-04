@@ -1,5 +1,5 @@
 # i3 config file (v4)
-set $mod Mod1
+set $mod Mod4
 set $term --no-startup-id st
 set $browser firefox
 font pango:monospace 10
@@ -23,6 +23,9 @@ exec --no-startup-id compton --config ~/.compton.conf
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 15
+
+# randomize wallpaper
+exec --no-startup-id feh --bg-scale --randomize ~/Pictures/wallpapers/*
 
 # start a terminal
 bindsym $mod+Return  exec $term
