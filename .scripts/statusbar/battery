@@ -1,0 +1,15 @@
+#!/bin/sh
+
+info=acpi
+
+charging=`$info | awk '{print $3}' | sed "s/,//g"`
+status=""
+percent=`$info | awk '{print $4}' | sed "s/,//g"`
+remaining=`$info | awk '{print $5}' | sed "s/,//g"`
+
+case $charging in
+	Charging*) status="CHR";;
+	Discharging*) status="DIS";;
+esac
+
+echo "$status $percent : $remaining"

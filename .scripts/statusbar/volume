@@ -1,0 +1,3 @@
+#!/bin/sh
+
+amixer get Master | grep -E -o '[0-9][0-9]?%' | awk '{print "Volume : " $1}'

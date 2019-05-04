@@ -4,8 +4,9 @@ VIMRC    = ~/.vimrc
 EMACS    = ~/.emacs
 TMUXCONF = ~/.tmux.conf
 CONFIG   = ~/.config/
+SCRIPTS  = ~/.scripts/
 
-all: profile bashrc vimrc emacs tmuxconf i3 mutt ranger
+all: profile bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts
 
 profile: 
 	cp .profile $(PROFILE)
@@ -25,8 +26,14 @@ tmuxconf:
 i3: 
 	cp -r .config/i3 $(CONFIG).
 
+i3blocks:
+	cp -r .config/i3blocks $(CONFIG)
+
 mutt:
 	cp -r .config/mutt $(CONFIG).
 
 ranger:
 	cp -r .config/ranger $(CONFIG).
+
+scripts:
+	cp -r .scripts/* $(SCRIPTS)

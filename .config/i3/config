@@ -1,7 +1,7 @@
 # i3 config file (v4)
 set $mod Mod1
 set $term --no-startup-id i3-sensible-terminal
-set $browser $BROWSER
+set $browser firefox
 font pango:monospace 10
 
 # use Mouse+$mod to drag floating windows to their wanted position
