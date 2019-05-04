@@ -1,6 +1,11 @@
 # Set size of history
 export HISTSIZE=10000
 
+# Environment variables
+export TERMINAL=xterm
+export BROWSER=firefox
+export EDITOR=vim
+
 # Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -12,8 +17,8 @@ else
 	export PS1="\[\e[32m\]\u\[\e[m\]\[\e[31m\]@\[\e[m\]\[\e[31m\]\h\[\e[m\]\[\e[36m\]:\[\e[m\]\[\e[36m\]\w\[\e[m\]\[\e[36m\]\\$\[\e[m\] "
 fi
 
-# For vim
-export EDITOR=vim
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ALIASES
 
