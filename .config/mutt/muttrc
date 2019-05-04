@@ -21,3 +21,5 @@ mailboxes =INBOX =Sent =Trash =Drafts =Other
 bind index G imap-fetch-mail
 set editor  = "vim"
 set charset = "utf-8"
+
+source colors.muttrc

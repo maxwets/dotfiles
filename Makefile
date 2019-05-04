@@ -6,7 +6,7 @@ TMUXCONF = ~/.tmux.conf
 CONFIG   = ~/.config/
 SCRIPTS  = ~/.scripts/
 
-all: profile bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts
+all: profile bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts misc
 
 profile: 
 	cp .profile $(PROFILE)
@@ -37,3 +37,6 @@ ranger:
 
 scripts:
 	cp -r .scripts/* $(SCRIPTS)
+
+misc:
+	cp .config/.dirs .config/.files $(CONFIG)

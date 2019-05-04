@@ -21,6 +21,9 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# load shortcuts
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+
 # ALIASES
 
 # ls command aliases
