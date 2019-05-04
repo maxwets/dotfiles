@@ -2,8 +2,7 @@
 export HISTSIZE=10000
 
 # Environment variables
-export TERMINAL=xterm
-export BROWSER=firefox
+export TERMINAL=st
 export EDITOR=vim
 
 # Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)

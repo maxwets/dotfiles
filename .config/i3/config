@@ -1,6 +1,6 @@
 # i3 config file (v4)
 set $mod Mod1
-set $term --no-startup-id i3-sensible-terminal
+set $term --no-startup-id st
 set $browser firefox
 font pango:monospace 10
 
