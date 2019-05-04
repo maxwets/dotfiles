@@ -1,0 +1,20 @@
+cd
+open_with 
+open_with
+rename tp5_sol.pdf
+rename tp3_sol.pdf
+rename tp4_sol.pdf
+rename tp0.pdf
+rename tp5.pdf
+rename tp1.pdf
+rename tp2.pdf
+rename tp3.pdf
+rename tp4.pdf
+mkdir
+mkdir CM
+mv ~/Documents/q2/macro/CM.
+rename
+search intro
+!zip q2.zip q2/
+make
+!make

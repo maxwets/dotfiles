@@ -1,0 +1,23 @@
+# config
+set realname      = "Max Wets"
+set from          = "max.wets@gmail.com"
+set use_from      = yes
+set envelope_from = yes
+
+# protocol config
+set smtp_url      = "smtps://max.wets@gmail.com@smtp.gmail.com:465/"
+set folder        = "imaps://max.wets@gmail.com@imap.gmail.com:993"
+set ssl_force_tls = yes
+
+
+# mailboxes
+set spoolfile = "+INBOX"
+set record    = '+Sent'
+set trash     = "+Trash"
+set postponed = "+Drafts"
+mailboxes =INBOX =Sent =Trash =Drafts =Other
+
+# editing mails
+bind index G imap-fetch-mail
+set editor  = "vim"
+set charset = "utf-8"
