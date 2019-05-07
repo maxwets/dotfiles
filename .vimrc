@@ -28,7 +28,8 @@ nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
 " Swap w and z
-nmap z w
+nnoremap z w
+nnoremap w z
 
 " Tab management
 nmap <C-t> :tabnew<ENTER>
