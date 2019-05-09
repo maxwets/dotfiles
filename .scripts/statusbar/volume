@@ -1,3 +1,9 @@
 #!/bin/sh
 
-amixer get Master | grep -E -o '[0-9][0-9]?%' | awk '{print "Volume : " $1}'
+sound=`amixer get Master | grep -E -o '[0-9][0-9]?%' | awk '{print "Volume : " $1}'`
+muted=`pacmd list-sinks | grep muted | awk '{print $2}'`
+
+case $muted in
+	yes) echo "MUTED";;
+	no)  echo "$sound";;
+esac

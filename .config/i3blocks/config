@@ -3,7 +3,7 @@ separator_block_width=20
 markup=pango
 
 [volume]
-interval=5
+interval=10
 signal=10
 
 [cpu]
