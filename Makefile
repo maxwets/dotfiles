@@ -1,27 +1,22 @@
-PROFILE  = ~/.profile
-BASHRC   = ~/.bashrc
-VIMRC    = ~/.vimrc
-EMACS    = ~/.emacs
-TMUXCONF = ~/.tmux.conf
-CONFIG   = ~/.config/
-SCRIPTS  = ~/.scripts/
+CONFIG   = $(HOME)/.config/
+SCRIPTS  = $(HOME)/.scripts/
 
 all: profile bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts misc
 
 profile: 
-	cp .profile $(PROFILE)
+	cp .profile .bash_profile .zprofile .xprofile $(HOME)
 
 bashrc:
-	cp .bashrc $(BASHRC)
+	cp .bashrc $(HOME)
 
 vimrc: 
-	cp .vimrc $(VIMRC)
+	cp .vimrc $(HOME)
 
 emacs:
-	cp .emacs $(EMACS)
+	cp .emacs $(HOME)
 
 tmuxconf: 
-	cp .tmux.conf $(TMUXCONF)
+	cp .tmux.conf $(HOME)
 
 i3: 
 	cp -r .config/i3 $(CONFIG).

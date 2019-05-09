@@ -1,8 +1,8 @@
 # Set size of history
 export HISTSIZE=10000
 
-# Environment variables
-export EDITOR=vim
+# vim mode
+set -o vi
 
 # Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
 bind "set completion-ignore-case on"
@@ -20,9 +20,6 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# load shortcuts
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 
 # ALIASES
 

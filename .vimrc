@@ -27,16 +27,16 @@ set laststatus=2
 nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
-" Swap w and z
-nnoremap z w
-nnoremap w z
-
 " Tab management
 nmap <C-t> :tabnew<ENTER>
 nmap <C-n> :tabnext<ENTER>
 nmap <C-p> :tabprev<ENTER>
 
-" Theme config (for gvim too)
+" copy/paste from/to other applications
+vnoremap <C-c> "*y : let @+=@*<CR>
+vnoremap <C-v> "*P
+
+" Theme config
 colorscheme slate
 highlight Normal guifg=white guibg=black
 if !has('gui_running')
