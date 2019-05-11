@@ -19,7 +19,6 @@ fi
 # set PATH so it incluedes scripts
 export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//g')"
 
-
 # set variables
 export EDITOR="vim"
 export PAGER="less"

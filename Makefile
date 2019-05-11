@@ -1,10 +1,13 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.scripts/
 
-all: profile bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts misc
+all: profile xinit bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts misc
 
 profile: 
 	cp .profile .bash_profile .zprofile .xprofile $(HOME)
+
+xinit:
+	cp .xinitrc $(HOME)
 
 bashrc:
 	cp .bashrc $(HOME)
