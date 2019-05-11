@@ -5,7 +5,7 @@ iface=`route | grep default | awk '{print $8}'`
 
 if [ -z $local ] || [ -z $iface ]
 then
-	echo "\e[31mDOWN" 
+	echo '\e[31mnetwork down'
 else
-	echo "$iface : $local"
+	echo "\e[0m$iface : $local"
 fi
