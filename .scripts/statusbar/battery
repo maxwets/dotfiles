@@ -4,7 +4,7 @@ info=acpi
 
 charging=`$info | awk '{print $3}' | sed "s/,//g"`
 status=""
-percent=`$info | awk '{print $4}' | sed "s/,//g"`
+percent=`$info | awk '{print $4}' | sed "s/%.*//g"`
 remaining=`$info | awk '{print $5}' | sed "s/,//g"`
 
 case $charging in
@@ -12,4 +12,9 @@ case $charging in
 	Discharging*) status="DIS";;
 esac
 
-echo "$status $percent : $remaining"
+if [ $status = "DIS" ] && [ $percent -lt 20 ]
+then
+	echo "\e[31m$status $percent : $remaining"
+else
+	echo "$status $percent% : $remaining"
+fi
