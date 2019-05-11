@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cpu=`sed 1q /proc/stat | awk '{print ($2+$4)*100/($2+$4+$5)}' | sed "s/\..*//g"`
-echo "\e[0mCPU : $cpu%"
+echo "CPU : $cpu%"
