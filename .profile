@@ -1,3 +1,11 @@
+# set env variables
+export EDITOR="vim"
+export TERM="st"
+export PAGER="less"
+export READER="zathura"
+export BROWSER="firefox"
+export TERMINAL="st"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -18,13 +26,6 @@ fi
 
 # set PATH so it incluedes scripts
 export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//g')"
-
-# set variables
-export EDITOR="vim"
-export PAGER="less"
-export BROWSER="firefox"
-export TERMINAL="st"
-export TERM="st"
 
 # swap ESC and CAPS keys
 setxkbmap -option caps:swapescape 
