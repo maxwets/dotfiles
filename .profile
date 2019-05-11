@@ -31,4 +31,4 @@ export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//g
 setxkbmap -option caps:swapescape 
 
 # get random wallpapers
-feh --randomize --bg-fill --fullscreen -D 1800.0 ~/Pictures/wallpapers/* &
+feh --randomize -R --bg-scale --fullscreen -D 1800.0 ~/Pictures/wallpapers/* &
