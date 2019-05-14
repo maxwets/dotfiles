@@ -9,8 +9,8 @@
 - mutt (*neomutt*)
 - ranger
 
-### ubuntu 18.04
-My OS is currently ubuntu 18.04
+### arch
+My OS is currently arch linux
 
 ### i3-gaps
 I use [i3-gaps](https://github.com/Airblader/i3) with [light](https://github.com/haikarainen/light) for brightness management.
