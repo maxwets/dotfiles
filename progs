@@ -14,11 +14,13 @@ make
 neomutt
 noto-fonts
 openssh
-ranger
+pygmentize
 sudo
+sxiv
 #texlive-lang
 #texlive-most
 unzip
+vifm
 vim
 wget
 xorg

@@ -7,7 +7,7 @@
 - emacs (*evil-mode*)
 - ~~tmux~~
 - mutt (*neomutt*)
-- ranger
+- vifm
 
 ### arch
 My OS is currently arch linux
@@ -31,5 +31,5 @@ I used tmux for a while before starting to use i3. I remapped the prefix to \<C-
 ### mutt
 My mail manager is neomutt. 
 
-### ranger
-My file manager is ranger.
+### vifm
+My file manager is vifm.

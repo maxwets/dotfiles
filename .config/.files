@@ -1,7 +1,0 @@
-cfb		~/.bashrc
-cfv		~/.vimrc
-cfm		~/.config/mutt/muttrc
-cfr 	~/.config/ranger/rc.conf
-cft		~/.tmux.conf
-cfi		~/.config/i3/config
-cfb 	~/.config/i3blocks/config

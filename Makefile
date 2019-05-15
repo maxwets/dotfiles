@@ -1,7 +1,7 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.scripts/
 
-all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks mutt scripts fonts misc
+all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks vifm mutt scripts fonts
 
 install:
 	sudo ./install.sh
@@ -34,6 +34,9 @@ i3:
 i3blocks:
 	cp -r .config/i3blocks $(CONFIG)
 
+vifm:
+	cp -r .config/vifm $(CONFIG)
+
 mutt:
 	cp -r .config/mutt $(CONFIG).
 
@@ -42,6 +45,3 @@ scripts:
 
 fonts:
 	cp -r .config/fontconfig $(CONFIG).
-
-misc:
-	cp .config/.dirs .config/.files $(CONFIG)

@@ -46,7 +46,7 @@ bindsym $mod+w exec $browser
 bindsym $mod+m exec $term -e neomutt
 
 # start ranger
-bindsym $mod+r exec $term -e ranger
+bindsym $mod+r exec $term -e vifm
 
 # start dmenu
 bindsym $mod+d exec dmenu_run
