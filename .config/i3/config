@@ -8,9 +8,9 @@ font pango:monospace 10
 floating_modifier $mod
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 sset Master 5%+    #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 sset Master 5%-    #decrease sound volume
-bindsym XF86AudioMute        exec --no-startup-id amixer -c 0 sset Master toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 sset Master 5%+ # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 sset Master 5%- # decrease sound volume
+bindsym XF86AudioMute        exec --no-startup-id ~/.scripts/./audio          # toggle mute
 
 # sreen brightness controls
 bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5 # increase screen brightness
@@ -22,7 +22,7 @@ gaps inner 10
 gaps outer 15
 
 # randomize wallpaper
-exec --no-startup-id feh --bg-scale --randomize ~/Pictures/wallpapers/*
+exec --no-startup-id feh --no-fehbg --bg-scale --fullscreen --randomize ~/Pictures/wallpapers/*
 
 # swap ESC and CAPS
 exec --no-startup-id setxkbmap be -option "caps:swapescape"

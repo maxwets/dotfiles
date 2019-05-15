@@ -1,0 +1,11 @@
+#!/bin/sh
+
+state=`amixer | sed 5q | grep Mono: | awk '{print $6}'`
+
+if [ $state = "[off]" ]; then
+	amixer -c 0 sset Master  unmute > /dev/null
+	amixer -c 0 sset Speaker unmute > /dev/null
+	amixer -c 0 sset Speaker unmute > /dev/null
+else
+	amixer -c 0 sset Master mute > /dev/null
+fi
