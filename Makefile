@@ -1,7 +1,14 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.scripts/
 
-all: profile xinit bashrc vimrc emacs tmuxconf i3 i3blocks mutt ranger scripts misc
+all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks mutt ranger scripts misc
+
+install:
+	sudo ./install.sh
+
+config:
+	[ -d .config ]  || mkdir $(CONFIG)
+	[ -d .scripts ] || mdkir $(SCRIPTS)
 
 profile: 
 	cp .profile .bash_profile .zprofile .xprofile $(HOME)
