@@ -1,11 +1,14 @@
 acpi
 alsa-utils
+atool
 #biber
 cronie
 curl
+elinks
 feh
 firefox
 gdb
+highlight
 i3blocks
 i3-gaps
 light
