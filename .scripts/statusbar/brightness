@@ -1,0 +1,5 @@
+#!/bin/sh
+
+brightness=`light | sed 's/\..*//g'`
+
+echo "Brightness : $brightness%"

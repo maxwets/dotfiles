@@ -2,6 +2,9 @@ command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=20
 markup=pango
 
+[brightness]
+interval=10
+
 [volume]
 interval=10
 

@@ -4,6 +4,6 @@ sound=`amixer get Master | grep -E -o '[0-9][0-9]?%' | awk '{print "Volume : " $
 muted=`pacmd list-sinks | grep muted | awk '{print $2}'`
 
 case $muted in
-	yes) echo "MUTED";;
-	no)  echo "$sound";;
+	yes) echo "Volume : MUTED";;
+	no)  echo "Volume : $sound";;
 esac
