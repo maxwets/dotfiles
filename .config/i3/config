@@ -16,9 +16,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp   exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
-# for compton (terminal transparency)
-exec --no-startup-id compton --config ~/.compton.conf
-
 # for i3-gaps
 for_window [class="^.*"] border pixel 0
 gaps inner 10
@@ -26,6 +23,12 @@ gaps outer 15
 
 # randomize wallpaper
 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/wallpapers/*
+
+# swap ESC and CAPS
+exec --no-startup-id setxkbmap be -option "caps:swapescape"
+
+# compton
+exec --no-startup-id compton
 
 # start a terminal
 bindsym $mod+Return  exec $term

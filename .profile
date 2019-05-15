@@ -28,11 +28,4 @@ fi
 export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//g')"
 
 # start graphical environment
-[ "$(tty)" = "/dev/tty1" ] && pgrep -x i3 > /dev/null && exec startx
-
-# set keyboard
-setxkbmap be
-setxkbmap -option "caps:swapescape"
-
-# get random wallpapers
-feh --randomize -R --bg-scale --fullscreen ~/Pictures/wallpapers/* &
+[ "$(tty)" = "/dev/tty1" ] && pgrep -xv i3 > /dev/null && exec startx
