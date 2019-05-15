@@ -1,7 +1,7 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.scripts/
 
-all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks mutt ranger scripts misc
+all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks mutt ranger scripts fonts misc
 
 install:
 	sudo ./install.sh
@@ -42,6 +42,9 @@ ranger:
 
 scripts:
 	cp -r .scripts/* $(SCRIPTS)
+
+fonts:
+	cp -r .config/fontconfig $(CONFIG).
 
 misc:
 	cp .config/.dirs .config/.files $(CONFIG)
