@@ -32,6 +32,14 @@ nmap <C-t> :tabnew<ENTER>
 nmap <C-n> :tabnext<ENTER>
 nmap <C-p> :tabprev<ENTER>
 
+" Split management
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+
 " copy/paste from/to other applications
 vnoremap <C-c> "*y : let @+=@*<CR>
 vnoremap <C-v> "*P
