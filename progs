@@ -1,5 +1,6 @@
 acpi
 alsa-utils
+#biber
 cronie
 curl
 feh
@@ -14,6 +15,8 @@ noto-fonts
 openssh
 ranger
 sudo
+#texlive-lang
+#texlive-most
 unzip
 vim
 w3m
