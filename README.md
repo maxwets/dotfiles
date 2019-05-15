@@ -26,7 +26,7 @@ I currenty use Bash as command processor.
 I use sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in Oz (The default Oz editor is emacs).
 
 ### tmux
-I used tmux for a while before starting to use i3. I remapped the prefix to \<C-\>.
+I used tmux for a while before starting to use i3. I remapped the prefix to \<C-s\>.
 
 ### mutt
 My mail manager is neomutt. 

@@ -16,6 +16,7 @@ ranger
 sudo
 unzip
 vim
+w3m
 xorg
 xorg-server
 xorg-xinit
