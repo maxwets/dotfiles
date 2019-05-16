@@ -5,6 +5,7 @@ cronie
 curl
 feh
 firefox
+fzf
 gdb
 htop
 i3blocks
