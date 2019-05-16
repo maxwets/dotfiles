@@ -29,21 +29,20 @@ let NERDTreeShowHidden=1
 
 " leader keymaps
 let mapleader = " "
-nnoremap <leader>w = :w<CR>
-nnoremap <leader>q = :q<CR>
+nnoremap <leader>q :q<CR>
 
 " Tab management
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>n :tabnext<CR>
-nnoremap <leader>p :tabprev<CR>
+nnoremap <leader>t :tabnew<CR>:e 
+nnoremap <leader>n :tabnext<CR>:e 
+nnoremap <leader>p :tabprev<CR>: 
 
 " Split management
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <leader>h = :sp<CR>
-nnoremap <leader>v = :vs<CR>
+nnoremap <leader>h :sp<CR>:e 
+nnoremap <leader>v :vs<CR>:e 
 set splitbelow
 set splitright
  
