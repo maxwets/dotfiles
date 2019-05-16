@@ -27,23 +27,26 @@ set laststatus=2
 nmap ù :NERDTreeToggle<ENTER>
 let NERDTreeShowHidden=1
 
+" leader keymaps
+let mapleader = " "
+nnoremap <leader>w = :w<CR>
+nnoremap <leader>q = :q<CR>
+
 " Tab management
-nmap <C-t> :tabnew<ENTER>
-nmap <C-n> :tabnext<ENTER>
-nmap <C-p> :tabprev<ENTER>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>n :tabnext<CR>
+nnoremap <leader>p :tabprev<CR>
 
 " Split management
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>h = :sp<CR>
+nnoremap <leader>v = :vs<CR>
 set splitbelow
 set splitright
-
-" copy/paste from/to other applications
-vnoremap <C-c> "*y : let @+=@*<CR>
-vnoremap <C-v> "*P
-
+ 
 " Theme config
 colorscheme slate
 highlight Normal guifg=white guibg=black
