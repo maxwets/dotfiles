@@ -8,9 +8,6 @@ interval=10
 [volume]
 interval=10
 
-[cpu]
-interval=15
-
 [disk_usage]
 interval=60
 
