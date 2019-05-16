@@ -1,10 +1,11 @@
-# Set size of history
-export HISTSIZE=10000
+# set size of history
+export HISTFILESIZE=
+export HISTSIZE=
 
 # vim mode
 set -o vi
 
-# Set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
+# set case-insensitive tab (edit /etc/inputrc if you want to use this on all users)
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
@@ -23,14 +24,14 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
-# Command prompt
+# sommand prompt
 if [ $USER = root ]; then
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 else 
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;9m\]@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 fi
 
-# Adds ~/.scripts and all subdirectories to $PATH
+# adds ~/.scripts and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 # fzf
@@ -38,15 +39,18 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 
 # ALIASES
 
+# open vifm with working directory and home
+alias vifm='vifm `pwd` $HOME'
+
 # ls command aliases
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
 alias la='ls -lArth'
 
 # cd command aliases
 alias cd..='cd ..'
 
-# Security aliases
+# security aliases
 alias rm='rm --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chown='chown --preserve-root'
@@ -56,28 +60,14 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# show open ports
-alias ports='netstat -tulanp'
-
-# iptables aliases
-alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
-alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
-alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
-alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
-alias firewall='iptlist'
-
-# IP aliases
-alias ifconfig='sudo ifconfig'
-
 # SSH aliases
 alias ssh_start='sudo /etc/init.d/ssh start'
 alias ssh_stop='sudo /etc/init.d/ssh stop'
 
 # root aliases
 alias ss='sudo su'
-alias apt-get='sudo apt-get'
-alias apt='sudo apt'
-alias reboot='sudo reboot'
+alias pacman='sudo pacman'
+alias yaourt='sudo yaourt'
 
 # gcc alias
 alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
