@@ -39,6 +39,10 @@ export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//
 
 # ALIASES
 
+# use nvim instead of vi
+alias vim='nvim'
+alias vi='nvim'
+
 # open vifm with working directory and home
 alias vifm='vifm `pwd` $HOME'
 
@@ -67,7 +71,6 @@ alias ssh_stop='sudo /etc/init.d/ssh stop'
 # root aliases
 alias ss='sudo su'
 alias pacman='sudo pacman'
-alias yaourt='sudo yaourt'
 
 # gcc alias
 alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
