@@ -4,7 +4,6 @@ Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/Valloric/YouCompleteMe'
-Plug 'https://github.com/Procrat/oz.vim'
 call plug#end()
 
 filetype plugin indent on
