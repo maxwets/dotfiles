@@ -1,7 +1,7 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.scripts/
 
-all: profile xinit bashrc vimrc emacs tmuxconf config i3 i3blocks vifm mutt scripts fonts
+all: profile xinit bashrc vimrc emacs inputrc tmuxconf config i3 i3blocks vifm mutt scripts fonts
 
 install:
 	sudo ./install.sh
@@ -21,6 +21,9 @@ bashrc:
 
 vimrc: 
 	cp .vimrc $(HOME)
+
+inputrc:
+	cp .inputrc $(HOME)
 
 emacs:
 	cp .emacs $(HOME)
