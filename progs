@@ -3,6 +3,7 @@ alsa-utils
 #biber
 cronie
 curl
+emacs
 feh
 firefox
 fzf
@@ -14,6 +15,7 @@ light
 make
 neomutt
 noto-fonts
+nvim
 openssh
 pygmentize
 sudo
@@ -22,7 +24,6 @@ sxiv
 #texlive-most
 unzip
 vifm
-vim
 wget
 xorg
 xorg-server
