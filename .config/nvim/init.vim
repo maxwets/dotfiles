@@ -21,6 +21,7 @@ set colorcolumn=110
 set nobackup
 set noswapfile
 set laststatus=2
+set nohlsearch
 
 " Config for NERDTree
 nmap ù :NERDTreeToggle<ENTER>
@@ -29,6 +30,12 @@ let NERDTreeShowHidden=1
 " leader keymaps
 let mapleader = " "
 nnoremap <leader>q :q<CR>
+
+" movement keys
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
 
 " Tab management
 nnoremap <leader>t :tabnew<CR>:e 
