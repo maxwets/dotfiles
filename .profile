@@ -1,5 +1,5 @@
 # set env variables
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERM="st"
 export PAGER="less"
 export READER="zathura"
