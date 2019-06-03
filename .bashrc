@@ -24,7 +24,7 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
-# sommand prompt
+# command prompt
 if [ $USER = root ]; then
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 else 
@@ -35,6 +35,9 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ALIASES
+
+# copy to primary and secundary
+alias xclip='xclip -selection "primary" -selection "secondary"'
 
 # kill tmux session
 alias tks='tmux kill-session -t'

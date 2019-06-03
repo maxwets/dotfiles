@@ -11,14 +11,17 @@ dirs:
 	[ -d $(HOME)/.local/bin ] || mkdir $(SCRIPTS)
 
 profile: 
-	cp     .profile              $(HOME)
+	cp    .profile               $(HOME)
+	cp    .bash_profile          $(HOME)
+	cp    .xprofile              $(HOME)
+	cp    .zprofile              $(HOME)
 
 xinit:
-	cp     .xinitrc              $(HOME)
+	cp    .xinitrc               $(HOME)
 
 bashrc:
-	cp     .bashrc               $(HOME)
-	cp     .inputrc              $(HOME)
+	cp    .bashrc                $(HOME)
+	cp    .inputrc               $(HOME)
 
 vim: 
 	cp    .config/nviminit.vim   $(CONFIG)
