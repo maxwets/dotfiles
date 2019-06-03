@@ -4,7 +4,7 @@ SCRIPTS  = $(HOME)/.local/bin/
 all: dirs profile xinit bashrc emacs tmuxconf vim i3 i3blocks vifm scripts fonts
 
 install:
-	sudo ./install.sh
+	./install.sh
 
 dirs:
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
