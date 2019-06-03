@@ -31,13 +31,13 @@ else
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;9m\]@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 fi
 
-# adds ~/.scripts and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ALIASES
+
+# kill tmux session
+alias tks='tmux kill-session -t'
 
 # use nvim instead of vi
 alias vim='nvim'

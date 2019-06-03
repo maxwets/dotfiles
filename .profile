@@ -24,8 +24,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# set PATH so it incluedes scripts
-export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//g')"
-
 # start graphical environment
 [ "$(tty)" = "/dev/tty1" ] && pgrep -xv i3 > /dev/null && exec startx
