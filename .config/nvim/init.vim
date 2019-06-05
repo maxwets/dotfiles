@@ -1,10 +1,10 @@
 call plug#begin()
+Plug 'https://github.com/ajh17/VimCompletesMe'
 Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/Valloric/YouCompleteMe'
 call plug#end()
 
 filetype plugin indent on
@@ -52,7 +52,10 @@ nnoremap <leader>h :sp<CR>:e
 nnoremap <leader>v :vs<CR>:e 
 set splitbelow
 set splitright
- 
+
+" VCM config
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
+
 " Theme config
 let g:gruvbox_italic=1
 colorscheme gruvbox
