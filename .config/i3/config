@@ -58,8 +58,8 @@ bindsym $mod+d exec dmenu_run
 # start emacs
 bindsym $mod+e exec emacs
 
-# start oz (mozart2)
-bindsym $mod+o exec oz
+# start spotify
+bindsym $mod+s exec spotify
 
 # change focus
 bindsym $mod+h focus left
