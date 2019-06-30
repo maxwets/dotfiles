@@ -31,13 +31,15 @@ else
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;9m\]@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 fi
 
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 # ALIASES
 
 # copy to primary and secundary
-alias xclip='xclip -selection "primary" -selection "secondary"'
+alias xclip='xclip -selection "clip"'
+
+# pacman aliases
+alias pacmans='pacman -S'
+alias pacmanq='pacman -Q'
+alias pacmanr='pacman -R'
 
 # kill tmux session
 alias tks='tmux kill-session -t'
