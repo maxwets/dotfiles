@@ -14,9 +14,15 @@ git clone https://github.com/emacs-evil/evil ~/.emacs.d/evil
 [ -d ~/.emacs.d/themes ] || mkdir ~/.emacs.d/themes
 curl -L https://raw.github.com/Greduan/emacs-theme-gruvbox/master/gruvbox-theme.el > ~/.emacs.d/themes/gruvbox-theme.el
 
+# install st
+git clone https://github.com/maxwets/st
+cd st && make all
+sudo make install
+cd;
+
 # install dmenu
-sudo git clone https://github.com/maxwets/dmenu
+git clone https://github.com/maxwets/dmenu
 cd dmenu && make all
 sudo make install
-
 cd;
+
