@@ -53,13 +53,10 @@ bindsym $mod+w exec $browser
 bindsym $mod+r exec $term -e vifm ~ /
 
 # start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sf '#fbf1c7' -nf '#3c3836' -sf '#3c3836'
 
 # start emacs
 bindsym $mod+e exec emacs
-
-# start spotify
-bindsym $mod+s exec spotify
 
 # change focus
 bindsym $mod+h focus left
