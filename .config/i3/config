@@ -53,7 +53,7 @@ bindsym $mod+w exec $browser
 bindsym $mod+r exec $term -e vifm ~ /
 
 # start dmenu
-bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sf '#fbf1c7' -nf '#3c3836' -sf '#3c3836'
+bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sf '#fbf1c7' -nf '#3c3836' -sf '#3c3836' -H ~/.dmenu_history
 
 # start emacs
 bindsym $mod+e exec emacs
