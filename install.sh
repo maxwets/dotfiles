@@ -13,3 +13,10 @@ git clone https://github.com/emacs-evil/evil ~/.emacs.d/evil
 # install gruvbox for emacs
 [ -d ~/.emacs.d/themes ] || mkdir ~/.emacs.d/themes
 curl -L https://raw.github.com/Greduan/emacs-theme-gruvbox/master/gruvbox-theme.el > ~/.emacs.d/themes/gruvbox-theme.el
+
+# install dmenu
+sudo git clone https://github.com/maxwets/dmenu
+cd dmenu && make all
+sudo make install
+
+cd;
