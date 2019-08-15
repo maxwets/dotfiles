@@ -1,7 +1,7 @@
 CONFIG   = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.local/bin/
 
-all: dirs profile xinit bashrc emacs tmuxconf vim i3 i3blocks vifm scripts fonts
+all: dirs profile xinit bashrc emacs tmuxconf vim i3 i3blocks lf scripts fonts
 
 install:
 	./install.sh
@@ -41,8 +41,8 @@ i3:
 i3blocks:
 	cp -r .config/i3blocks       $(CONFIG)
 
-vifm:
-	cp -r .config/vifm           $(CONFIG)
+lf:
+	cp -r .config/lf             $(CONFIG)
 
 scripts:
 	cp -r .local/bin/*           $(SCRIPTS)

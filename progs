@@ -8,6 +8,7 @@ feh
 firefox
 fzf
 gdb
+go
 gnupg
 htop
 i3blocks
@@ -21,7 +22,6 @@ openssh
 sudo
 sxiv
 unzip
-vifm
 wget
 wireshark-cli
 wireshark-qt

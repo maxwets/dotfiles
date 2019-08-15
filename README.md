@@ -16,7 +16,7 @@ make install && make all
 - bash
 - emacs (*evil-mode*)
 - ~~tmux~~
-- vifm
+- lf
 
 ### arch
 My Linux distro is currently [arch](https://archlinux.org)
@@ -42,5 +42,5 @@ I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for p
 ### tmux
 I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i3. I remapped the prefix to \<C-Space\>.
 
-### vifm
-My file manager is [vifm](https://vifm.info/)
+### lf
+My terminal file manager is [lf](https://github.com/gokcehan/lf)

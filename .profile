@@ -4,7 +4,10 @@ export TERM="st"
 export PAGER="less"
 export READER="zathura"
 export BROWSER="firefox"
+export VIDEO="mpv"
+export IMAGE="sxiv"
 export TERMINAL="st"
+export GOPATH="~/go"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
