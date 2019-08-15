@@ -43,4 +43,4 @@ I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for p
 I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i3. I remapped the prefix to \<C-Space\>.
 
 ### lf
-My terminal file manager is [lf](https://github.com/gokcehan/lf)
+My terminal file manager is [lf](https://github.com/gokcehan/lf) and I use the highlight command for previews.
