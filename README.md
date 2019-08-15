@@ -4,7 +4,7 @@
 You can easily install my config by doing this :
 ```bash
 git clone https://github.com/maxwets/dotfiles.git ~/dotfiles
-cd dotfiles
+cd ~/dotfiles
 make install && make all
 ```
 
