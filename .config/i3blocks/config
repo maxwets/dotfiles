@@ -4,9 +4,11 @@ markup=pango
 
 [brightness]
 interval=10
+signal=10
 
 [volume]
 interval=10
+signal=12
 
 [disk_usage]
 interval=60

@@ -9,6 +9,7 @@ remaining=`$info | awk '{print $5}' | sed "s/,//g"`
 
 case $charging in
         Charging*) status="CHR";;
+		Not*) status="CHR"; percent="100%"; remaining="0:00" ;;
         Discharging*) status="DIS";;
 esac
 

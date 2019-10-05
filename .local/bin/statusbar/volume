@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sound=`amixer get Master | grep -E -o '[0-9][0-9]?%' | awk '{print $1}'`
+sound=`amixer get Master | grep %] | awk '{print $4}' | tr -d '[]'`
 muted=`pacmd list-sinks | grep muted | awk '{print $2}'`
 
 case $muted in

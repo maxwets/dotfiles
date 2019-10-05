@@ -53,8 +53,8 @@ alias vifm='vifm `pwd` $HOME'
 
 # ls command aliases
 alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -lh'
-alias la='ls -lArth'
+alias ll='ls -lh --color=auto --group-directories-first'
+alias la='ls -lArth --color=auto --group-directories-first'
 
 # cd command aliases
 alias cd..='cd ..'
