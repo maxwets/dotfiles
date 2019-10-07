@@ -4,6 +4,7 @@
 set $mod     Mod4
 set $term    --no-startup-id $TERMINAL
 set $browser $BROWSER
+set $script_dir ~/.local/bin
 
 font pango:monospace 10
 
@@ -11,13 +12,13 @@ font pango:monospace 10
 floating_modifier $mod
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 sset Master 5%+ # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 sset Master 5%- # decrease sound volume
-bindsym XF86AudioMute        exec --no-startup-id ~/.local/bin/./audio        # toggle mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id $script_dir/./audio + # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id $script_dir/./audio - # decrease sound volume
+bindsym XF86AudioMute        exec --no-startup-id $script_dir/./audio M # toggle mute
 
 # sreen brightness controls
-bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp   exec --no-startup-id $script_dir/./brightness + # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id $script_dir/./brightness - # decrease screen brightness
 
 # for i3-gaps
 for_window [class="^.*"] border pixel 0

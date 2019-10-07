@@ -1,11 +1,28 @@
 #!/bin/sh
 
-state=`amixer | sed 5q | grep Mono: | awk '{print $6}'`
+muted=`amixer | sed 5q | grep Mono: | awk '{print $6}'`
 
-if [ $state = "[off]" ]; then
-	amixer -c 0 sset Master  unmute > /dev/null
-	amixer -c 0 sset Speaker unmute > /dev/null
-	amixer -c 0 sset Speaker unmute > /dev/null
-else
-	amixer -c 0 sset Master mute > /dev/null
+if [ "$1" != "" ]; then
+	# Volume up
+	if [ "$1" = "+" ]; then
+		amixer -c 0 sset Master 5%+
+		pkill -RTMIN+10 i3blocks
+
+	# Volume down
+	elif [ "$1" = "-" ]; then
+		amixer -c 0 sset Master 5%-
+		pkill -RTMIN+10 i3blocks
+
+	# Mute/Unmute the volume
+	elif [ "$1" = "M" ]; then
+		if [ $muted = "[off]" ] && [ "$1" != "" ]; then
+			amixer -c 0 sset Master    unmute > /dev/null
+			amixer -c 0 sset Speaker   unmute > /dev/null
+			amixer -c 0 sset Headphone unmute > /dev/null
+		else
+			amixer -c 0 sset Master    mute > /dev/null
+			amixer -c 0 sset Speaker   mute > /dev/null
+			amixer -c 0 sset Headphone mute > /dev/null
+		fi
+	fi
 fi
