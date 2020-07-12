@@ -9,23 +9,20 @@ make install && make all
 ```
 
 ## Programs that I use
-- st
-- dmenu
-- i3 (*i3-gaps*)
+- ~~st~~
+- ~~dmenu~~
+- ~~i3~~ (*i3-gaps*)
 - vim (*neovim*)
 - bash
 - emacs (*evil-mode*)
 - ~~tmux~~
-- lf
+- ~~lf~~
 
-### arch
-My Linux distro is currently [arch](https://archlinux.org)
+### ubuntu
+My Linux distro is currently ubuntu, I do not use i3 anymore.
 
 ### i3
 I use [i3-gaps](https://github.com/Airblader/i3) with [light](https://github.com/haikarainen/light) for brightness management.
-
-### st
-My terminal emulator is [st](https://st.suckless.org). You can find my build on [this](https://github.com/maxwets/st) repository.
 
 ### dmenu
 [dmenu](https://tools.suckless.org/dmenu) is a very useful dynamic menu that I use. My configuration files are in [this](https://github.com/maxwets/dmenu) repository.
