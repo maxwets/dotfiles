@@ -33,6 +33,9 @@ fi
 
 # ALIASES
 
+# android studio
+alias studio='/opt/android-studio/bin/studio.sh &'
+
 # copy to primary and secundary
 alias xclip='xclip -selection "clip"'
 
