@@ -1,0 +1,12 @@
+if [ -z "$1" ]; then # if no file is passed as argument
+        echo "usage: handout file.tex"
+        exit
+fi
+
+OLD="\documentclass{beamer}"
+NEW="\documentclass[handout]{beamer}"
+
+sed s/$OLD/$NEW/g $1 > $(basename $1 .tex)"-handout.tex"
+
+/usr/local/texlive/2019/bin/x86_64-linux/pdflatex $(basename $1 .tex)"-handout.tex"
+/usr/local/texlive/2019/bin/x86_64-linux/pdflatex $(basename $1 .tex)"-handout.tex"
