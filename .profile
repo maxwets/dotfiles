@@ -6,6 +6,7 @@ export BROWSER="firefox"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export TERMINAL="st"
+export TERM="xterm-256color"
 export GOPATH="~/go"
 
 # if running bash
