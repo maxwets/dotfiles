@@ -1,13 +1,16 @@
+#!/bin/sh
+
 # set env variables
 export EDITOR="nvim"
-export PAGER="less"
+export PAGER="most"
 export READER="zathura"
-export BROWSER="firefox"
+export BROWSER="brave-browser"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export TERMINAL="st"
 export TERM="xterm-256color"
-export GOPATH="~/go"
+
+setxkbmap -option "caps:swapescape"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
