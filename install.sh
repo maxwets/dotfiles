@@ -10,6 +10,20 @@ apt --yes install < progs
 add-apt-repository -y ppa:regolith-linux/stable
 apt --yes install i3-gaps i3blocks
 
+# install dmenu
+if [ ! -d /tmp/dmenu ]
+then
+	git clone https://github.com/maxwets/dmenu.git /tmp/dmenu
+fi
+make install -C /tmp/dmenu
+
+# install st
+if [ ! -d /tmp/st ]
+then
+	git clone https://github.com/maxwets/st.git /tmp/st
+fi
+make install -C /tmp/st
+
 # install fish
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
@@ -20,7 +34,6 @@ apt install fonts-powerline
 
 # install lf
 wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O /tmp/lf; dpkg -i /tmp/lf
-
 
 # install vim-plug for neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \

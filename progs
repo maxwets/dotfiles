@@ -14,6 +14,7 @@ gdb
 git
 gnupg
 gzip
+libx11-dev
 libxinerama1
 libxinerama-dev
 light
