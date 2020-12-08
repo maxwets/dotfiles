@@ -1,7 +1,18 @@
 #!/bin/bash
 
+sort -o progs progs
+
 # install programs
-sudo apt-get install < progs
+apt update
+apt --yes install < progs
+
+# install fish
+curl -L https://get.oh-my.fish > tmp/omf
+fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
+
+# install lf
+wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O lf; dpkg -i lf; rm lf;
+
 
 # install vim-plug for neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
