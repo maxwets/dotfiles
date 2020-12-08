@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sort -o progs progs
 
@@ -9,9 +9,13 @@ apt --yes install < progs
 # install fish
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
+omf install spacefish
+
+# install powerline fonts
+apt install fonts-powerline
 
 # install lf
-wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O lf; dpkg -i lf; rm lf;
+wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O /tmp/lf; dpkg -i /tmp/lf
 
 
 # install vim-plug for neovim
