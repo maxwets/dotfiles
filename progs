@@ -1,5 +1,5 @@
-build-essential
 brave-browser
+build-essential
 bzip2
 curl
 default-jdk
@@ -14,6 +14,9 @@ gdb
 git
 gnupg
 gzip
+libxinerama1
+libxinerama-dev
+light
 make
 nano
 neovim

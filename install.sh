@@ -6,6 +6,10 @@ sort -o progs progs
 apt update
 apt --yes install < progs
 
+# install i3-gaps
+add-apt-repository -y ppa:regolith-linux/stable
+apt --yes install i3-gaps i3blocks
+
 # install fish
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
