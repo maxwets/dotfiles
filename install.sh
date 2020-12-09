@@ -2,13 +2,13 @@
 
 sort -o progs progs
 
+# add ppa's
+add-apt-repository -y ppa:xorg-edgers/ppa
+add-apt-repository -y ppa:regolith-linux/stable
+
 # install programs
 apt update
-apt --yes install < progs
-
-# install i3-gaps
-add-apt-repository -y ppa:regolith-linux/stable
-apt --yes install i3-gaps i3blocks
+apt -y install < progs
 
 # install dmenu
 if [ ! -d /tmp/dmenu ]
@@ -28,9 +28,6 @@ make install -C /tmp/st
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
 omf install spacefish
-
-# install powerline fonts
-apt install fonts-powerline
 
 # install lf
 wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O /tmp/lf; dpkg -i /tmp/lf

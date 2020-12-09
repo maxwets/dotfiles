@@ -2,7 +2,7 @@
 
 # set env variables
 export EDITOR="nvim"
-export PAGER="most"
+export PAGER="less"
 export READER="zathura"
 export BROWSER="brave-browser"
 export VIDEO="mpv"

@@ -15,4 +15,5 @@
 (evil-mode 1)
 
 ;; load gruvbox color theme
-(load-theme 'gruvbox)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'gruvbox-theme t)
