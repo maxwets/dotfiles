@@ -10,8 +10,6 @@ export IMAGE="sxiv"
 export TERMINAL="st"
 export TERM="xterm-256color"
 
-export LC_TIME="fr_BE.UTF-8"
-
 setxkbmap -option "caps:swapescape"
 
 # if running bash

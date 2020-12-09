@@ -121,7 +121,7 @@ bindsym $mod+Shift+i resize shrink height 15 px or 5 ppt
 
 # Start i3bar to display a workspace bar
 bar {
-		font       		pango:mono 12
+		font       		pango:mono 16
         status_command  i3blocks
 		position	 	top
 		mode 			dock
