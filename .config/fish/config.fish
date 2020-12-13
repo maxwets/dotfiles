@@ -12,9 +12,9 @@ fish_vi_key_bindings
 set fish_bind_mode insert
 
 # Aliases
-alias vim   nvim
-alias vi    nvim
-alias cd..='cd..'
+alias vim  nvim
+alias vi   nvim
+alias cd.. 'cd ..'
 
 # Copy to primary and secundary clipboard
 alias xclip 'xclip -selection "clip"'
