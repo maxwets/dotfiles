@@ -4,7 +4,7 @@ omf theme spacefish
 # Globals
 set -gx EDITOR  "nvim"
 set -gx VISUAL  "nvim"
-set -gx PAGER   "most"
+set -gx PAGER   "less"
 set -gx BROWSER "brave-browser"
 
 # Set vi mode
