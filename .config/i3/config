@@ -30,7 +30,7 @@ bindsym $mod+g       gaps outer current set 0; gaps inner current set 0
 bindsym $mod+Shift+g gaps outer current set 5; gaps inner current set 10
 
 # randomize wallpaper
-exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/emmaetmoi.jpg
+exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/*.jpg
 
 # set belgian kb + swap ESC and CAPS
 exec --no-startup-id setxkbmap be -option "caps:swapescape"
@@ -58,6 +58,9 @@ bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7
 
 # start emacs
 bindsym $mod+e exec emacs
+
+# start nautilus
+bindsym $mod+n exec nautilus
 
 # change focus
 bindsym $mod+h focus left
