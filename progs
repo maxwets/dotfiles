@@ -1,6 +1,7 @@
 brave-browser
 build-essential
 bzip2
+compton
 curl
 default-jdk
 default-jre

@@ -62,6 +62,9 @@ bindsym $mod+e exec emacs
 # start nautilus
 bindsym $mod+n exec nautilus
 
+# start Discord
+bindsym $mod+d exec discord
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
