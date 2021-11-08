@@ -5,7 +5,7 @@ omf theme spacefish
 set -gx EDITOR  "nvim"
 set -gx VISUAL  "nvim"
 set -gx PAGER   "less"
-set -gx BROWSER "brave-browser"
+set -gx BROWSER "firefox"
 
 # Set vi mode
 fish_vi_key_bindings

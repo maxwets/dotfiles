@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 export PAGER="less"
 export READER="zathura"
-export BROWSER="brave-browser"
+export BROWSER="firefox"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export TERMINAL="st"
