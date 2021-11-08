@@ -2,4 +2,5 @@
 
 brightness=`light | sed 's/\..*//g'`
 
-echo "Brightness : $brightness%"
+
+echo "🔆 : $brightness%"

@@ -5,7 +5,7 @@ iface=`ip route | grep default | awk '{print $5}'`
 
 if [ -z $local ] || [ -z $iface ]
 then
-	echo 'network down'
+	echo '📶 : down'
 else
-	echo "$iface : $local"
+	echo "📶 : [$iface] $local"
 fi

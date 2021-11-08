@@ -2,6 +2,9 @@ command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=20
 markup=pango
 
+[internet]
+interval=10
+
 [brightness]
 interval=once
 signal=13
@@ -10,14 +13,8 @@ signal=13
 interval=once
 signal=10
 
-[disk_usage]
+[battery]
 interval=60
 
-[battery]
-interval=30
-
-[internet]
-interval=10
-
 [clock]
-interval=30
+interval=15
