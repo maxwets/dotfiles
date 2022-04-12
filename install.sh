@@ -24,6 +24,13 @@ then
 fi
 make install -C /tmp/st
 
+# install radare2
+if [ ! -d /tmp/radare2 ]
+then
+	git clone https://github.com/radareorg/radare2
+fi
+/tmp/radare2/sys/install.sh
+
 # install fish
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf

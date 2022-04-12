@@ -18,6 +18,7 @@ gnupg
 gzip
 i3
 i3blocks
+libreadline-dev
 libx11-dev
 libxinerama1
 libxinerama-dev

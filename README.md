@@ -9,14 +9,14 @@ make install && make all
 ```
 
 ## Programs that I use
-- ~~st~~
-- ~~dmenu~~
-- ~~i3~~ (*i3-gaps*)
+- st
+- dmenu
+- i3 (*i3-gaps*)
 - vim (*neovim*)
 - bash
-- emacs (*evil-mode*)
+- ~~emacs~~ (*evil-mode*)
 - ~~tmux~~
-- ~~lf~~
+- lf
 
 ### ubuntu
 My Linux distro is currently ubuntu, I do not use i3 anymore.
