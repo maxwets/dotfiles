@@ -24,10 +24,19 @@ then
 fi
 make install -C /tmp/st
 
+# install darktile
+curl -s "https://raw.githubusercontent.com/liamg/darktile/main/scripts/install.sh" | sudo bash
+
+# install darktile themes
+[ -d ~/.config/darktile ]        || mkdir ~/.config/darktile
+[ -d ~/.config/darktile-themes ] || git clone git@github.com:liamg/darktile-themes.git ~/.config/darktile-themes.git
+touch ~/.config/darktile/theme.yaml
+ln -sf ~/.config/darktile/darktile-themes/themes/Afterglow.yaml ~/.config/darktile/theme.yaml
+
 # install radare2
 if [ ! -d /tmp/radare2 ]
 then
-	git clone https://github.com/radareorg/radare2
+	git clone https://github.com/radareorg/radare2 /tmp/radare2
 fi
 /tmp/radare2/sys/install.sh
 

@@ -9,35 +9,49 @@ make install && make all
 ```
 
 ## Programs that I use
-- st
-- dmenu
 - i3 (*i3-gaps*)
-- vim (*neovim*)
-- bash
-- ~~emacs~~ (*evil-mode*)
+- dmenu
+- st
+- ~~bash~~
+- fish
 - ~~tmux~~
-- lf
+- vim (*neovim*)
+- ~~emacs~~ (*evil-mode*)
+- ~~lf~~
+- gruvbox
 
 ### ubuntu
-My Linux distro is currently ubuntu, I do not use i3 anymore.
+My current Linux distro is currently ubuntu.
 
 ### i3
-I use [i3-gaps](https://github.com/Airblader/i3) with [light](https://github.com/haikarainen/light) for brightness management.
+My tiling window manager is [i3-gaps](https://github.com/Airblader/i3) with [light](https://github.com/haikarainen/light) for brightness management.
 
 ### dmenu
 [dmenu](https://tools.suckless.org/dmenu) is a very useful dynamic menu that I use. My configuration files are in [this](https://github.com/maxwets/dmenu) repository.
 
-### vim
-[neovim](https://neovim.io) is my text editor.  My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug) and my theme is [gruvbox](https://github.com/morhetz/gruvbox).
+### st
+[st](https://tools.suckless.org/st) is a simple terminal developped by suckless. My configuration files are in [this](https://github.com/maxwets/st) repository.
 
 ### bash
-I currenty use Bash as command processor.
+I used [bash](https://www.gnu.org/software/bash/) for a very long time.
 
-### emacs
-I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in [Oz](https://mozart.github.io/) (The default Oz editor is emacs).
+### fish
+The command line shell that I use is [fish](https://fishshell.com/).
 
 ### tmux
 I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i3. I remapped the prefix to \<C-Space\>.
 
+### vim
+[neovim](https://neovim.io) is my text editor.  My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
+
+### emacs
+I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in [Oz](https://mozart.github.io/) (The default Oz editor is emacs).
+
 ### lf
 My terminal file manager is [lf](https://github.com/gokcehan/lf) and I use the highlight command for previews.
+
+### gruvbox
+[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, vim and emacs.
+
+## LICENCE
+MIT Licence

@@ -18,6 +18,7 @@ gnupg
 gzip
 i3
 i3blocks
+jq
 libreadline-dev
 libx11-dev
 libxinerama1
@@ -29,14 +30,15 @@ mpv
 nano
 neovim
 net-tools
-nnn
 nmap
+nnn
 openbox
 openssh-client
 openssh-server
 p7zip-full
 python3
 python3-pip
+radare2
 sudo
 sxiv
 tcpdump
@@ -47,6 +49,6 @@ vim
 vlc
 wget
 wireshark
-wireshark
 xorg
+xorg-dev
 zip

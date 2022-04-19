@@ -1,0 +1,8 @@
+opacity: 0.85        # Window opacity: 0.0 is fully transparent, 1.0 is fully opaque
+font:
+    family: ""       # Font family. Find possible values for this by running 'darktile list-fonts'
+    size: 16         # Font size
+    dpi: 72          # DPI
+    ligatures: true  # Enable font ligatures e.g. render '≡' instead of '==='
+cursor:
+    image: ""        # Path to an image to render as your cursor (defaults to standard rectangular cursor)

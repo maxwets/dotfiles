@@ -1,7 +1,7 @@
 CONFIG	 = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.local/bin/
 
-all: dirs profile xinit bashrc emacs tmuxconf vim fish i3 i3blocks scripts fonts
+all: dirs profile xinit bashrc emacs tmuxconf vim fish darktile i3 i3blocks scripts fonts
 
 install:
 	./install.sh
@@ -37,6 +37,9 @@ tmuxconf:
 
 fish:
 	cp -r .config/fish         $(CONFIG)
+
+darktile:
+	cp -r .config/darktile     $(CONFIG)
 
 i3:
 	cp -r .config/i3           $(CONFIG)
