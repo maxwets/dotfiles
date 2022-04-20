@@ -40,6 +40,13 @@ then
 fi
 /tmp/radare2/sys/install.sh
 
+# install pwndbg
+if [ -d /.local/bin/pwndbg ]
+then
+	git clone https://github.com/pwndbg/pwndbg /.local/bin/pwndbg
+fi
+/.local/bin/pwndbg/setup.sh
+
 # install fish
 curl -L https://get.oh-my.fish > tmp/omf
 fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
