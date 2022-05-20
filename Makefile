@@ -1,7 +1,7 @@
 CONFIG	 = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.local/bin/
 
-all: dirs profile xinit bashrc emacs tmuxconf vim fish gdbinit darktile i3 i3blocks scripts fonts
+all: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts
 
 install:
 	./install.sh
@@ -19,9 +19,23 @@ profile:
 xinit:
 	cp    .xinitrc             $(HOME)
 
+i3:
+	cp -r .config/i3           $(CONFIG)
+	cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
+	cp -r .config/i3blocks     $(CONFIG)
+
+tmuxconf:
+	cp    .tmux.conf           $(HOME)
+
 bashrc:
 	cp    .bashrc	           $(HOME)
 	cp    .inputrc             $(HOME)
+
+zshrc:
+	cp    .zshrc               $(HOME)
+
+fish:
+	cp -r .config/fish         $(CONFIG)
 
 vim: 
 	cp    .config/nviminit.vim $(CONFIG)
@@ -32,23 +46,8 @@ vim:
 emacs:
 	cp    .emacs               $(HOME)
 
-tmuxconf:
-	cp    .tmux.conf           $(HOME)
-
-fish:
-	cp -r .config/fish         $(CONFIG)
-
-darktile:
-	cp -r .config/darktile     $(CONFIG)
-
 gdbinit:
-	cp    .gdbinitrc 		   $(HOME)
-
-i3:
-	cp -r .config/i3           $(CONFIG)
-
-i3blocks:
-	cp -r .config/i3blocks     $(CONFIG)
+	cp    .gdbinit             $(HOME)
 
 scripts:
 	cp -r .local/bin/*         $(SCRIPTS)

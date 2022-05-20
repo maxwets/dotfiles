@@ -8,7 +8,7 @@ add-apt-repository -y ppa:regolith-linux/stable
 
 # install programs
 apt update
-apt -y install < progs
+apt -y install $(cat progs)
 
 # install dmenu
 if [ ! -d /tmp/dmenu ]
@@ -33,13 +33,6 @@ curl -s "https://raw.githubusercontent.com/liamg/darktile/main/scripts/install.s
 touch ~/.config/darktile/theme.yaml
 ln -sf ~/.config/darktile/darktile-themes/themes/Afterglow.yaml ~/.config/darktile/theme.yaml
 
-# install radare2
-if [ ! -d /tmp/radare2 ]
-then
-	git clone https://github.com/radareorg/radare2 /tmp/radare2
-fi
-/tmp/radare2/sys/install.sh
-
 # install pwndbg
 if [ -d /.local/bin/pwndbg ]
 then
@@ -47,16 +40,8 @@ then
 fi
 /.local/bin/pwndbg/setup.sh
 
-# install fish
-curl -L https://get.oh-my.fish > tmp/omf
-fish /tmp/omf --path=~/.local/share/omf --config=~/.config/omf
-omf install spacefish
-
-# install lf
-wget https://download.opensuse.org/repositories/home:/Provessor/xUbuntu_19.10/amd64/lf_16+git20200907.61442f8-1_amd64.deb -O /tmp/lf; dpkg -i /tmp/lf
-
 # install vim-plug for neovim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install evil-mode for emacs

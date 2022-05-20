@@ -1,4 +1,4 @@
-# i3 config file (v4)
+# i2 config file (v4)
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
 client.focused_inactive #282828 #5f676a #ffffff #484e50   #5f676a
@@ -8,6 +8,26 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
+# i3-gaps
+smart_borders on
+
+# Plasma compatibility improvements
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+for_window [class="yakuake"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
 
 # variables
 set $mod     Mod4
@@ -21,25 +41,19 @@ font pango:monospace 18
 floating_modifier $mod
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id $script_dir/./audio + # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id $script_dir/./audio - # decrease sound volume
-bindsym XF86AudioMute        exec --no-startup-id $script_dir/./audio M # toggle mute
+#bindsym XF86AudioRaiseVolume exec --no-startup-id $script_dir/./audio + # increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id $script_dir/./audio - # decrease sound volume
+#bindsym XF86AudioMute        exec --no-startup-id $script_dir/./audio M # toggle mute
 
 # sreen brightness controls
-bindsym XF86MonBrightnessUp   exec --no-startup-id $script_dir/./backlight -inc 45 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id $script_dir/./backlight -dec 45 # decrease screen brightness
-
-# randomize wallpaper
-exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers/*.jpg
+#bindsym XF86MonBrightnessUp   exec --no-startup-id $script_dir/./backlight -inc 45 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec --no-startup-id $script_dir/./backlight -dec 45 # decrease screen brightness
 
 # set belgian kb + swap ESC and CAPS
 exec --no-startup-id setxkbmap be -option "caps:swapescape"
 
 # start pulseaudio
 exec --no-startup-id pulseaudio --start
-
-# start compton
-exec --no-startup-id compton
 
 # start a terminal
 bindsym $mod+Return  exec $term
@@ -50,23 +64,17 @@ bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 # start web browser
 bindsym $mod+w exec $browser
 
-# start file manager
-bindsym $mod+r exec $term -e lf
-
 # start dmenu
 bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
 
 # start emacs
 bindsym $mod+e exec emacs
 
-# start nautilus
-bindsym $mod+n exec nautilus
+# start file explorer
+bindsym $mod+n exec dolphin
 
 # start Discord
 bindsym $mod+d exec discord
-
-# take screenshot
-bindsym --release $mod+s exec gnome-screenshot -ac
 
 # change focus
 bindsym $mod+h focus left
@@ -127,24 +135,3 @@ bindsym $mod+u 		 resize grow   width  15 px or 5 ppt
 bindsym $mod+Shift+u resize shrink width  15 px or 5 ppt
 bindsym $mod+i 		 resize grow   height 15 px or 5 ppt
 bindsym $mod+Shift+i resize shrink height 15 px or 5 ppt
-
-# Start i3bar to display a workspace bar
-bar {
-	colors {
-		# Whole color settings
-		background #3c3836
-		statusline #ebdbb2
-		separator  #666666
-
-		
-		focused_workspace  #458588 #458588 #ebdbb2
-		active_workspace   #83a598 #83a598 #ebdbb2
-		inactive_workspace #504945 #504945 #ebdbb2
-		urgent_workspace   #cc241d #cc241d #504945
-	}
-	font       		pango:mono 22
-	status_command  i3blocks
-	position	 	top
-	mode 			dock
-	modifier 		None
-}

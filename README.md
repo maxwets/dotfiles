@@ -3,15 +3,15 @@
 ## How to install ?
 You can easily install my config by doing this :
 ```bash
-git clone https://github.com/maxwets/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-make install && make all
+git clone https://github.com/maxwets/dotfiles.git
+cd dotfiles
+sudo make install && make all
 ```
 
 ## Programs that I use
 - i3 (*i3-gaps*)
 - dmenu
-- st
+- ~~st~~
 - ~~bash~~
 - fish
 - ~~tmux~~
@@ -20,8 +20,8 @@ make install && make all
 - ~~lf~~
 - gruvbox
 
-### ubuntu
-My current Linux distro is currently ubuntu.
+### kali
+My current Linux distro is currently [Kali Linux](https://www.kali.org).
 
 ### i3
 My tiling window manager is [i3-gaps](https://github.com/Airblader/i3) with [light](https://github.com/haikarainen/light) for brightness management.
@@ -46,9 +46,6 @@ I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i
 
 ### emacs
 I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in [Oz](https://mozart.github.io/) (The default Oz editor is emacs).
-
-### lf
-My terminal file manager is [lf](https://github.com/gokcehan/lf) and I use the highlight command for previews.
 
 ### gruvbox
 [gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, vim and emacs.

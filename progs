@@ -1,12 +1,11 @@
-brave-browser
 build-essential
 bzip2
 compton
 curl
 default-jdk
 default-jre
+docker.io
 emacs-gtk
-firefox
 fish
 fonts-powerline
 fzf
@@ -39,10 +38,10 @@ p7zip-full
 python3
 python3-pip
 radare2
+suckless-tools
 sudo
 sxiv
 tcpdump
-ubuntu-desktop
 unrar
 unzip
 vim
