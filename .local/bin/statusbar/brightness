@@ -1,6 +1,0 @@
-#!/bin/sh
-
-brightness=`light | sed 's/\..*//g'`
-
-
-echo "🔆 : $brightness%"

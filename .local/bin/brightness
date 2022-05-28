@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = "+" ]; then
-	light -A 5
-	pkill -RTMIN+13 i3blocks
-elif [ "$1" = "-" ]; then
-	light -U 5
-	pkill -RTMIN+13 i3blocks
-fi

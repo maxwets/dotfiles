@@ -1,10 +1,9 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
-set -o vi
 
 setopt autocd              # change directory just by typing its name
-#setopt correct            # auto correct mistakes
+setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
 setopt nonomatch           # hide error message if there is no match for the pattern
@@ -17,19 +16,8 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-# configure key keybindings
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^U' backward-kill-line                   # ctrl + U
-bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-bindkey '^[[3~' delete-char                       # delete
-bindkey '^[[1;5C' forward-word                    # ctrl + ->
-bindkey '^[[1;5D' backward-word                   # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
-bindkey '^[[H' beginning-of-line                  # home
-bindkey '^[[F' end-of-line                        # end
-bindkey '^[[Z' undo                               # shift + tab undo last action
+# configure vim keybindings
+bindkey -v
 
 # enable completion features
 autoload -Uz compinit
@@ -50,13 +38,12 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History configurations
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=
+SAVEHIST=
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
-#setopt share_history         # share command history data
 
 # force zsh to show the complete history
 alias history="history 0"
@@ -257,3 +244,69 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
+
+# ALIASES
+
+# copy to primary and secundary
+alias xclip='xclip -selection "clip"'
+
+# apt aliases
+alias apt='sudo apt'
+alias apt-get='sudo apt-get'
+
+# kill tmux session
+alias tks='tmux kill-session -t'
+
+# use nvim instead of vi
+alias vim='nvim'
+alias vi='nvim'
+
+# open vifm with working directory and home
+alias vifm='vifm `pwd` $HOME'
+
+# ls command aliases
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -lh --color=auto --group-directories-first'
+alias la='ls -lArth --color=auto --group-directories-first'
+
+# cd command aliases
+alias cd..='cd ..'
+
+# security aliases
+alias rm='rm --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+
+# grep command aliases
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias vgrep='vgrep --color=auto'
+
+# SSH aliases
+alias ssh_start='sudo /etc/init.d/ssh start'
+alias ssh_stop='sudo /etc/init.d/ssh stop'
+
+# gcc alias
+alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
+
+# docker aliases
+dsh() {
+	docker exec -it $1 /bin/sh;
+}
+alias dexec='docker exec'
+alias dps='docker ps -a'
+alias dstop='docker stop'
+alias drun='docker run -d'
+alias drm='docker rm'
+alias dlogs='docker logs'
+alias dstart='docker start'
+
+# VirtualBox aliases
+vbstop() {
+	vboxmanage controlvm $1 poweroff soft;
+}
+alias vbstart='vboxmanage startvm --type headless'
+alias vbm='vboxmanage controlvm'
+alias vblrvm='vboxmanage list runningvms'
+alias vbls='vboxmanage list vms'

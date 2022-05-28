@@ -33,16 +33,12 @@ fi
 
 # ALIASES
 
-# android studio
-alias studio='/opt/android-studio/bin/studio.sh &'
-
 # copy to primary and secundary
 alias xclip='xclip -selection "clip"'
 
-# pacman aliases
-alias pacmans='pacman -S'
-alias pacmanq='pacman -Q'
-alias pacmanr='pacman -R'
+# apt aliases
+alias apt='sudo apt'
+alias apt-get='sudo apt-get'
 
 # kill tmux session
 alias tks='tmux kill-session -t'
@@ -71,14 +67,29 @@ alias chown='chown --preserve-root'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias vgrep='vgrep --color=auto'
 
 # SSH aliases
 alias ssh_start='sudo /etc/init.d/ssh start'
 alias ssh_stop='sudo /etc/init.d/ssh stop'
 
-# root aliases
-alias ss='sudo su'
-alias pacman='sudo pacman'
-
 # gcc alias
 alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
+
+# docker aliases
+dsh() {
+	docker exec -it $1 /bin/sh
+}
+alias dexec='docker exec'
+alias dps='docker ps -a'
+alias dstop='docker stop'
+alias drun='docker run -d'
+alias drm='docker rm'
+alias dlogs='docker logs'
+alias dstart='docker start'
+
+# VirtualBox aliases
+alias vbstart='vboxmanage startvm --type headless'
+alias vbm='vboxmanage controlvm'
+alias vblrvm='vboxmanage list runningvms'
+alias vbls='vboxmanage list vms'

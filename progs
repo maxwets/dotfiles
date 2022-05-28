@@ -22,7 +22,6 @@ libreadline-dev
 libx11-dev
 libxinerama1
 libxinerama-dev
-light
 make
 most
 mpv
@@ -50,4 +49,5 @@ wget
 wireshark
 xorg
 xorg-dev
+zathura
 zip

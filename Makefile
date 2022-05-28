@@ -21,8 +21,7 @@ xinit:
 
 i3:
 	cp -r .config/i3           $(CONFIG)
-	cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
-	cp -r .config/i3blocks     $(CONFIG)
+	#cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
 
 tmuxconf:
 	cp    .tmux.conf           $(HOME)

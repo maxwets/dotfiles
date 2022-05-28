@@ -1,5 +1,0 @@
-#!/bin/sh
-
-freespace=`df /home | sed "/Filesystem.*/d" | awk '{print $4/1000000}'| sed "s/\..*//g" | awk '{print $1}'`
-
-echo "$freespace GB"
