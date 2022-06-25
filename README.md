@@ -13,11 +13,11 @@ sudo make install && make all
 - dmenu
 - ~~st~~
 - ~~bash~~
-- fish
-- ~~tmux~~
+- ~~fish~~
+- zsh
+- tmux
 - vim (*neovim*)
 - ~~emacs~~ (*evil-mode*)
-- ~~lf~~
 - gruvbox
 
 ### kali
@@ -36,10 +36,13 @@ My tiling window manager is [i3-gaps](https://github.com/Airblader/i3) with [lig
 I used [bash](https://www.gnu.org/software/bash/) for a very long time.
 
 ### fish
-The command line shell that I use is [fish](https://fishshell.com/).
+I used [fish](https://fishshell.com/) for a while before switching to zsh.
+
+### zsh
+I use [zsh](https://www.zsh.org/).
 
 ### tmux
-I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i3. I remapped the prefix to \<C-Space\>.
+I use [tmux](https://github.com/tmux/tmux) for managing multiple terminals
 
 ### vim
 [neovim](https://neovim.io) is my text editor.  My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
@@ -48,7 +51,7 @@ I used [tmux](https://github.com/tmux/tmux) for a while before starting to use i
 I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in [Oz](https://mozart.github.io/) (The default Oz editor is emacs).
 
 ### gruvbox
-[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, vim and emacs.
+[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim, and emacs.
 
 ## LICENCE
 MIT Licence
