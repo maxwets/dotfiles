@@ -1,9 +1,17 @@
-# ~/.zshrc file for zsh interactive shells.
-# see /usr/share/doc/zsh/examples/zshrc for examples
+# History configurations
+HISTFILE=~/.config/history
+HISTSIZE=99999
+SAVEHIST=99999
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
 
+# force zsh to show the complete history
+alias history="history 0"
 
 setopt autocd              # change directory just by typing its name
-setopt correct            # auto correct mistakes
+setopt correct             # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
 setopt nonomatch           # hide error message if there is no match for the pattern
@@ -36,23 +44,8 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# History configurations
-HISTFILE=~/.zsh_history
-HISTSIZE=
-SAVEHIST=
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-
-# force zsh to show the complete history
-alias history="history 0"
-
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -64,11 +57,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
 force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
         # We have color support; assume it's compliant with Ecma-48
@@ -102,20 +91,12 @@ configure_prompt() {
     unset prompt_symbol
 }
 
-# The following block is surrounded by two delimiters.
-# These delimiters must not be modified. Thanks.
-# START KALI CONFIG VARIABLES
 PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
-# STOP KALI CONFIG VARIABLES
 
 if [ "$color_prompt" = yes ]; then
-    # override default virtualenv indicator in prompt
     VIRTUAL_ENV_DISABLE_PROMPT=1
-
     configure_prompt
-
-    # enable syntax-highlighting
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
         . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -188,10 +169,7 @@ xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
 esac
 
 precmd() {
-    # Print the previously configured title
     print -Pnr -- "$TERM_TITLE"
-
-    # Print a new line before the prompt, but only if it is not the first line
     if [ "$NEWLINE_BEFORE_PROMPT" = yes ]; then
         if [ -z "$_NEW_LINE_BEFORE_PROMPT" ]; then
             _NEW_LINE_BEFORE_PROMPT=1
@@ -201,7 +179,6 @@ precmd() {
     fi
 }
 
-# enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
@@ -224,19 +201,13 @@ if [ -x /usr/bin/dircolors ]; then
     export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
     export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-    # Take advantage of $LS_COLORS for completion as well
     zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-# ls aliases
-alias ll='ls -l'
-alias la='ls -lArth'
-
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # change suggestion color
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
@@ -245,68 +216,17 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-# ALIASES
-
-# copy to primary and secundary
-alias xclip='xclip -selection "clip"'
-
-# apt aliases
-alias apt='sudo apt'
-alias apt-get='sudo apt-get'
-
-# kill tmux session
-alias tks='tmux kill-session -t'
-
-# use nvim instead of vi
-alias vim='nvim'
-alias vi='nvim'
-
-# open vifm with working directory and home
-alias vifm='vifm `pwd` $HOME'
-
-# ls command aliases
-alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -lh --color=auto --group-directories-first'
-alias la='ls -lArth --color=auto --group-directories-first'
-
-# cd command aliases
-alias cd..='cd ..'
-
-# security aliases
-alias rm='rm --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chown='chown --preserve-root'
-
-# grep command aliases
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias vgrep='vgrep --color=auto'
-
-# SSH aliases
-alias ssh_start='sudo /etc/init.d/ssh start'
-alias ssh_stop='sudo /etc/init.d/ssh stop'
-
-# gcc alias
-alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
-
-# docker aliases
+# sh into docker container
 dsh() {
 	docker exec -it $1 /bin/sh;
 }
-alias dexec='docker exec'
-alias dps='docker ps -a'
-alias dstop='docker stop'
-alias drun='docker run -d'
-alias drm='docker rm'
-alias dlogs='docker logs'
-alias dstart='docker start'
 
-# VirtualBox aliases
+# stop virtualbox vm
 vbstop() {
 	vboxmanage controlvm $1 poweroff soft;
 }
-alias vbstart='vboxmanage startvm --type headless'
-alias vbm='vboxmanage controlvm'
-alias vblrvm='vboxmanage list runningvms'
-alias vbls='vboxmanage list vms'
+
+# load aliases
+if [ -e $HOME/.config/aliases ]; then
+	source $HOME/.config/aliases
+fi

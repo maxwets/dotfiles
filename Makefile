@@ -1,7 +1,7 @@
 CONFIG	 = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.local/bin/
 
-all: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts
+all: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts aliases
 
 install:
 	./install.sh
@@ -53,3 +53,6 @@ scripts:
 
 fonts:
 	cp -r .config/fontconfig   $(CONFIG)
+
+aliases:
+	cp -r .config/aliases      $(CONFIG)

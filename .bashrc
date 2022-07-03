@@ -1,6 +1,7 @@
 # set size of history
 export HISTFILESIZE=
 export HISTSIZE=
+export HISTFILE=$HOME/.config/history
 
 # vim mode
 set -o vi
@@ -31,65 +32,17 @@ else
 	export PS1="\[\033[38;5;3m\][\[$(tput sgr0)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;9m\]@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;3m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 fi
 
-# ALIASES
-
-# copy to primary and secundary
-alias xclip='xclip -selection "clip"'
-
-# apt aliases
-alias apt='sudo apt'
-alias apt-get='sudo apt-get'
-
-# kill tmux session
-alias tks='tmux kill-session -t'
-
-# use nvim instead of vi
-alias vim='nvim'
-alias vi='nvim'
-
-# open vifm with working directory and home
-alias vifm='vifm `pwd` $HOME'
-
-# ls command aliases
-alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -lh --color=auto --group-directories-first'
-alias la='ls -lArth --color=auto --group-directories-first'
-
-# cd command aliases
-alias cd..='cd ..'
-
-# security aliases
-alias rm='rm --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chown='chown --preserve-root'
-
-# grep command aliases
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias vgrep='vgrep --color=auto'
-
-# SSH aliases
-alias ssh_start='sudo /etc/init.d/ssh start'
-alias ssh_stop='sudo /etc/init.d/ssh stop'
-
-# gcc alias
-alias cflags='-Wall -Wextra -Werror -Wfloat-equal -Wundef -Wshadow -Wpointer-artith -Winit-self -DC99 -ICTester -std=c99 -g'
-
-# docker aliases
+# sh into docker container
 dsh() {
-	docker exec -it $1 /bin/sh
+	docker exec -it $1 /bin/sh;
 }
-alias dexec='docker exec'
-alias dps='docker ps -a'
-alias dstop='docker stop'
-alias drun='docker run -d'
-alias drm='docker rm'
-alias dlogs='docker logs'
-alias dstart='docker start'
 
-# VirtualBox aliases
-alias vbstart='vboxmanage startvm --type headless'
-alias vbm='vboxmanage controlvm'
-alias vblrvm='vboxmanage list runningvms'
-alias vbls='vboxmanage list vms'
+# stop virtualbox vm
+vbstop() {
+	vboxmanage controlvm $1 poweroff soft;
+}
+
+# load aliases
+if [ -e $HOME/.config/aliases ]; then
+	source $HOME/.config/aliases
+fi
