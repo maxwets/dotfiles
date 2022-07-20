@@ -1,20 +1,17 @@
-# i2 config file (v4)
+set $mod Mod4
+set $term --no-startup-id $TERMINAL
+set $browser --no-startup-id $BROWSER
+set $script_dir ~/.local/bin
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
 client.focused_inactive #282828 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #3c3836 #3c3836 #a89984 #292d2e   #222222
 client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #ffffff
 
-# i3-gaps
-smart_borders on
-
-# Plasma compatibility improvements
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-
 for_window [class="yakuake"] floating enable
 for_window [class="systemsettings"] floating enable
 for_window [class="plasmashell"] floating enable;
@@ -29,22 +26,23 @@ for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
 
-# variables
-set $mod     Mod4
-set $term    --no-startup-id $TERMINAL
-set $browser --no-startup-id $BROWSER
-set $script_dir ~/.local/bin
-
+smart_borders on
+for_window [class="^.*"] border pixel 2 
+gaps outer 5
+gaps inner 20
 font pango:monospace 18
+
+# background image
+exec_always --no-startup-id feh --bg-fill "/usr/share/wallpapers/Bamboo/contents/images/5120x2880.png"
+
+# transparency
+exec_always --no-startup-id picom -bcf
+
+# set belgian kb + swap ESC and CAPS
+exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# set belgian kb + swap ESC and CAPS
-exec --no-startup-id setxkbmap be -option "caps:swapescape"
-
-# start pulseaudio
-#exec --no-startup-id pulseaudio --start
 
 # start a terminal
 bindsym $mod+Return  exec $term
@@ -119,10 +117,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 ?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id systemctl suspend
 
 # resize windows
-bindsym $mod+u 		 resize grow   width  15 px or 5 ppt
-bindsym $mod+Shift+u resize shrink width  15 px or 5 ppt
-bindsym $mod+i 		 resize grow   height 15 px or 5 ppt
-bindsym $mod+Shift+i resize shrink height 15 px or 5 ppt
+bindsym $mod+u 		 resize grow   width  5 px or 5 ppt
+bindsym $mod+Shift+u resize shrink width  5 px or 5 ppt
+bindsym $mod+i 		 resize grow   height 5 px or 5 ppt
+bindsym $mod+Shift+i resize shrink height 5 px or 5 ppt

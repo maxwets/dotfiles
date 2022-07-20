@@ -7,8 +7,8 @@ export READER="zathura"
 export BROWSER="firefox"
 export VIDEO="mpv"
 export IMAGE="sxiv"
-export TERMINAL="konsole"
-export TERM="konsole"
+export TERMINAL="st"
+export TERM="st"
 
 setxkbmap -option "caps:swapescape"
 

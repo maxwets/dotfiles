@@ -22,9 +22,10 @@ then
 	# install st
 	if [ ! -d /tmp/st ]
 	then
-		git clone https://github.com/LukeSmithxyz/st.git /tmp/st
+		git clone https://github.com/maxwets/st.git /tmp/st
 	fi
 	make install -C /tmp/st
+	pacman -R noto-fonts-emoji
 fi
 
 # install pwndbg
