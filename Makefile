@@ -1,7 +1,9 @@
 CONFIG	 = $(HOME)/.config/
 SCRIPTS  = $(HOME)/.local/bin/
 
-all: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts aliases
+all: 
+
+config: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts aliases
 
 install:
 	./install.sh
@@ -21,7 +23,9 @@ xinit:
 
 i3:
 	cp -r .config/i3           $(CONFIG)
-	#cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
+
+i3-plasma:
+	cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
 
 tmuxconf:
 	cp    .tmux.conf           $(HOME)
