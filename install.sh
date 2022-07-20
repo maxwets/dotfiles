@@ -1,11 +1,22 @@
 #!/bin/sh
 
+distro=grep DISTRIB_ID /etc/*-release | cut -d '=' f2
+
 if [ "$EUID" -eq 0 ]
 then
 	# install programs
-	sort -o progs progs
-	pacman -Syu
-	pacman -Sy $(cat progs)
+	case $distro in
+		ManjaroLinux)
+			pacman -Syu;
+			pacman -Sy $(cat progs/pacman.list);
+			pacman -Sy $(cat progs/pacman.list);
+			yay -Syu $(cat progs/aur.list)
+			;;
+		*)
+			apt update
+			apt install $(cat progs/apt.list)
+			;;
+	esac
 
 	# enable docker
 	sudo systemctl start docker.service
