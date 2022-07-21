@@ -12,16 +12,13 @@ sudo make install && make config && make install
 - i3 (*i3-gaps*)
 - dmenu
 - st
-- ~~bash~~
-- ~~fish~~
 - zsh
 - tmux
 - vim (*neovim*)
-- ~~emacs~~ (*evil-mode*)
 - gruvbox
 
 ### distro
-My current Linux distro is currently Manjaro.
+My current Linux distro is currently [Manjaro](https://manjaro.org).
 
 ### i3
 My tiling window manager is [i3-gaps](https://github.com/Airblader/i3).
@@ -32,13 +29,7 @@ My configuration files are in [this](https://github.com/maxwets/dmenu) repositor
 
 ### st
 [st](https://tools.suckless.org/st) is a simple terminal developped by suckless.
-I use [Luke Smith's config](https://github.com/LukeSmithxyz)
-
-### bash
-I used [bash](https://www.gnu.org/software/bash/) for a very long time.
-
-### fish
-I used [fish](https://fishshell.com/) for a while before switching to zsh.
+I use a [fork](https://github.com/maxwets/st) of [Luke Smith's config](https://github.com/LukeSmithxyz/st)
 
 ### zsh
 I use [zsh](https://www.zsh.org/).
@@ -49,9 +40,6 @@ I use [tmux](https://github.com/tmux/tmux) for managing multiple terminals.
 ### vim
 [neovim](https://neovim.io) is my text editor.
 My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
-
-### emacs
-I sometimes use emacs with [evil-mode](https://github.com/emacs-evil/evil) for programming in [Oz](https://mozart.github.io/) (The default Oz editor is emacs).
 
 ### gruvbox
 [gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim, and emacs.

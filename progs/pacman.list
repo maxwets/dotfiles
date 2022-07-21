@@ -1,7 +1,6 @@
 base-devel
 bzip2
 curl
-emacs
 feh
 fish
 fontconfig
@@ -23,6 +22,8 @@ make
 metasploit
 mpv
 nano
+ncmpcpp
+neomutt
 neovim
 net-tools
 nikto
@@ -37,8 +38,8 @@ powerline-fonts
 python2
 python3
 radare2
-radare2
 readline
+scim
 sleuthkit
 sqlmap
 subbrute
@@ -55,6 +56,7 @@ whois
 wireshark-cli
 wireshark-qt
 xorg
+yay
 zaproxy
 zathura
 zip

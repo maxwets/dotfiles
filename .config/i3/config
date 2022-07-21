@@ -56,14 +56,8 @@ bindsym $mod+w exec $browser
 # start dmenu
 bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
 
-# start emacs
-bindsym $mod+e exec emacs
-
 # start file explorer
-bindsym $mod+n exec dolphin
-
-# start Discord
-bindsym $mod+d exec discord
+bindsym $mod+n exec nnn
 
 # change focus
 bindsym $mod+h focus left
@@ -78,8 +72,7 @@ bindsym $mod+Shift+k move up    30
 bindsym $mod+Shift+l move right 30
 
 # split windows horizontally/vertically
-bindsym $mod+t 		 split h
-bindsym $mod+Shift+t split v
+bindsym $mod+Shift+Return split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
