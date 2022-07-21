@@ -1,6 +1,6 @@
 #!/bin/sh
 
-distro=grep DISTRIB_ID /etc/*-release | cut -d '=' f2
+distro=`cat /etc/*-release | grep DISTRIB_ID | cut -d '=' -f2`
 
 if [ "$EUID" -eq 0 ]
 then
