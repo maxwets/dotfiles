@@ -1,26 +1,32 @@
 # dotfiles
 ---
 ## How to install ?
-You can easily install my config by doing this :
+You can easily copy my config files to your $HOME by doing
 ```bash
 git clone https://github.com/maxwets/dotfiles.git
 cd dotfiles
-sudo make install && make config && make install
+make config
+make i3-plasma
+```
+Then, you can install all the packageges I use by doing (currently supported OS are Arch/Debian based):
+```bash
+sudo ./install <package manager>
 ```
 
 ## Programs that I use
-- i3 (*i3-gaps*)
+- i3-gaps
 - dmenu
 - st
 - zsh
 - tmux
-- vim (*neovim*)
+- neovim
+- nnn
 - gruvbox
 
 ### distro
 My current Linux distro is currently [Manjaro](https://manjaro.org).
 
-### i3
+### i3-gaps
 My tiling window manager is [i3-gaps](https://github.com/Airblader/i3).
 
 ### dmenu
@@ -37,9 +43,12 @@ I use [zsh](https://www.zsh.org/).
 ### tmux
 I use [tmux](https://github.com/tmux/tmux) for managing multiple terminals.
 
-### vim
+### neovim
 [neovim](https://neovim.io) is my text editor.
 My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
+
+### nnn
+[nnn](https://github.com/jarun/nnn) is my file browser.
 
 ### gruvbox
 [gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim, and emacs.

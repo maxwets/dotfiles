@@ -1,56 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
-distro=`cat /etc/*-release | grep DISTRIB_ID | cut -d '=' -f2`
-
-if [ "$EUID" -eq 0 ]
+if [ $EUID == '0' ]
 then
-	# install programs
-	case $distro in
-		ManjaroLinux)
-			pacman -Syu;
-			pacman -Sy $(cat progs/pacman.list);
-			pacman -Sy $(cat progs/pacman.list);
-			yay -Syu $(cat progs/aur.list)
-			;;
-		*)
-			apt update
-			apt install $(cat progs/apt.list)
-			;;
-	esac
+	if [[ $1 == "apt" ]]; then
+		cp progs/apt-src.list /etc/apt/sources.list
+		apt update
+		apt install $(cat progs/apt.list)
+	elif [[ $1 == "pacman" ]]; then
+		pacman -Syu;
+		pacman -R noto-fonts-emoji
+		pacman -Sy $(cat progs/pacman.list);
+	elif [[ $1 == "yay" ]]; then
+		yay -Syu $(cat progs/aur.list)
+	elif [[ $1 == "pip" ]]; then
+		pip install $(cat progs/pip.list)
+	fi
 
-	# enable docker
-	sudo systemctl start docker.service
-	sudo systemctl enable docker.service
-	sudo usermod -aG docker $USER
-
-	# install dmenu
-	if [ ! -d /tmp/dmenu ]
-	then
+	if [ ! -d /tmp/dmenu ]; then
 		git clone https://github.com/maxwets/dmenu.git /tmp/dmenu
+		make install -C /tmp/dmenu
 	fi
-	make install -C /tmp/dmenu
 
-	# install st
-	if [ ! -d /tmp/st ]
-	then
+	if [ ! -d /tmp/st ]; then
 		git clone https://github.com/maxwets/st.git /tmp/st
+		make install -C /tmp/st
 	fi
-	make install -C /tmp/st
-	pacman -R noto-fonts-emoji
 fi
 
-# install pwndbg
-if [ -d /.local/bin/pwndbg ]
-then
-	git clone https://github.com/pwndbg/pwndbg /.local/bin/pwndbg
-fi
-
-/.local/bin/pwndbg/setup.sh
-
-# install vim-plug for vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# install vim-plug for neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh

@@ -3,13 +3,11 @@ SCRIPTS  = $(HOME)/.local/bin/
 
 all: 
 
-config: dirs profile xinit i3 tmuxconf bashrc zshrc fish emacs vim gdbinit scripts fonts aliases
-
-install:
-	./install.sh
+config: dirs profile xinit i3 tmuxconf bashrc zshrc fish vim gdbinit scripts fonts aliases
 
 dirs:
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
+	[ -d $(HOME)/.local ]     || mkdir $(HOME).local
 	[ -d $(HOME)/.local/bin ] || mkdir $(SCRIPTS)
 
 profile:
@@ -44,10 +42,8 @@ vim:
 	cp    .config/nviminit.vim $(CONFIG)
 	cp    .vimrc               $(HOME)
 	cp -r .config/nvim         $(CONFIG)
+	rm -rf                     $(HOME)/.vim
 	cp -r .vim                 $(HOME)
-
-emacs:
-	cp    .emacs               $(HOME)
 
 gdbinit:
 	cp    .gdbinit             $(HOME)
