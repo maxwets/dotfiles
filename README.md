@@ -5,7 +5,8 @@ You can easily install my config by doing this :
 ```bash
 git clone https://github.com/maxwets/dotfiles.git
 cd dotfiles
-sudo make install && make config && make install
+make config
+sudo ./install <pacman/yay/apt>
 ```
 
 ## Programs that I use
