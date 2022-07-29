@@ -6,7 +6,7 @@ You can easily install my config by doing this :
 git clone https://github.com/maxwets/dotfiles.git
 cd dotfiles
 make config
-sudo ./install <pacman/yay/apt>
+sudo ./install <package manager>
 ```
 
 ## Programs that I use
