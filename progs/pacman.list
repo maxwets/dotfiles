@@ -42,6 +42,7 @@ python2
 python3
 radare2
 readline
+rust
 scim
 sleuthkit
 sqlmap

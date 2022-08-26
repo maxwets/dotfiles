@@ -32,55 +32,35 @@ gaps outer 5
 gaps inner 20
 font pango:monospace 18
 
-# background image
-exec_always --no-startup-id feh --bg-fill "/usr/share/wallpapers/Bamboo/contents/images/5120x2880.png"
-
-# transparency
+exec_always --no-startup-id feh --bg-fill "~/.config/wallpaper"
 exec_always --no-startup-id picom -bcf
-
-# set belgian kb + swap ESC and CAPS
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
-
-# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return  exec $term
-
-# kill focused window
+bindsym $mod+Return exec $term
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
-
-# start web browser
 bindsym $mod+w exec $browser
-
-# start dmenu
 bindsym $mod+space exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
+bindsym $mod+n exec $term -e nnn -Sdeo ~
 
-# start file explorer
-bindsym $mod+n exec nnn
-
-# change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# move focused window
 bindsym $mod+Shift+h move left  30
 bindsym $mod+Shift+j move down  30
 bindsym $mod+Shift+k move up    30
 bindsym $mod+Shift+l move right 30
+bindsym $mod+u 		 resize grow   width  5 px or 5 ppt
+bindsym $mod+Shift+u resize shrink width  5 px or 5 ppt
+bindsym $mod+i 		 resize grow   height 5 px or 5 ppt
+bindsym $mod+Shift+i resize shrink height 5 px or 5 ppt
 
-# split windows horizontally/vertically
 bindsym $mod+Shift+Return split toggle
-
-# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# switch to workspace
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2
 bindsym $mod+quotedbl   workspace 3
@@ -93,7 +73,6 @@ bindsym $mod+ccedilla   workspace 9
 bindsym $mod+agrave     workspace 10
 bindsym $mod+Tab 		workspace back_and_forth
 
-# move focused container to workspace
 bindsym $mod+Shift+ampersand  move container to workspace 1
 bindsym $mod+Shift+eacute 	  move container to workspace 2
 bindsym $mod+Shift+quotedbl   move container to workspace 3
@@ -105,15 +84,10 @@ bindsym $mod+Shift+exclam     move container to workspace 8
 bindsym $mod+Shift+ccedilla   move container to workspace 9
 bindsym $mod+Shift+agrave     move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id systemctl suspend
 
-# resize windows
-bindsym $mod+u 		 resize grow   width  5 px or 5 ppt
-bindsym $mod+Shift+u resize shrink width  5 px or 5 ppt
-bindsym $mod+i 		 resize grow   height 5 px or 5 ppt
-bindsym $mod+Shift+i resize shrink height 5 px or 5 ppt
+workspace 1 output DP-1-1
+workspace 2 output DP-1-1
+workspace 3 output DP-1-2
+workspace 4 output DP-1-2
