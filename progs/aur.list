@@ -2,6 +2,7 @@ beef-git
 brim
 burpsuite
 commix
+dynamips
 feroxbuster
 ftkimager
 gophish
@@ -10,8 +11,8 @@ hivex
 networkminer
 powershell-bin
 recon-ng
-scalpel
 seclists
-sublist3r
+ubridge
+vpcs
 xsstrike
 zenmap
