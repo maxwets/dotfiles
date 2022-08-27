@@ -8,6 +8,7 @@ fzf
 gcc
 gdb
 git
+gnome-keyring
 gnupg
 gzip
 hydra
