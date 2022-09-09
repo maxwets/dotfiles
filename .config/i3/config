@@ -1,7 +1,6 @@
 set $mod Mod4
 set $term --no-startup-id $TERMINAL
 set $browser --no-startup-id $BROWSER
-set $script_dir ~/.local/bin
 floating_modifier $mod
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
@@ -37,13 +36,14 @@ exec_always --no-startup-id feh --bg-fill "~/.config/wallpaper.*"
 exec_always --no-startup-id picom -bcf
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
-bindsym $mod+Return exec $term
-bindsym $mod+w 		exec $browser
-bindsym $mod+space 	exec dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
-bindsym $mod+n 		exec $term -e nnn -Sdeo ~
-bindsym $mod+c 		exec screenkey -p bottom --opacity 0.65 --font-size small --mods-mode normal --bak-mode normal --scr 2
+bindsym $mod+Return   exec --no-startup-id $term
+bindsym $mod+w        exec --no-startup-id $browser
+bindsym $mod+x        exec --no-startup-id chromium-browser
+bindsym $mod+space    exec --no-startup-id dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
+bindsym $mod+n        exec --no-startup-id $term -e nnn -Sdeo ~
+bindsym $mod+p        exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+p  exec --no-startup-id maim --select ~/Pictures/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
-bindsym $mod+Shift+c exec pkill -9 screenkey
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -73,7 +73,7 @@ bindsym $mod+egrave     workspace 7
 bindsym $mod+exclam     workspace 8
 bindsym $mod+ccedilla   workspace 9
 bindsym $mod+agrave     workspace 10
-bindsym $mod+Tab 		workspace back_and_forth
+bindsym $mod+Tab        workspace back_and_forth
 
 bindsym $mod+Shift+ampersand  move container to workspace 1
 bindsym $mod+Shift+eacute 	  move container to workspace 2
@@ -87,11 +87,3 @@ bindsym $mod+Shift+ccedilla   move container to workspace 9
 bindsym $mod+Shift+agrave     move container to workspace 10
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec --no-startup-id systemctl suspend
-
-workspace 1 output DP-1-2
-workspace 2 output DP-1-2
-workspace 3 output DP-1-2
-workspace 7 output DP-1-1
-workspace 8 output DP-1-1
-workspace 9 output DP-1-1
