@@ -29,6 +29,7 @@ libx11-dev
 libxinerama1
 libxinerama-dev
 linux-headers-generic
+maim
 make
 most
 mpv

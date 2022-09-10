@@ -19,6 +19,7 @@ jq
 jre-openjdk
 libx11
 libxft
+maim
 make
 metasploit
 mpv
