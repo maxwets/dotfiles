@@ -33,7 +33,7 @@ gaps outer 5
 gaps inner 20
 font pango:monospace 18
 
-exec_always --no-startup-id feh --bg-fill "~/.config/wallpaper.*"
+exec_always --no-startup-id feh --bg-fill "~/.config/wallpaper"
 exec_always --no-startup-id picom -bcf
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
