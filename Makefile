@@ -3,7 +3,7 @@ SCRIPTS  = $(HOME)/.local/bin/
 
 all: 
 
-config: dirs profile xinit i3 tmuxconf bashrc zshrc fish vim gdbinit scripts fonts aliases
+config: dirs profile xinit i3 tmux bashrc zshrc fish vim gdbinit scripts fonts aliases
 
 dirs:
 	[ -d $(HOME)/Documents ]  || mkdir $(HOME)/Documents
@@ -29,7 +29,7 @@ i3:
 i3-plasma:
 	cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
 
-tmuxconf:
+tmux:
 	cp    .tmux.conf           $(HOME)
 
 bashrc:

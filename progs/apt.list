@@ -61,8 +61,10 @@ virtualbox-dkms
 vlc
 wget
 wireshark
+xclip
 xorg
 xorg-dev
+xsel
 zathura
 zip
 zsh
