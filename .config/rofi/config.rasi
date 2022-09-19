@@ -6,7 +6,7 @@ configuration {
   kb-mode-previous: "Alt+h,Alt+N";
   kb-row-up: "Alt+k,Up";
   kb-row-down: "Alt+j,Down";
-  modi: "combi,drun,run,window,ssh";
+  modi: "combi,drun,run,window,filebrowser,ssh";
   combi-modi: "window,drun,run";
   show: "combi";
 }

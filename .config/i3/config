@@ -32,7 +32,7 @@ gaps outer 5
 gaps inner 20
 font pango:monospace 18
 
-exec_always --no-startup-id feh --bg-fill "~/.config/wallpaper"
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper
 exec_always --no-startup-id picom -bcf
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
@@ -41,6 +41,7 @@ bindsym $mod+w        exec --no-startup-id $browser
 bindsym $mod+x        exec --no-startup-id chromium-browser
 bindsym $mod+space    exec --no-startup-id rofi -show-icons -show combi
 bindsym $mod+o        exec --no-startup-id rofi -show-icons -show window
+bindsym $mod+Shift+n  exec --no-startup-id rofi -show-icons -show filebrowser
 bindsym $mod+n        exec --no-startup-id $term -e nnn -Sdeo ~
 bindsym $mod+p        exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p  exec --no-startup-id maim --select ~/Pictures/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
