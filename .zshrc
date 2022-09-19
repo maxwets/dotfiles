@@ -3,6 +3,11 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+# Autosuggestions
+bindkey '^[z' autosuggest-accept
+bindkey '^[a' autosuggest-clear
+bindkey '^[e' autosuggest-fetch
+
 # History configurations
 HISTFILE=~/.config/history
 HISTSIZE=99999
