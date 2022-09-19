@@ -1,4 +1,5 @@
 # dotfiles
+max.wets
 ---
 ## How to install ?
 You can easily copy my config files to your $HOME by doing
@@ -50,7 +51,49 @@ My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
 [nnn](https://github.com/jarun/nnn) is my file browser.
 
 ### gruvbox
-[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim, and emacs.
+[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim and rofi.
+
+## Key bindings
+
+### i3
+The Modifier I use is `$Mod4` aka Windows key.
+- `M-Enter` : spawn terminal;
+- `M-Space` : spawn `rofi`;
+- `M-w` : spawn `firefox`;
+- `M-R` : reload config;
+- `M-p` : take screenshot and copy to clipboard;
+- `M-P` : take screenshot and save to ~/Pictures/screenshot\_date;
+- `M-n` : spawn `nnn`;
+- `M-q` : kill focused window.
+I use Vim keys for moving windows.
+
+### tmux
+The Modifier I use is the `Alt` key.
+- `M-Space` : Prefix.
+
+#### window management
+I use `C+Vi` keys to move through to change the focus on the pane.
+Copy pasting with the mouse is enabled.
+- `M-"` : split vertically;
+- `M-'` : split horizontally;
+- `M-Enter` : spawn new window;
+- `M-Tab` : go to last window;
+- `M-q` : kill window;
+- `M-w` : kill pane.
+
+#### visual mode
+- `Escape` : enter visual mode;
+- `y` : copy;
+- `p` : paste.
+
+### st
+I use the `Alt-Vi` keys to move around
+
+### zsh
+I use the Vi key bindings with the following shortcuts for autosuggest :
+- `Alt-z` : autosuggest-accept;
+- `Alt-a` : autosuggest-clear;
+- `Alt-e` : autosuggest-fetch.
 
 ## LICENCE
 MIT Licence
