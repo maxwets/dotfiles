@@ -46,6 +46,7 @@ picom
 python3
 python3-pip
 radare2
+rofi
 snap
 snort
 suckless-tools

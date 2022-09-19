@@ -39,7 +39,7 @@ exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 bindsym $mod+Return   exec --no-startup-id $term
 bindsym $mod+w        exec --no-startup-id $browser
 bindsym $mod+x        exec --no-startup-id chromium-browser
-bindsym $mod+space    exec --no-startup-id dmenu_run -i -l 10 -h 30 -fn 'monospace 18' -nb '#fbf1c7' -sb '#82a598' -nf '#3c3836' -sf '#000000' -H ~/.dmenu_history
+bindsym $mod+space    exec --no-startup-id rofi -show combi
 bindsym $mod+n        exec --no-startup-id $term -e nnn -Sdeo ~
 bindsym $mod+p        exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p  exec --no-startup-id maim --select ~/Pictures/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png

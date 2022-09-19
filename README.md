@@ -15,7 +15,7 @@ sudo ./install <package manager>
 
 ## Programs that I use
 - i3-gaps
-- dmenu
+- rofi
 - st
 - zsh
 - tmux
@@ -29,9 +29,8 @@ My current Linux distro is currently [Manjaro](https://manjaro.org).
 ### i3-gaps
 My tiling window manager is [i3-gaps](https://github.com/Airblader/i3).
 
-### dmenu
-[dmenu](https://tools.suckless.org/dmenu) is a very useful dynamic menu that I use.
-My configuration files are in [this](https://github.com/maxwets/dmenu) repository.
+### rofi
+[rofi](https://github.com/davatorium/rofi) is an alternative for [dmenu](https://github.com/maxwets/dmenu).
 
 ### st
 [st](https://tools.suckless.org/st) is a simple terminal developped by suckless.

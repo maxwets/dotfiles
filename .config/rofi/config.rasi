@@ -1,0 +1,13 @@
+configuration {
+  sidebar-mode:  true;
+  hide-scrollbar: true;
+  kb-cancel: "Escape,Alt+q";
+  kb-mode-next: "Alt+l";
+  kb-mode-previous: "Alt+h";
+  kb-row-up: "Alt+k";
+  kb-row-down: "Alt+j";
+  modi: "combi,drun,run,window,ssh";
+  combi-modi: "window,drun";
+  show: "combi";
+}
+@import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
