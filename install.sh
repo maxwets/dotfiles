@@ -15,10 +15,6 @@ then
 	elif [[ $1 == "pip" ]]; then
 		pip install $(cat progs/pip.list)
 	else
-		if [ ! -d /tmp/dmenu ]; then
-			git clone https://github.com/maxwets/dmenu.git /tmp/dmenu
-			make install -C /tmp/dmenu
-		fi
 		if [ ! -d /tmp/st ]; then
 			git clone https://github.com/maxwets/st.git /tmp/st
 			make install -C /tmp/st
