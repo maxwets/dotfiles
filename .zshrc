@@ -1,7 +1,9 @@
-# Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# Prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 
 # Autosuggestions
 bindkey '^[z' autosuggest-accept
@@ -21,6 +23,11 @@ alias history="history 0"
 # load aliases
 if [ -e $HOME/.config/aliases ]; then
 	source $HOME/.config/aliases
+fi
+
+# load proxy settings
+if [ -e $HOME/.config/proxy ]; then
+	source $HOME/.config/proxy
 fi
 
 setopt autocd              # change directory just by typing its name
