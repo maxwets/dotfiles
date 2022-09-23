@@ -25,6 +25,11 @@ if [ -e $HOME/.config/aliases ]; then
 	source $HOME/.config/aliases
 fi
 
+# load zsh autosuggestions
+if [ -e $HOME/.config/zsh-autosuggestions.zsh ]; then
+	source $HOME/.config/zsh-autosuggestions.zsh
+fi
+
 # load proxy settings
 if [ -e $HOME/.config/proxy ]; then
 	source $HOME/.config/proxy
