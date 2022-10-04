@@ -6,13 +6,12 @@ all:
 config: dirs profile xinit i3 rofi tmux bashrc zshrc fish vim gdbinit scripts fonts aliases
 
 dirs:
-	[ -d $(HOME)/Documents ]  || mkdir $(HOME)/Documents
-	[ -d $(HOME)/Pictures ]   || mkdir $(HOME)/Pictures
-	[ -d $(HOME)/Github ]     || mkdir $(HOME)/Github
-	[ -d $(HOME)/Downloads ]  || mkdir $(HOME)/Downloads
+	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
+	[ -d $(HOME)/pics ]       || mkdir $(HOME)/pics
+	[ -d $(HOME)/git ]        || mkdir $(HOME)/git
+	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
 	[ -d $(HOME)/.local ]     || mkdir $(HOME).local
-	[ -d $(HOME)/.local/bin ] || mkdir $(SCRIPTS)
 
 profile:
 	cp    .profile             $(HOME)
