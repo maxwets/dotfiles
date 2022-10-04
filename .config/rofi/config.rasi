@@ -6,7 +6,7 @@ configuration {
   kb-mode-previous: "Alt+h,Alt+N";
   kb-row-up:        "Alt+k,Up";
   kb-row-down:      "Alt+j,Down";
-  modi:             "drun,run,window,filebrowser,ssh";
+  modi:             "drun,run,window,ssh";
   show:             "drun";
 }
 @import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
