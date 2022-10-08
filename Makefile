@@ -8,7 +8,7 @@ config: dirs profile xinit i3 rofi tmux bashrc zshrc fish vim gdbinit scripts fo
 dirs:
 	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
 	[ -d $(HOME)/pics ]       || mkdir $(HOME)/pics
-	[ -d $(HOME)/git ]        || mkdir $(HOME)/git
+	[ -d $(HOME)/src ]        || mkdir $(HOME)/src
 	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
 	[ -d $(HOME)/.local ]     || mkdir $(HOME).local
