@@ -26,10 +26,6 @@ for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
 
-smart_borders on
-for_window [class="^.*"] border pixel 2 
-gaps outer 5
-gaps inner 20
 font pango:monospace 18
 
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper
@@ -40,8 +36,7 @@ bindsym $mod+Return  exec --no-startup-id $term
 bindsym $mod+w       exec --no-startup-id $browser
 bindsym $mod+space   exec --no-startup-id rofi -show-icons -show drun
 bindsym $mod+o       exec --no-startup-id rofi -show-icons -show window
-bindsym $mod+Shift+n exec --no-startup-id rofi -show-icons -show filebrowser
-bindsym $mod+n       exec --no-startup-id $term -e nnn='nnn -HSadeor .'
+bindsym $mod+n       exec --no-startup-id $term -e nnn -HSadeor .
 bindsym $mod+p       exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id maim --select ~/Pictures/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
 bindsym $mod+q       [con_id="__focused__" instance="^(?!dropdown_).*$"] kill

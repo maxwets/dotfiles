@@ -1,8 +1,7 @@
-deb http://be.archive.ubuntu.com/ubuntu/ focal main restricted
-deb http://be.archive.ubuntu.com/ubuntu/ focal-updates main restricted
-deb http://be.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
-deb http://archive.canonical.com/ubuntu focal partner
-deb http://security.ubuntu.com/ubuntu focal-security main restricted
-deb http://security.ubuntu.com/ubuntu focal-security universe
-deb http://security.ubuntu.com/ubuntu focal-security multiverse
-deb [arch=amd64] https://repo.fortinet.com/repo/6.4/ubuntu/ /bionic multiverse
+deb http://deb.debian.org/debian bullseye main contrib non-free
+deb-src http://deb.debian.org/debian bullseye main contrib non-free
+
+deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+
+deb http://deb.debian.org/debian bullseye-updates main contrib non-free

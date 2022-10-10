@@ -3,15 +3,11 @@ build-essential
 bzip2
 cheese
 curl
-default-jdk
-default-jre
-docker
-docker.io
+dash
 emacs-gtk
+ewf-tools
 feh
-fish
 fonts-powerline
-forticlient
 fzf
 g++
 gcc
@@ -22,8 +18,12 @@ gnome-keyring
 gnupg
 gzip
 htop
-i3-gaps
+i3
 jq
+libcairo2-dev
+libfreetype6-dev
+libghc-x11-xft-dev
+libglib2.0-dev
 libreadline-dev
 libx11-dev
 libxinerama1
@@ -45,9 +45,7 @@ p7zip-full
 picom
 python3
 python3-pip
-radare2
 rofi
-snap
 snort
 suckless-tools
 sudo
@@ -57,8 +55,6 @@ tmux
 unrar
 unzip
 vim
-virtualbox
-virtualbox-dkms
 vlc
 wget
 wireshark
@@ -69,4 +65,3 @@ xsel
 zathura
 zip
 zsh
-ewf-tools
