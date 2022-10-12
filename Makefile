@@ -63,4 +63,4 @@ fonts:
 	cp -r .config/fontconfig   $(CONFIG)
 
 shell:
-	cp -r .config/shell        $(CONFIG)/shell
+	cp -r .config/shell        $(CONFIG)shell

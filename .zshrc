@@ -24,7 +24,7 @@ setopt numericglobsort
 setopt promptsubst
 
 [ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
-[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxy
+[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
 [ -e $HOME/.config/zsh/autosuggestions.zsh ] && source $HOME/.config/zsh/autosuggestions.zsh
 
 function zle-keymap-select () {
