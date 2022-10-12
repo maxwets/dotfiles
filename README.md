@@ -8,7 +8,6 @@ git clone https://github.com/maxwets/dotfiles.git
 cd dotfiles
 sh ./install.sh
 make config
-make i3-plasma
 ```
 
 ## Programs that I use
