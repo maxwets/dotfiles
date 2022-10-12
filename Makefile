@@ -11,7 +11,7 @@ dirs:
 	[ -d $(HOME)/src ]        || mkdir $(HOME)/src
 	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
-	[ -d $(HOME)/.local ]     || mkdir $(HOME)/.local
+	[ -d $(HOME)/.local ]     || cp -r .local $(HOME)/.local
 	[ -d $(HOME)/.cache ]     || mkdir $(HOME)/.cache
 
 profile:
@@ -53,15 +53,8 @@ vim:
 	ln -s .vimrc               $(CONFIG)nvim
 	ln -s $(HOME)/.config/nvim $(HOME)/.vim
 
-scripts:
-	cp -r .local/bin/*         $(SCRIPTS)
-
 fonts:
 	cp -r .config/fontconfig   $(CONFIG)
 
 shell:
 	cp -r .config/shell        $(CONFIG)
-
-i3-plasma:
-	cp .local/share/plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
-
