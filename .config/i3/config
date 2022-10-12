@@ -28,7 +28,7 @@ no_focus [class="plasmashell" window_type="notification"]
 
 font pango:monospace 18
 
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper
+exec_always --no-startup-id feh --bg-fill ~/.local/share/wallpaper
 exec_always --no-startup-id picom -bcf
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
@@ -38,7 +38,7 @@ bindsym $mod+space   exec --no-startup-id rofi -show-icons -show drun
 bindsym $mod+o       exec --no-startup-id rofi -show-icons -show window
 bindsym $mod+n       exec --no-startup-id $term -e nnn -HSadeor .
 bindsym $mod+p       exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+p exec --no-startup-id maim --select ~/Pictures/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
+bindsym $mod+Shift+p exec --no-startup-id maim --select ~/pics/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
 bindsym $mod+q       [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
 bindsym $mod+h focus left
