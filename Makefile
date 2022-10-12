@@ -3,7 +3,7 @@ SCRIPTS  = $(HOME)/.local/bin/
 
 all: 
 
-config: dirs profile xinit i3 rofi tmux bashrc zshrc fish vim gdbinit scripts fonts aliases
+config: dirs profile xinit i3 rofi tmux bashrc zshrc fish vim scripts fonts shell
 
 dirs:
 	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
@@ -16,8 +16,11 @@ dirs:
 
 profile:
 	cp    .profile             $(HOME)
+	rm -f $(HOME)/.zprofile
 	ln -s $(HOME)/.profile     $(HOME)/.zprofile
+	rm -f $(HOME)/.bash_profile
 	ln -s $(HOME)/.profile     $(HOME)/.bash_profile
+	rm -f $(HOME)/.xprofile 
 	ln -s $(HOME)/.profile     $(HOME)/.xprofile
 
 xinit:
@@ -33,7 +36,7 @@ rofi:
 	cp -r .config/rofi         $(CONFIG)
 
 tmux:
-	cp    .tmux.conf           $(HOME)
+	cp -r .config/tmux         $(CONFIG)
 
 bashrc:
 	cp    .bashrc	           $(HOME)
@@ -46,14 +49,12 @@ fish:
 	cp -r .config/fish         $(CONFIG)
 
 vim: 
+	rm -rf $(HOME)/.vim
+	rm -rf $(HOME)/.vimrc
 	cp    .config/nviminit.vim $(CONFIG)
 	cp    .vimrc               $(HOME)
 	cp -r .config/nvim         $(CONFIG)
-	rm -rf                     $(HOME)/.vim
 	ln -s $(HOME)/.config/vim  $(HOME)/.vim
-
-gdbinit:
-	cp    .gdbinit             $(HOME)
 
 scripts:
 	cp -r .local/bin/*         $(SCRIPTS)
@@ -61,5 +62,5 @@ scripts:
 fonts:
 	cp -r .config/fontconfig   $(CONFIG)
 
-aliases:
-	cp -r .config/aliases      $(CONFIG)
+shell:
+	cp -r .config/shell        $(CONFIG)/shell
