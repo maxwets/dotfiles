@@ -1,17 +1,14 @@
 # dotfiles
-max.wets
+Maxime Wets
 ---
 ## How to install ?
 You can easily copy my config files to your $HOME by doing
 ```bash
 git clone https://github.com/maxwets/dotfiles.git
 cd dotfiles
+sh ./install.sh
 make config
 make i3-plasma
-```
-Then, you can install all the packageges I use by doing:
-```bash
-sudo ./install.sh
 ```
 
 ## Programs that I use
@@ -92,8 +89,6 @@ I use the `Alt-Vi` keys to move around
 ### zsh
 I use the Vi key bindings with the following shortcuts for autosuggest :
 - `Alt-z` : autosuggest-accept;
-- `Alt-a` : autosuggest-clear;
-- `Alt-e` : autosuggest-fetch.
 
 ## LICENCE
 MIT Licence

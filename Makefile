@@ -29,9 +29,6 @@ xinit:
 i3:
 	cp -r .config/i3           $(CONFIG)
 
-i3-plasma:
-	cp plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
-
 rofi:
 	cp -r .config/rofi         $(CONFIG)
 
@@ -51,10 +48,10 @@ fish:
 vim: 
 	rm -rf $(HOME)/.vim
 	rm -rf $(HOME)/.vimrc
-	cp    .config/nviminit.vim $(CONFIG)
-	cp    .vimrc               $(HOME)
 	cp -r .config/nvim         $(CONFIG)
-	ln -s $(HOME)/.config/vim  $(HOME)/.vim
+	cp    .config/nviminit.vim $(CONFIG)
+	ln -s .vimrc               $(CONFIG)nvim
+	ln -s $(HOME)/.config/nvim $(HOME)/.vim
 
 scripts:
 	cp -r .local/bin/*         $(SCRIPTS)
@@ -64,3 +61,7 @@ fonts:
 
 shell:
 	cp -r .config/shell        $(CONFIG)
+
+i3-plasma:
+	cp .local/share/plasma-i3.desktop       /usr/share/xsessions/plasma-i3.desktop
+
