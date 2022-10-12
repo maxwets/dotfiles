@@ -8,7 +8,7 @@ alias \
 
 # colors
 alias \
-	ls="ls -hNv --color=auto --group-directories-first --classify" \
+	ls="ls -hNSv --size -1 --color=auto --group-directories-first --classify" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ip="ip -color=auto";
