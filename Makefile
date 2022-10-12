@@ -11,13 +11,14 @@ dirs:
 	[ -d $(HOME)/src ]        || mkdir $(HOME)/src
 	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
 	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
-	[ -d $(HOME)/.local ]     || mkdir $(HOME).local
+	[ -d $(HOME)/.local ]     || mkdir $(HOME)/.local
+	[ -d $(HOME)/.cache ]     || mkdir $(HOME)/.cache
 
 profile:
 	cp    .profile             $(HOME)
-	cp    .bash_profile        $(HOME)
-	cp    .xprofile            $(HOME)
-	cp    .zprofile            $(HOME)
+	ln -s $(HOME)/.profile     $(HOME)/.zprofile
+	ln -s $(HOME)/.profile     $(HOME)/.bash_profile
+	ln -s $(HOME)/.profile     $(HOME)/.xprofile
 
 xinit:
 	cp    .xinitrc             $(HOME)
@@ -49,7 +50,7 @@ vim:
 	cp    .vimrc               $(HOME)
 	cp -r .config/nvim         $(CONFIG)
 	rm -rf                     $(HOME)/.vim
-	cp -r .vim                 $(HOME)
+	ln -s $(HOME)/.config/vim  $(HOME)/.vim
 
 gdbinit:
 	cp    .gdbinit             $(HOME)

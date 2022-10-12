@@ -1,0 +1,54 @@
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# verbosity
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkdir="mkdir -pv";
+
+# colors
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ip="ip -color=auto";
+
+# security
+alias \
+	chmod='chmod --preserve-root' \
+	chown='chown --preserve-root' \
+	rm='rm --preserve-root';
+	
+# sudo
+alias \
+	apt-get='sudo apt-get' \
+	alias apt='sudo apt'
+
+# virtualbox
+alias \
+	vblrvm='vboxmanage list runningvms' \
+	vbls='vboxmanage list vms' \
+	vbm='vboxmanage controlvm' \
+	vbstart='vboxmanage startvm --type headless';
+
+# docker
+alias \
+	dexec='docker exec' \
+	dlogs='docker logs' \
+	dps='docker ps -a' \
+	drm='docker rm' \
+	drun='docker run -d' \
+	dstart='docker start' \
+	dstop='docker stop';
+
+# convenience
+alias \
+	cd..='cd ..' \
+	la='ls -lArth' \
+	ll='ls -lh' \
+	ls='ls --human-readable --size -1 -S --classify' \
+	nnn='nnn -HSadeor .' \
+	vim='nvim' \
+	vi='nvim' \
+	clip='xclip -selection "clip"';

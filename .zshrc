@@ -1,17 +1,11 @@
-# Prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%b '
-setopt PROMPT_SUBST
 PROMPT='%F{cyan}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-
-# Autosuggestions
+PROMPT_EOL_MARK=""
+WORDCHARS=${WORDCHARS//\/}
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
+autoload -Uz vcs_info
+setopt PROMPT_SUBST
 bindkey '^[z' autosuggest-accept
-bindkey '^[a' autosuggest-clear
-bindkey '^[e' autosuggest-fetch
 
-# History configurations
-HISTFILE=~/.config/history
 HISTSIZE=99999
 SAVEHIST=99999
 setopt hist_expire_dups_first
@@ -20,37 +14,42 @@ setopt hist_ignore_space
 setopt hist_verify
 alias history="history 0"
 
-# load aliases
-if [ -e $HOME/.config/aliases ]; then
-	source $HOME/.config/aliases
-fi
+setopt autocd
+setopt correct
+setopt interactivecomments
+setopt magicequalsubst
+setopt nonomatch
+setopt notify
+setopt numericglobsort
+setopt promptsubst
 
-# load zsh config
-[ -e $HOME/.config/zsh/autosuggestions.zsh ]     && source $HOME/.config/zsh/autosuggestions.zsh
+[ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
+[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxy
+[ -e $HOME/.config/zsh/autosuggestions.zsh ] && source $HOME/.config/zsh/autosuggestions.zsh
 
-# load proxy settings
-if [ -e $HOME/.config/proxy ]; then
-	source $HOME/.config/proxy
-fi
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;
+        viins|main) echo -ne '\e[5 q';;
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q'
+preexec() { echo -ne '\e[5 q' ;}
 
-setopt autocd              # change directory just by typing its name
-setopt correct             # auto correct mistakes
-setopt interactivecomments # allow comments in interactive mode
-setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
-setopt nonomatch           # hide error message if there is no match for the pattern
-setopt notify              # report the status of background jobs immediately
-setopt numericglobsort     # sort filenames numerically when it makes sense
-setopt promptsubst         # enable command substitution in prompt
-
-WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
-
-# hide EOL sign ('%')
-PROMPT_EOL_MARK=""
-
-# configure vim keybindings
 bindkey -v
-
-# enable completion features
+autoload -U compinit
+zstyle ':vcs_info:git:*' formats '%b '
+zmodload zsh/complist
+zstyle ':completion:*' menu select
+compinit
+_comp_options+=(globdots)
+precmd() { vcs_info }
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
@@ -67,26 +66,5 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# configure `time` format
-TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-
-# enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-fi
-
-# enable command-not-found if installed
-if [ -f /etc/zsh_command_not_found ]; then
-    . /etc/zsh_command_not_found
-fi
-
-# sh into docker container
-dsh() {
-	docker exec -it $1 /bin/sh;
-}
-
-# stop virtualbox vm
-vbstop() {
-	vboxmanage controlvm $1 poweroff soft;
-}
+dsh() { docker exec -it $1 /bin/sh; }
+vbstop() { vboxmanage controlvm $1 poweroff soft; }

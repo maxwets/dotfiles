@@ -9,13 +9,13 @@ cd dotfiles
 make config
 make i3-plasma
 ```
-Then, you can install all the packageges I use by doing (currently supported OS are Arch/Debian based):
+Then, you can install all the packageges I use by doing:
 ```bash
-sudo ./install <package manager>
+sudo ./install.sh
 ```
 
 ## Programs that I use
-- i3-gaps
+- i3 (with KDE Plasma)
 - rofi
 - st
 - zsh
@@ -25,10 +25,10 @@ sudo ./install <package manager>
 - gruvbox
 
 ### distro
-My current Linux distro is currently [Manjaro](https://manjaro.org).
+My current Linux distro is currently [Debian](https://debian.org).
 
 ### i3-gaps
-My tiling window manager is [i3-gaps](https://github.com/Airblader/i3).
+My tiling window manager is [i3](https://github.com/i3/i3).
 
 ### rofi
 [rofi](https://github.com/davatorium/rofi) is an alternative for [dmenu](https://github.com/maxwets/dmenu).
