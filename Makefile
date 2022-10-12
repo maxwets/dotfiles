@@ -1,9 +1,8 @@
-CONFIG	 = $(HOME)/.config/
-SCRIPTS  = $(HOME)/.local/bin/
+CONFIG	 = $(HOME)/.config
 
 all: 
 
-config: dirs profile xinit i3 rofi tmux bashrc zshrc fish vim scripts fonts shell
+config: dirs profile xinit i3 rofi tmux bashrc zsh fish vim fonts shell
 
 dirs:
 	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
@@ -33,14 +32,16 @@ rofi:
 	cp -r .config/rofi         $(CONFIG)
 
 tmux:
+	rm -f $(HOME)/.tmux.conf
 	cp -r .config/tmux         $(CONFIG)
+	ln -s $(CONFIG)/tmux/tmux.conf $(HOME)/.tmux.conf  
 
 bashrc:
 	cp    .bashrc	           $(HOME)
 	cp    .inputrc             $(HOME)
 
-zshrc:
-	cp    .zshrc               $(HOME)
+zsh:
+	cp -r .config/zsh          $(CONFIG)
 
 fish:
 	cp -r .config/fish         $(CONFIG)
@@ -50,7 +51,7 @@ vim:
 	rm -rf $(HOME)/.vimrc
 	cp -r .config/nvim         $(CONFIG)
 	cp    .config/nviminit.vim $(CONFIG)
-	ln -s .vimrc               $(CONFIG)nvim
+	ln -s $(CONFIG)/nvim/init.vim $(HOME)/.vimrc
 	ln -s $(HOME)/.config/nvim $(HOME)/.vim
 
 fonts:
