@@ -1,61 +1,55 @@
-CONFIG	 = $(HOME)/.config
+<<<<<<< HEAD
+CONFIG=$(HOME)/.config
+LOCAL=$(HOME)/.local
+CACHE=$(HOME)/.cache
 
 all: 
 
-config: dirs profile xinit i3 rofi tmux bashrc zsh fish vim fonts shell
+config: dirs profile x11 i3 rofi tmux zsh vim fonts shell
 
 dirs:
-	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
-	[ -d $(HOME)/pics ]       || mkdir $(HOME)/pics
-	[ -d $(HOME)/src ]        || mkdir $(HOME)/src
-	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
-	[ -d $(HOME)/.config ]    || mkdir $(CONFIG)
-	[ -d $(HOME)/.local ]     || cp -r .local $(HOME)/.local
-	[ -d $(HOME)/.cache ]     || mkdir $(HOME)/.cache
+	[ -d $(HOME)/docs ]	|| mkdir $(HOME)/docs
+	[ -d $(HOME)/pics ]	|| mkdir $(HOME)/pics
+	[ -d $(HOME)/src ] 	|| mkdir $(HOME)/src
+	[ -d $(HOME)/dl ]   || mkdir $(HOME)/dl
+	[ -d $(LOCAL) ]     || cp -r .local $(LOCAL)
+	[ -d $(CONFIG) ]    || mkdir $(CONFIG)
+	[ -d $(CACHE) ]	    || mkdir $(CACHE)
 
 profile:
-	cp    .profile             $(HOME)
+	cp    .profile           $(HOME)
+	rm -f $(HOME)/.xprofile
 	rm -f $(HOME)/.zprofile
-	ln -s $(HOME)/.profile     $(HOME)/.zprofile
 	rm -f $(HOME)/.bash_profile
-	ln -s $(HOME)/.profile     $(HOME)/.bash_profile
-	rm -f $(HOME)/.xprofile 
-	ln -s $(HOME)/.profile     $(HOME)/.xprofile
+	ln -s $(HOME)/.profile   $(HOME)/.xprofile
+	ln -s $(HOME)/.profile   $(HOME)/.zprofile
+	ln -s $(HOME)/.profile   $(HOME)/.bash_profile
 
-xinit:
-	cp    .xinitrc             $(HOME)
+x11:
+	cp -r .config/X11        $(CONFIG)/.
 
 i3:
-	cp -r .config/i3           $(CONFIG)
+	cp -r .config/i3         $(CONFIG)/.
 
 rofi:
-	cp -r .config/rofi         $(CONFIG)
+	cp -r .config/rofi       $(CONFIG)/.
 
 tmux:
-	rm -f $(HOME)/.tmux.conf
-	cp -r .config/tmux         $(CONFIG)
-	ln -s $(CONFIG)/tmux/tmux.conf $(HOME)/.tmux.conf  
-
-bashrc:
-	cp    .bashrc	           $(HOME)
-	cp    .inputrc             $(HOME)
+	cp -r .config/tmux       $(CONFIG)/.
 
 zsh:
-	cp -r .config/zsh          $(CONFIG)
+	cp -r .config/zsh/       $(CONFIG)/.
+
 
 fish:
-	cp -r .config/fish         $(CONFIG)
+	cp -r .config/fish       $(CONFIG)/.
 
 vim: 
-	rm -rf $(HOME)/.vim
-	rm -rf $(HOME)/.vimrc
-	cp -r .config/nvim         $(CONFIG)
-	cp    .config/nviminit.vim $(CONFIG)
-	ln -s $(CONFIG)/nvim/init.vim $(HOME)/.vimrc
-	ln -s $(HOME)/.config/nvim $(HOME)/.vim
+	cp -r .config/vim        $(CONFIG)/.
 
 fonts:
-	cp -r .config/fontconfig   $(CONFIG)
+	cp -r .config/fontconfig $(CONFIG)/.
 
 shell:
-	cp -r .config/shell        $(CONFIG)
+	cp -r .config/shell      $(CONFIG)/.
+

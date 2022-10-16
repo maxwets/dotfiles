@@ -5,6 +5,7 @@ set -o vi
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
+
 [ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
 [ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxy
 
