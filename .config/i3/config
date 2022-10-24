@@ -28,7 +28,7 @@ no_focus [class="plasmashell" window_type="notification"]
 
 font pango:monospace 18
 
-exec_always --no-startup-id feh --bg-fill ~/.local/share/wallpaper
+exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/wallpaper
 exec_always --no-startup-id picom -bcf
 exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
 
