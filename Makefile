@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CONFIG=$(HOME)/.config
 LOCAL=$(HOME)/.local
 CACHE=$(HOME)/.cache
@@ -39,8 +40,6 @@ tmux:
 zsh:
 	cp -r .config/zsh/       $(CONFIG)/.
 
-bashrc:
-	cp -r .bashrc            $(HOME)
 
 fish:
 	cp -r .config/fish       $(CONFIG)/.
