@@ -7,44 +7,50 @@ all:
 config: dirs profile x11 i3 rofi tmux zsh vim fonts shell
 
 dirs:
-	[ -d $(HOME)/docs ]       || mkdir $(HOME)/docs
-	[ -d $(HOME)/pics ]       || mkdir $(HOME)/pics
-	[ -d $(HOME)/src ]        || mkdir $(HOME)/src
-	[ -d $(HOME)/dl ]         || mkdir $(HOME)/dl
-	[ -d $(LOCAL) ]           || cp -r .local $(LOCAL)
-	[ -d $(CONFIG) ]          || mkdir $(CONFIG)
-	[ -d $(CACHE) ]           || mkdir $(CACHE)
+	[ -d $(HOME)/docs ]	|| mkdir $(HOME)/docs
+	[ -d $(HOME)/pics ]	|| mkdir $(HOME)/pics
+	[ -d $(HOME)/src ] 	|| mkdir $(HOME)/src
+	[ -d $(HOME)/dl ]   || mkdir $(HOME)/dl
+	[ -d $(LOCAL) ]     || cp -r .local $(LOCAL)
+	[ -d $(CONFIG) ]    || mkdir $(CONFIG)
+	[ -d $(CACHE) ]	    || mkdir $(CACHE)
 
 profile:
-	cp    .profile             $(HOME)
+	cp    .profile           $(HOME)
+	rm -f $(HOME)/.xprofile
+	rm -f $(HOME)/.zprofile
+	rm -f $(HOME)/.bash_profile
+	ln -s $(HOME)/.profile   $(HOME)/.xprofile
+	ln -s $(HOME)/.profile   $(HOME)/.zprofile
+	ln -s $(HOME)/.profile   $(HOME)/.bash_profile
 
 x11:
-	cp -r .config/X11          $(CONFIG)/.
+	cp -r .config/X11        $(CONFIG)/.
 
 i3:
-	cp -r .config/i3           $(CONFIG)/.
+	cp -r .config/i3         $(CONFIG)/.
 
 rofi:
-	cp -r .config/rofi         $(CONFIG)/.
+	cp -r .config/rofi       $(CONFIG)/.
 
 tmux:
-	cp -r .config/tmux         $(CONFIG)/.
+	cp -r .config/tmux       $(CONFIG)/.
 
 zsh:
-	cp -r .config/zsh/         $(CONFIG)/.
+	cp -r .config/zsh/       $(CONFIG)/.
 
 bashrc:
-	cp -r .bashrc              $(HOME)
+	cp -r .bashrc            $(HOME)
 
 fish:
-	cp -r .config/fish         $(CONFIG)/.
+	cp -r .config/fish       $(CONFIG)/.
 
 vim: 
-	cp -r .config/vim          $(CONFIG)/.
+	cp -r .config/vim        $(CONFIG)/.
 
 fonts:
-	cp -r .config/fontconfig   $(CONFIG)/.
+	cp -r .config/fontconfig $(CONFIG)/.
 
 shell:
-	cp -r .config/shell        $(CONFIG)/.
+	cp -r .config/shell      $(CONFIG)/.
 
