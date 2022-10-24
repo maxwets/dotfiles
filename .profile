@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export TERM="st"
+export TERMINAL="st"
 export EDITOR="nvim"
 export PAGER="less"
 export READER="zathura"
@@ -31,17 +32,16 @@ export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+#export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-export KDEHOME="$XDG_CONFIG_HOME"/kde
+#export KDEHOME="${XDG_CONFIG_HOME:-$HOME/.config}/kde"
 export LESSHISTFILE="-"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/X11/xinitrc"
+#export XAUTHORITY="${XDG_CONFIG_HOME:-$HOME/.config}/Xauthority"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
