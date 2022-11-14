@@ -25,6 +25,7 @@ libcairo2-dev
 libfreetype6-dev
 libghc-x11-xft-dev
 libglib2.0-dev
+libharfbuzz-dev
 libreadline-dev
 libvirt-daemon-system
 libx11-dev
