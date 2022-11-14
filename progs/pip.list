@@ -1,6 +1,7 @@
 droopescan
 impacket
 mitmproxy
+pe
 pyshell
 python-evtx
 pwntools
