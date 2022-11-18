@@ -1,0 +1,21 @@
+###############################################################################
+# Session Management
+###############################################################################
+
+## Session // Exit App // <> q ##
+set_from_resource $i3-wm.binding.exit_app i3-wm.binding.exit_app q
+bindsym $mod+$i3-wm.binding.exit_app [con_id="__focused__"] kill
+
+## Session // Restart i3 // <><Shift> r ##
+set_from_resource $i3-wm.binding.restart i3-wm.binding.restart Shift+r
+bindsym $mod+$i3-wm.binding.restart restart
+
+## Session // Power Down // <><Shift> p ##
+set_from_resource $i3-wm.binding.shutdown i3-wm.binding.shutdown Shift+p
+set_from_resource $i3-wm.program.shutdown i3-wm.program.shutdown /usr/bin/gnome-session-quit --power-off
+bindsym $mod+$i3-wm.binding.shutdown exec $i3-wm.program.shutdown
+
+## Session // Lock Screen // <><Shift> Escape ##
+set_from_resource $i3-wm.binding.lock i3-wm.binding.lock Shift+Escape
+set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+$i3-wm.binding.lock exec $i3-wm.program.lock

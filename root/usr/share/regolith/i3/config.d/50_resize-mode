@@ -1,0 +1,20 @@
+## Resize // Enter Resize Mode // <> r ##
+mode "Resize Mode" {
+        ## Resize // Resize Window // k j h l ##
+        bindsym $i3-wm.binding.left resize shrink width 3 px or 3 ppt
+        bindsym $i3-wm.binding.up resize grow height 3 px or 3 ppt
+        bindsym $i3-wm.binding.down resize shrink height 3 px or 3 ppt
+        bindsym $i3-wm.binding.right resize grow width 3 px or 3 ppt
+
+        bindsym $i3-wm.binding.move_left resize shrink width 6 px or 6 ppt
+        bindsym $i3-wm.binding.move_up resize grow height 6 px or 6 ppt
+        bindsym $i3-wm.binding.move_down resize shrink height 6 px or 6 ppt
+        bindsym $i3-wm.binding.move_right resize grow width 6 px or 6 ppt
+
+        ## Resize // Exit Resize Mode // Escape or Enter ##
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+set_from_resource $i3-wm.binding.resize_mode i3-wm.binding.resize_mode r
+bindsym $mod+$i3-wm.binding.resize_mode mode "Resize Mode"

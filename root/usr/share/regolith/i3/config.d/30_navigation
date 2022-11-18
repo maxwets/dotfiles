@@ -1,0 +1,33 @@
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+## Navigate // Relative Window // <> k j h l ##
+set_from_resource $i3-wm.binding.left i3-wm.binding.left h
+set_from_resource $i3-wm.binding.right i3-wm.binding.right l
+set_from_resource $i3-wm.binding.up i3-wm.binding.up k
+set_from_resource $i3-wm.binding.down i3-wm.binding.down j
+bindsym $mod+$i3-wm.binding.left focus left
+bindsym $mod+$i3-wm.binding.down focus down
+bindsym $mod+$i3-wm.binding.up focus up
+bindsym $mod+$i3-wm.binding.right focus right
+
+## Navigate // Workspaces 1-10 // <> 0..9 ##
+bindsym $mod+$ws1_key workspace number $ws1
+bindsym $mod+$ws2_key workspace number $ws2
+bindsym $mod+$ws3_key workspace number $ws3
+bindsym $mod+$ws4_key workspace number $ws4
+bindsym $mod+$ws5_key workspace number $ws5
+bindsym $mod+$ws6_key workspace number $ws6
+bindsym $mod+$ws7_key workspace number $ws7
+bindsym $mod+$ws8_key workspace number $ws8
+bindsym $mod+$ws9_key workspace number $ws9
+bindsym $mod+$ws10_key workspace number $ws10
+
+## Navigate // Next Workspace // <> Tab ##
+set_from_resource $i3-wm.binding.ws_next i3-wm.binding.ws_next Tab
+bindsym $mod+$i3-wm.binding.ws_next workspace next
+
+## Navigate // Previous Workspace // <><Shift> Tab ##
+set_from_resource $i3-wm.binding.ws_prev i3-wm.binding.ws_prev Shift+Tab
+bindsym $mod+$i3-wm.binding.ws_prev workspace prev
