@@ -4,7 +4,7 @@ CACHE=$(HOME)/.cache
 
 all: 
 
-config: dirs profile x11 i3 rofi tmux zsh powershell vim fonts shell wget
+config: dirs profile regolith rofi tmux zsh powershell vim fonts shell wget
 
 dirs:
 	[ -d $(HOME)/docs ] || mkdir $(HOME)/docs
@@ -23,6 +23,9 @@ profile:
 	ln -s $(HOME)/.profile $(HOME)/.xprofile
 	ln -s $(HOME)/.profile $(HOME)/.zprofile
 	ln -s $(HOME)/.profile $(HOME)/.bash_profile
+
+regolith:
+	cp -r ./root/usr/share/regolith/i3/config.d/* /usr/share/regolith/i3/config.d/.
 
 x11:
 	cp -r .config/X11 $(CONFIG)/.

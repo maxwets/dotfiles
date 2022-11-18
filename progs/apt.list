@@ -32,6 +32,7 @@ libx11-dev
 libxinerama1
 libxinerama-dev
 linux-headers-generic
+locate
 maim
 make
 most
@@ -73,7 +74,7 @@ tree
 unrar
 unzip
 vim
-vlc
+virt-manager
 wget
 wireshark
 xclip
