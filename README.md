@@ -11,57 +11,50 @@ make config
 ```
 
 ## Programs that I use
-- i3 (with KDE Plasma)
+- bspwm
 - rofi
-- st
-- zsh
+- alacritty
 - tmux
+- zsh
 - neovim
-- nnn
-- gruvbox
 
-### distro
-My current Linux distro is currently [Debian](https://debian.org).
+### Distro
+My current Linux distro is currently [Debian 11](https://debian.org).
 
-### i3-gaps
-My tiling window manager is [i3](https://github.com/i3/i3).
+### Window Manager
+My tiling window manager is [bspwm](https://github.com/baskerville/bspwm).
+I use it with:
+- [sxhkd](https://github.com/baskerville/sxhkd) to manage the binding keys;
+- [polybar](https://github.com/polybar/polybar) to manage the status bar;
+- [dunst](https://github.com/dunst-project/dunst) to manage notifications;
+- [picom](https://github.com/yshui/picom) as a compositor.
 
-### rofi
-[rofi](https://github.com/davatorium/rofi) is an alternative for [dmenu](https://github.com/maxwets/dmenu).
+### Launcher
+[rofi](https://github.com/davatorium/rofi) is an alternative for [dmenu](https://github.com/maxwets/dmenu) that is easier to configure.
 
-### st
-[st](https://tools.suckless.org/st) is a simple terminal developped by suckless.
-I use a [fork](https://github.com/maxwets/st) of [Luke Smith's config](https://github.com/LukeSmithxyz/st)
-
-### zsh
+### Shell
 I use [zsh](https://www.zsh.org/).
 
-### tmux
+### Terminal Multiplexer
 I use [tmux](https://github.com/tmux/tmux) for managing multiple terminals.
 
-### neovim
+### Editor
 [neovim](https://neovim.io) is my text editor.
 My plugin manager is [vim-plug](https://github.com/junegunn/vim-plug).
 
-### nnn
-[nnn](https://github.com/jarun/nnn) is my file browser.
-
-### gruvbox
-[gruvbox](https://github.com/morhetz/gruvbox) is a beautiful theme that I use with st, tmux, vim and rofi.
-
 ## Key bindings
 
-### i3
+### Window Manager
 The Modifier I use is `$Mod4` aka Windows key.
-- `M-Enter` : spawn terminal;
+- `M-Enter` : spawn `$TERM`;
+- `M-Shift-Enter` : spawn `$BROWSER`;
 - `M-Space` : spawn `rofi`;
-- `M-w` : spawn `firefox`;
 - `M-R` : reload config;
 - `M-p` : take screenshot and copy to clipboard;
-- `M-P` : take screenshot and save to ~/Pictures/screenshot\_date;
+- `M-P` : take screenshot and save it;
 - `M-n` : spawn `nnn`;
 - `M-q` : kill focused window.
-I use Vim keys for moving windows.
+I use `M-Vi` keys for moving windows.
 
 ### tmux
 The Modifier I use is the `Alt` key.
@@ -82,12 +75,9 @@ Copy pasting with the mouse is enabled.
 - `y` : copy;
 - `p` : paste.
 
-### st
-I use the `Alt-Vi` keys to move around
-
 ### zsh
 I use the Vi key bindings with the following shortcuts for autosuggest :
-- `Alt-z` : autosuggest-accept;
+- `M-z` : autosuggest-accept;
 
 ## LICENCE
 MIT Licence

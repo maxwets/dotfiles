@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+nmon=`xrandr --listmonitors | sed 1q | cut -d' ' -f2`
+lmon=`xrandr --listmonitors | sed 1d | grep -o '[^\ ]*$'`
+
+[[ $nmon = "1" ]] && \
+	bspc monitor $lmon -1 -d I II III IV V VI VII VIII IX X;
+
+[[ $nmon = "2" ]] && \
+	mon1=`echo $lmon | cut -d' ' -f1` && \
+	mon2=`echo $lmon | cut -d' ' -f2` && \
+	xrandr --output $mon2 --auto && \
+	xrandr --output $mon3 --auto && \
+	bspc monitor $mon1 -d I  II  III  IV V && \
+	bspc monitor $mon2 -d VI VII VIII IX X;
+
+[[ $nmon = "3" ]] && \
+	mon1=`echo $lmon | cut -d' ' -f1` && \
+	mon2=`echo $lmon | cut -d' ' -f2` && \
+	mon3=`echo $lmon | cut -d' ' -f3` && \
+	xrandr --output $mon1 --off && \
+	xrandr --output $mon2 --auto && \
+	xrandr --output $mon3 --auto && \
+	bspc monitor $mon2 -d I  II  III  IV V && \
+	bspc monitor $mon3 -d VI VII VIII IX X;

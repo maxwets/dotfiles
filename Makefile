@@ -4,31 +4,39 @@ CACHE=$(HOME)/.cache
 
 all: 
 
-config: dirs profile regolith rofi tmux zsh powershell vim fonts shell wget
+config: dirs profile x11 wm rofi tmux zsh vim misc
 
 dirs:
-	[ -d $(HOME)/docs ] || mkdir $(HOME)/docs
-	[ -d $(HOME)/pics ] || mkdir $(HOME)/pics
-	[ -d $(HOME)/src ] || mkdir $(HOME)/src
-	[ -d $(HOME)/dl ] || mkdir $(HOME)/dl
-	[ -d $(LOCAL) ] || cp -r .local $(LOCAL)
-	[ -d $(CONFIG) ] || mkdir $(CONFIG)
-	[ -d $(CACHE) ] || mkdir $(CACHE)
+	[ -d $(LOCAL) ]  || cp -r .local $(LOCAL)
+	[ -d $(CONFIG) ] || mkdir -p $(CONFIG)
+	[ -d $(CACHE) ]  || mkdir -p $(CACHE)
 
 profile:
 	cp .profile $(HOME)
 	rm -f $(HOME)/.xprofile
 	rm -f $(HOME)/.zprofile
 	rm -f $(HOME)/.bash_profile
-	ln -s $(HOME)/.profile $(HOME)/.xprofile
-	ln -s $(HOME)/.profile $(HOME)/.zprofile
-	ln -s $(HOME)/.profile $(HOME)/.bash_profile
-
-regolith:
-	cp -r ./root/usr/share/regolith/i3/config.d/* /usr/share/regolith/i3/config.d/.
 
 x11:
 	cp -r .config/X11 $(CONFIG)/.
+
+wm: bspwm sxhkd polybar dunst
+
+desktop:
+	cp bspwm.desktop /usr/share/xsessions/bspwm.desktop
+
+bspwm:
+	cp -r .config/bspwm $(CONFIG)/.
+
+sxhkd:
+	cp -r .config/sxhkd $(CONFIG)/.
+
+polybar:
+	git clone https://github.com/adi1090x/polybar-themes /tmp/polybar-themes && \
+		/tmp/polybar-themes/setup.sh
+
+dunst:
+	cp -r .config/dunst $(CONFIG)/.
 
 i3:
 	cp -r .config/i3 $(CONFIG)/.
@@ -42,17 +50,16 @@ tmux:
 zsh:
 	cp -r .config/zsh/ $(CONFIG)/.
 
+vim: 
+	cp -r .config/vim $(CONFIG)/.
+
+misc: powershell fish shell wget
+
 powershell:
 	cp -r .config/powershell/ $(CONFIG)/.
 
 fish:
 	cp -r .config/fish $(CONFIG)/.
-
-vim: 
-	cp -r .config/vim $(CONFIG)/.
-
-fonts:
-	cp -r .config/fontconfig $(CONFIG)/.
 
 shell:
 	cp -r .config/shell $(CONFIG)/.
