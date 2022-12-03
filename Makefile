@@ -51,7 +51,7 @@ zsh:
 	cp -r .config/zsh/ $(CONFIG)/.
 
 vim: 
-	cp -r .config/vim $(CONFIG)/.
+	cp -r .config/nvim $(CONFIG)/.
 
 misc: powershell fish shell wget
 

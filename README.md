@@ -14,6 +14,7 @@ make config
 - bspwm
 - rofi
 - alacritty
+- felix
 - tmux
 - zsh
 - neovim
@@ -37,6 +38,9 @@ I use [zsh](https://www.zsh.org/).
 
 ### Terminal Multiplexer
 I use [tmux](https://github.com/tmux/tmux) for managing multiple terminals.
+
+### Terminal File Browser
+I use [felix](https://github.com/kyoheiu/felix) which is a TUI file browser written in Rust.
 
 ### Editor
 [neovim](https://neovim.io) is my text editor.
@@ -74,10 +78,6 @@ Copy pasting with the mouse is enabled.
 - `Escape` : enter visual mode;
 - `y` : copy;
 - `p` : paste.
-
-### zsh
-I use the Vi key bindings with the following shortcuts for autosuggest :
-- `M-z` : autosuggest-accept;
 
 ## LICENCE
 MIT Licence
