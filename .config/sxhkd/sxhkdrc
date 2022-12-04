@@ -22,6 +22,9 @@ super + p
 super + shift + p
 	maim --select ~/pics/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
 
+super + shift + Escape
+	betterlockscreen -l dim
+
 super + q
 	bspc node -c
 

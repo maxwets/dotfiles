@@ -1,6 +1,5 @@
 set $mod Mod4
-set $term $TERMINAL
-set $browser $BROWSER
+set $alt Mod1
 floating_modifier $mod
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
@@ -10,54 +9,54 @@ client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [class="yakuake"] floating enable
-for_window [class="systemsettings"] floating enable
-for_window [class="plasmashell"] floating enable;
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
+workspace 1  output DP-1-8
+workspace 2  output DP-1-8
+workspace 1  output DP-1-8
+workspace 4  output DP-1-8
+workspace 5  output DP-1-8
+workspace 6  output DP-1-9
+workspace 7  output DP-1-9
+workspace 8  output DP-1-9
+workspace 9  output DP-1-9
+workspace 10 output DP-1-9
 
 font pango:monospace 18
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/wallpaper
-exec_always --no-startup-id picom -bcf
-exec_always --no-startup-id setxkbmap be -option "caps:swapescape"
+#exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-fill ~/.local/share/wallpaper
+exec_always --no-startup-id /usr/bin/picom -bcf
+exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
+exec_always --no-startup-id /usr/bin/nm-applet
 
-bindsym $mod+Return  exec --no-startup-id $term
-bindsym $mod+w       exec --no-startup-id $browser
-bindsym $mod+space   exec --no-startup-id rofi -show-icons -show drun
-bindsym $mod+o       exec --no-startup-id rofi -show-icons -show window
-bindsym $mod+n       exec --no-startup-id $term -e nnn -HSadeor .
-bindsym $mod+p       exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+p exec --no-startup-id maim --select ~/pics/screenshot_$(date +"%Y:%m:%d-%H:%M:%S").png
-bindsym $mod+q       [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+gaps inner 5
+gaps outer 0
+smart_gaps on
+hide_edge_borders smart
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+focus_follows_mouse yes
+
+bindsym $mod+Return  exec --no-startup-id /usr/bin/x-terminal-emulator
+Bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
+bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
+bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
+bindsym $mod+n       exec --no-startup-id /usr/bin/nautilus --new-window
+bindsym $mod+s       exec --no-startup-id /usr/bin/regolith-control-center --class=floating_window
+
+bindsym $mod+f         fullscreen toggle
+bindsym $mod+Shift+f   floating   toggle
+bindsym $mod+BackSpace split      toggle
+bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+Shift+r   restart
+
+bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/fx
+bindsym $mod+Shift+Escape exec --no-startup-id /usr/bin/betterlockscreen -l dim
+bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-bindsym $mod+Shift+h move left  30
-bindsym $mod+Shift+j move down  30
-bindsym $mod+Shift+k move up    30
-bindsym $mod+Shift+l move right 30
-bindsym $mod+u 		 resize grow   width  5 px or 5 ppt
-bindsym $mod+Shift+u resize shrink width  5 px or 5 ppt
-bindsym $mod+i 		 resize grow   height 5 px or 5 ppt
-bindsym $mod+Shift+i resize shrink height 5 px or 5 ppt
-
-bindsym $mod+Shift+Return split toggle
-bindsym $mod+f            fullscreen toggle
-bindsym $mod+Shift+space  floating toggle
 
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2
@@ -69,17 +68,28 @@ bindsym $mod+egrave     workspace 7
 bindsym $mod+exclam     workspace 8
 bindsym $mod+ccedilla   workspace 9
 bindsym $mod+agrave     workspace 10
-bindsym $mod+Tab        workspace back_and_forth
+bindsym $mod+Tab        workspace next
+bindsym $mod+Shift+Tab  workspace previous
 
 bindsym $mod+Shift+ampersand  move container to workspace 1
 bindsym $mod+Shift+eacute 	  move container to workspace 2
 bindsym $mod+Shift+quotedbl   move container to workspace 3
 bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+5 		  move container to workspace 5
+bindsym $mod+Shift+parenleft  move container to workspace 5
 bindsym $mod+Shift+section	  move container to workspace 6
 bindsym $mod+Shift+egrave     move container to workspace 7
 bindsym $mod+Shift+exclam     move container to workspace 8
 bindsym $mod+Shift+ccedilla   move container to workspace 9
 bindsym $mod+Shift+agrave     move container to workspace 10
 
-bindsym $mod+Shift+r restart
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+		bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"

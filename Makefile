@@ -4,7 +4,7 @@ CACHE=$(HOME)/.cache
 
 all: 
 
-config: dirs profile x11 wm rofi tmux zsh vim misc
+config: dirs profile x11 i3 rofi tmux zsh vim misc
 
 dirs:
 	[ -d $(LOCAL) ]  || cp -r .local $(LOCAL)
@@ -16,11 +16,12 @@ profile:
 	rm -f $(HOME)/.xprofile
 	rm -f $(HOME)/.zprofile
 	rm -f $(HOME)/.bash_profile
+	ln -s $(HOME)/.profile $(HOME)/.xprofile
+	ln -s $(HOME)/.profile $(HOME)/.zprofile
 
 x11:
 	cp -r .config/X11 $(CONFIG)/.
-
-wm: bspwm sxhkd polybar dunst
+	cp .xsession $(HOME)/.
 
 desktop:
 	cp bspwm.desktop /usr/share/xsessions/bspwm.desktop
@@ -37,6 +38,9 @@ polybar:
 
 dunst:
 	cp -r .config/dunst $(CONFIG)/.
+
+betterlockscreen:
+	cp -r .config/betterlockscreen $(CONFIG)/.
 
 i3:
 	cp -r .config/i3 $(CONFIG)/.

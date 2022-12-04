@@ -41,7 +41,6 @@ export KDEHOME="$XDG_CONFIG_HOME"/kde
 export LESSHISTFILE="-"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/password-store
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WORKON_HOME="$XDG_DATA_HOME"/virtualenvs
 export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
