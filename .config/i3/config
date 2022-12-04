@@ -41,6 +41,8 @@ bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+n       exec --no-startup-id /usr/bin/nautilus --new-window
+bindsym $mod+m       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt 
+bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/weechat
 bindsym $mod+s       exec --no-startup-id /usr/bin/regolith-control-center --class=floating_window
 
 bindsym $mod+f         fullscreen toggle

@@ -4,7 +4,7 @@ CACHE=$(HOME)/.cache
 
 all: 
 
-config: dirs profile x11 i3 rofi tmux zsh vim misc
+config: dirs profile x11 term i3 rofi tmux zsh vim shell misc
 
 dirs:
 	[ -d $(LOCAL) ]  || cp -r .local $(LOCAL)
@@ -23,8 +23,8 @@ x11:
 	cp -r .config/X11 $(CONFIG)/.
 	cp .xsession $(HOME)/.
 
-desktop:
-	cp bspwm.desktop /usr/share/xsessions/bspwm.desktop
+term:
+	cp -r .config/alacritty $(CONFIG)/.
 
 bspwm:
 	cp -r .config/bspwm $(CONFIG)/.
@@ -57,6 +57,9 @@ zsh:
 vim: 
 	cp -r .config/nvim $(CONFIG)/.
 
+shell:
+	cp -r .config/shell $(CONFIG)/.
+
 misc: powershell fish shell wget
 
 powershell:
@@ -64,9 +67,6 @@ powershell:
 
 fish:
 	cp -r .config/fish $(CONFIG)/.
-
-shell:
-	cp -r .config/shell $(CONFIG)/.
 
 wget:
 	cp -r .config/wget $(CONFIG)/.

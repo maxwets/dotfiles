@@ -40,9 +40,11 @@ export INPUTRC="$XDG_CONFIG_HOME"/shell/inputrc
 export KDEHOME="$XDG_CONFIG_HOME"/kde
 export LESSHISTFILE="-"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/password-store
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export WORKON_HOME="$XDG_DATA_HOME"/virtualenvs
+export WEECHAT_HOME="${XDG_CONFIG_HOME}"/weechat
 export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
+export WORKON_HOME="$XDG_DATA_HOME"/virtualenvs
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 

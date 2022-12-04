@@ -26,8 +26,8 @@ alias \
 # convenience
 alias \
 	cd..="cd .." \
-	la="ls -lArt" \
-	ll="ls -lrt" \
+	la="ls -lA" \
+	ll="ls -l" \
 	nnn="nnn -HSadeor ." \
 	vim="nvim" \
 	vi="nvim" \
