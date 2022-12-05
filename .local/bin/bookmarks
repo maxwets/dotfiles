@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+name=$(cat "$HOME/.local/share/links" | cut -d',' -f1 | rofi -i -dmenu)
+if [[ ! -z "$link" ]]; then
+	link=$(grep "$name" "$HOME/.local/share/links")
+
+xdotool type "$link"

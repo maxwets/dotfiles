@@ -1,15 +1,15 @@
 CONFIG=$(HOME)/.config
 LOCAL=$(HOME)/.local
-CACHE=$(HOME)/.cache
 
 all: 
 
 config: dirs profile x11 term i3 rofi tmux zsh vim shell misc
 
 dirs:
-	[ -d $(LOCAL) ]  || cp -r .local $(LOCAL)
 	[ -d $(CONFIG) ] || mkdir -p $(CONFIG)
-	[ -d $(CACHE) ]  || mkdir -p $(CACHE)
+	[ -d $(LOCAL) ]  || mkdir -p $(LOCAL)/{bin,cache,share}
+	cp -r .local/bin/*   $(LOCAL)/bin/.
+	cp -r .local/share/* $(LOCAL)/share/.
 
 profile:
 	cp .profile $(HOME)
