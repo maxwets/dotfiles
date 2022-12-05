@@ -1,7 +1,0 @@
-#!/bin/sh
-
-db="$HOME/.local/share/vault";
-pass=`rofi -dmenu -password`;
-list=`echo $pass | keepassxc-cli ls $db`;
-elem=`echo $list | rofi -dmenu`;
-echo $pass | keepassxc-cli clip $db $elem;
