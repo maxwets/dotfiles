@@ -1,2 +1,2 @@
 #!/bin/sh
-man -k . | sort | dmenu -i -h 30 -l 15 -fn 'monospace 24' | awk '{print $1}' | xargs -r man -t | ps2pdf - | zathura -
+man -k . | sort | rofi -dmenu | awk '{print $1}' | xargs -r man -t | ps2pdf - | zathura -

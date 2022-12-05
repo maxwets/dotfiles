@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 name=$(cat "$HOME/.local/share/links" | cut -d',' -f1 | rofi -i -dmenu)
-if [[ ! -z "$link" ]]; then
-	link=$(grep "$name" "$HOME/.local/share/links")
+if [[ ! -z "$name" ]]; then
+	link=$(grep "$name" "$HOME/.local/share/links" | cut -d',' -f2 | sed 1q)
+	setxkbmap be && xdotool type "$link"
+fi
 
-xdotool type "$link"
