@@ -1,36 +1,41 @@
 # verbosity
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkdir="mkdir -pv";
+	cp='cp -iv' \
+	mv='mv -iv' \
+	rm='rm -vI' \
+	mkdir='mkdir -pv';
 
 # colors
 alias \
-	ls="ls -hNSv --size -1 --color=auto --group-directories-first --classify" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ip="ip -color=auto";
+	ls='ls -hNSv --size -1 --color=auto --group-directories-first --classify' \
+	grep='grep --color=auto' \
+	diff='diff --color=auto' \
+	ip='ip -color=auto';
 
 # security
 alias \
-	chmod="chmod --preserve-root" \
-	chown="chown --preserve-root" \
-	rm="rm --preserve-root";
+	chmod='chmod --preserve-root' \
+	chown='chown --preserve-root' \
+	rm='rm --preserve-root';
 	
 # sudo
 alias \
-	apt-get="sudo apt-get" \
-	alias apt="sudo apt"
+	apt-get='sudo apt-get' \
+	apt='sudo apt';
+
+# useful containers
+alias \
+	kali='docker run --rm --name kali --tty -d kalilinux/kali-rolling:latest' \
+	cyberchef='docker run --rm --name cyberchef -dp 8000:8000 mpepping/cyberchef';
 
 # convenience
 alias \
-	cd..="cd .." \
-	la="ls -lArt" \
-	ll="ls -lrt" \
-	nnn="nnn -HSadeor ." \
-	vim="nvim" \
-	vi="nvim" \
+	cd..='cd ..' \
+	la='ls -lA' \
+	ll='ls -l' \
+	nnn='nnn -HSadeor .' \
+	vim='nvim' \
+	vi='nvim' \
 	clip="xclip -selection 'clip'";
 
 # xdg-cleaning
@@ -40,4 +45,20 @@ alias \
 
 # cURL with proxy (BBH)
 alias \
-	c="curl --proxy http://127.0.0.1:8080 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem --insecure -L ";
+	c='curl --proxy http://127.0.0.1:8080 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem --insecure -L ';
+
+# systemd
+alias \
+	s='systemctl' \
+	sd='systemctl disable' \
+	se='systemctl enable --now' \
+	sp='systemctl stop' \
+	sr='systemctl daemon-reload' \
+	ss='systemctl status' \
+	st='systemctl start' \
+	j='journalctl -xe' \
+	ju='journalctl -xeu';
+
+# for FUN
+alias \
+	starwarslol='telnet towel.blinkenlights.nl';

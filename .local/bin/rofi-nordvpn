@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+country=$(nordvpn countries | tr '\t' '\n' | sed '/^$/d' | rofi -dmenu -i)
+
+[[ ! -z "$country" ]] && nordvpn c "$country"

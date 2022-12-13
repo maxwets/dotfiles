@@ -60,7 +60,13 @@ vim:
 shell:
 	cp -r .config/shell $(CONFIG)/.
 
-misc: powershell fish shell wget
+misc: wget keepmenu felix
+
+keepmenu:
+	cp -r .config/keepmenu $(CONFIG)/.
+
+felix:
+	cp -r .config/felix $(CONFIG)/.
 
 powershell:
 	cp -r .config/powershell/ $(CONFIG)/.

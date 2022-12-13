@@ -1,0 +1,16 @@
+default: nvim
+
+exec:
+  sxiv:
+    [jpg, jpeg, png, gif, svg]
+  zathura:
+    [pdf]
+
+syntax_highlight: true
+
+default_theme: SolarizedDark
+
+color:
+  dir_fg: LightCyan
+  file_fg: LightWhite
+  symlink_fg: LightYellow

@@ -21,7 +21,12 @@ alias \
 # sudo
 alias \
 	apt-get="sudo apt-get" \
-	alias apt="sudo apt"
+	apt="sudo apt";
+
+# useful containers
+alias \
+	kali="docker run --rm --name kali --tty -d kalilinux/kali-rolling:latest" \
+	cyberchef="docker run --rm --name cyberchef -dp 8000:8000 mpepping/cyberchef";
 
 # convenience
 alias \
@@ -41,3 +46,7 @@ alias \
 # cURL with proxy (BBH)
 alias \
 	c="curl --proxy http://127.0.0.1:8080 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem --insecure -L ";
+
+# for FUN
+alias \
+	starwarslol="telnet towel.blinkenlights.nl";

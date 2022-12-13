@@ -11,7 +11,7 @@ client.background       #ffffff
 
 workspace 1  output DP-1-8
 workspace 2  output DP-1-8
-workspace 1  output DP-1-8
+workspace 3  output DP-1-8
 workspace 4  output DP-1-8
 workspace 5  output DP-1-8
 workspace 6  output DP-1-9
@@ -35,7 +35,7 @@ floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
 focus_follows_mouse yes
 
-bindsym $mod+Return  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fish
+bindsym $mod+Return  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/zsh
 Bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
 bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
@@ -43,11 +43,17 @@ bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screensh
 bindsym $mod+n       exec --no-startup-id /usr/bin/nautilus --new-window
 bindsym $mod+m       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt 
 bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/weechat
-bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc $HOME/.local/share/vault
+bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc ~/.local/share/vault
 bindsym $mod+s       exec --no-startup-id /usr/bin/regolith-control-center --class=floating_window
+bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window https://discord.com/channels/@me
 
-bindsym $mod+b       exec --no-startup-id $HOME/.local/bin/bookmarks
-bindsym $mod+t       exec --no-startup-id $HOME/.local/bin/mansplain
+bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
+bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
+bindsym $mod+t       exec --no-startup-id ~/.local/bin/mansplain
+bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/rofi-nordvpn
+bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/keepmenu
+bindsym $mod+x       exec --no-startup-id ~/.local/bin/rofi-rdp-htb
+bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/insert-emoji
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
@@ -56,13 +62,18 @@ bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+r   restart
 
 bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/fx
-bindsym $mod+Shift+Escape exec --no-startup-id /usr/bin/betterlockscreen -l dim
+bindsym $mod+Shift+Escape exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move container left
+bindsym $mod+Shift+j move container down
+bindsym $mod+Shift+k move container up
+bindsym $mod+Shift+l move container right
 
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2
