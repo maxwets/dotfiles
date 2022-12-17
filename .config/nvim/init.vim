@@ -30,19 +30,15 @@ set mouse=a
 let mapleader = " "
 nnoremap <leader>q :q<CR>
 
-" Config for NERDTree
-nmap ù :NERDTreeToggle<ENTER>
-let NERDTreeShowHidden=1
-
 " Copy to X clipboard
 vnoremap YY "+y
 nnoremap YY "+yy
 
 " Character encoding/decoding
-vnoremap <leader>eu :!python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().strip()))'<CR>
-vnoremap <leader>du :!python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().strip()))'<CR>
-vnoremap <leader>eb :'<,'>!python3 -m base64<CR>
-vnoremap <leader>db :'<,'>!python3 -m base64 -d<CR>
+vnoremap <leader>u :!python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().rstrip("\n")))'<CR>
+vnoremap <leader>U :!python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().rstrip("\n")))'<CR>
+vnoremap <leader>b c<c-r>=system("base64 -w 0", @")<cr><esc>
+vnoremap <leader>B c<c-r>=system("base64 -d", @")<cr><esc>
 
 " movement keys
 nnoremap j gj
@@ -50,20 +46,16 @@ vnoremap j gj
 nnoremap k gk
 vnoremap k gk
 
+" Move cursor to ^ and $
+nnoremap ç 0
+vnoremap ç 0
+nnoremap à $
+vnoremap à $
+
 " Tab management
 nnoremap <leader>t :tabnew<CR>:e 
 nnoremap <leader>n :tabnext<CR>
 nnoremap <leader>p :tabprev<CR> 
-
-" Split management
-"nnoremap <leader>j <C-W><C-J>
-"nnoremap <leader>k <C-W><C-K>
-"nnoremap <leader>l <C-W><C-L>
-"nnoremap <leader>h <C-W><C-H>
-"nnoremap <leader>h :sp<CR>:e 
-"nnoremap <leader>v :vs<CR>:e 
-"set splitbelow
-"set splitright
 
 " VCM config
 autocmd FileType vim let b:vcm_tab_complete = 'vim'

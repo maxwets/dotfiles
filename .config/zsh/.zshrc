@@ -4,7 +4,6 @@ WORDCHARS=${WORDCHARS//\/}
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 autoload -Uz vcs_info
 setopt PROMPT_SUBST
-bindkey '^[z' autosuggest-accept
 
 HISTSIZE=99999
 SAVEHIST=99999
@@ -25,7 +24,7 @@ setopt promptsubst
 
 [ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
 [ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
-[ -e $HOME/.config/zsh/autosuggestions.zsh ] && source $HOME/.config/zsh/autosuggestions.zsh
+[ -e $HOME/.local/bin/autosuggestions.zsh ] && source $HOME/.local/bin/autosuggestions.zsh
 
 function zle-keymap-select () {
     case $KEYMAP in
@@ -43,6 +42,7 @@ echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
 
 bindkey -v
+bindkey "^?" backward-delete-char
 autoload -U compinit
 zstyle ':vcs_info:git:*' formats '%b '
 zmodload zsh/complist
@@ -66,5 +66,3 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-dsh() { docker exec -it $1 /bin/sh; }
-vbstop() { vboxmanage controlvm $1 poweroff soft; }
