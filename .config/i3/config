@@ -26,6 +26,7 @@ font pango:monospace 18
 exec_always --no-startup-id /usr/bin/picom -bcf
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 exec_always --no-startup-id /usr/bin/nm-applet
+exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
 
 gaps inner 5
 gaps outer 0
@@ -42,7 +43,7 @@ bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -select
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+n       exec --no-startup-id /usr/bin/nautilus --new-window
 bindsym $mod+m       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt 
-bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/weechat
+bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/irssi
 bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc ~/.local/share/vault
 bindsym $mod+s       exec --no-startup-id /usr/bin/regolith-control-center --class=floating_window
 bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window https://discord.com/channels/@me
@@ -53,7 +54,8 @@ bindsym $mod+t       exec --no-startup-id ~/.local/bin/mansplain
 bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/rofi-nordvpn
 bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/keepmenu
 bindsym $mod+x       exec --no-startup-id ~/.local/bin/rofi-rdp-htb
-bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/insert-emoji
+bindsym $mod+e       exec --no-startup-id ~/.local/bin/insert-emoji
+bindsym $mod+c       exec --no-startup-id ~/.local/bin/start-bluetooth
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle

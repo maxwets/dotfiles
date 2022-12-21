@@ -41,26 +41,28 @@ alias \
 
 # systemd
 alias \
-        s="systemctl" \
-        sa="systemctl status" \
-        st="systemctl start" \
-        sp="systemctl stop" \
-        se="systemctl enable --now" \
-        sd="systemctl disable" \
-        sr="systemctl daemon-reload" \
-        j="journalctl -xe" \
-        ju="journalctl -xeu";
+	s="systemctl" \
+	sa="systemctl status" \
+	st="systemctl start" \
+	sp="systemctl stop" \
+	se="systemctl enable --now" \
+	sd="systemctl disable" \
+	sr="systemctl daemon-reload" \
+	j="journalctl -xe" \
+	ju="journalctl -xeu";
 
 # xdg-cleaning
 alias \
 	mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy" \
 	mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy" \
-	irssi="irssi --config=\"$XDG_CONFIG_HOME\"/irssi/config --home=\"$XDG_DATA_HOME\"/irssi";
+	irssi="irssi --config=\"$XDG_CONFIG_HOME\"/irssi/config --home=\"$XDG_DATA_HOME\"/irssi" \
+	wget="wget --hsts-file=\"XDG_DATA_HOME\"/wget-hsts"
 
 # Web App pentesting
 alias \
 	c="curl --proxy http://127.0.0.1:8080 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem --insecure -L " \
-	ffuf="ffuf -t 64 -c -s";
+	ffuf="ffuf -t 64 -c" \
+	f="ffuf -t 64 -c -v -replay-proxy http://localhost:8080/";
 
 # for FUN
 alias \

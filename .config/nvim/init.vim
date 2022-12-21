@@ -3,6 +3,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'qtc-de/vve'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -28,34 +29,28 @@ set mouse=a
 
 " leader keymaps
 let mapleader = " "
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :q<cr>
 
 " Copy to X clipboard
 vnoremap YY "+y
 nnoremap YY "+yy
 
 " Character encoding/decoding
-vnoremap <leader>u :!python3 -c 'import sys; from urllib import parse; print(parse.quote_plus(sys.stdin.read().rstrip("\n")))'<CR>
-vnoremap <leader>U :!python3 -c 'import sys; from urllib import parse; print(parse.unquote_plus(sys.stdin.read().rstrip("\n")))'<CR>
-vnoremap <leader>b c<c-r>=system("base64 -w 0", @")<cr><esc>
-vnoremap <leader>B c<c-r>=system("base64 -d", @")<cr><esc>
+noremap <leader>b c<c-r>=system("base64 -w 0", @")<cr><esc>
+noremap <leader>B c<c-r>=system("base64 -d", @")<cr><esc>
 
 " movement keys
-nnoremap j gj
-vnoremap j gj
-nnoremap k gk
-vnoremap k gk
+noremap j gj
+noremap k gk
 
 " Move cursor to ^ and $
-nnoremap ç 0
-vnoremap ç 0
-nnoremap à $
-vnoremap à $
+noremap ç 0
+noremap à $
 
 " Tab management
-nnoremap <leader>t :tabnew<CR>:e 
-nnoremap <leader>n :tabnext<CR>
-nnoremap <leader>p :tabprev<CR> 
+noremap <leader>t :tabnew<cr>:e 
+noremap <leader>n :tabnext<cr>
+noremap <leader>p :tabprev<cr> 
 
 " VCM config
 autocmd FileType vim let b:vcm_tab_complete = 'vim'
