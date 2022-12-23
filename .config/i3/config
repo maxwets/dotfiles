@@ -22,11 +22,11 @@ workspace 10 output DP-1-9
 
 font pango:monospace 18
 
-#exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-fill ~/.local/share/wallpaper
+exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-fill ~/.local/share/wallpaper
 exec_always --no-startup-id /usr/bin/picom -bcf
 exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 exec_always --no-startup-id /usr/bin/nm-applet
-exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 gaps inner 5
 gaps outer 0
@@ -37,7 +37,7 @@ for_window [class="floating_window"] floating enable
 focus_follows_mouse yes
 
 bindsym $mod+Return  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/zsh
-Bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
+bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
 bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
@@ -63,7 +63,7 @@ bindsym $mod+BackSpace split      toggle
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+r   restart
 
-bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/fx
+bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
 bindsym $mod+Shift+Escape exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
 

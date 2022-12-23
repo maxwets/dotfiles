@@ -4,4 +4,4 @@ function fail () { dunstify "Failed to insert Emoji :("; }
 
 emoji=$(cat ~/.local/share/emoji | rofi -dmenu | cut -d' ' -f1)
 [[ -z "$emoji" ]] && fail;
-[[ ! -z "$emoji" ]] && xdotool "$emoji";
+[[ ! -z "$emoji" ]] && xdotool type "$emoji";

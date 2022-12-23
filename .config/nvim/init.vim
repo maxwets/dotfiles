@@ -50,3 +50,8 @@ if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
 set background=dark
 colorscheme PaperColor
+
+lua << EOF
+  require("which-key").setup {
+  }
+EOF
