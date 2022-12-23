@@ -1,7 +1,10 @@
 CONFIG=$(HOME)/.config
 LOCAL=$(HOME)/.local
 
-all: 
+all: backup config
+
+backup:
+	zip -r $(HOME)/backup.zip $(HOME)/{.local,.config,.profile}
 
 config: dirs profile x11 term i3 rofi tmux zsh vim shell misc
 
@@ -15,7 +18,6 @@ profile:
 	cp .profile $(HOME)
 	rm -f $(HOME)/.xprofile
 	rm -f $(HOME)/.zprofile
-	rm -f $(HOME)/.bash_profile
 	ln -s $(HOME)/.profile $(HOME)/.xprofile
 	ln -s $(HOME)/.profile $(HOME)/.zprofile
 
