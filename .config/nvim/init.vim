@@ -1,19 +1,20 @@
 call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'folke/which-key.nvim'
 Plug 'itchyny/lightline.vim'
+Plug 'jghauser/mkdir.nvim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'mhinz/vim-startify'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'qtc-de/vve'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'folke/which-key.nvim'
-Plug 'mhinz/vim-startify'
-Plug 'jghauser/mkdir.nvim'
 call plug#end()
 
 filetype plugin indent on
 syntax enable
+autocmd BufEnter * COQnow
 
-" Basic config
 set number
 set relativenumber
 set ignorecase

@@ -22,7 +22,8 @@ alias \
 alias \
 	apt-get='sudo apt-get' \
 	apt='sudo apt' \
-	aptitude='sudo aptitude';
+	aptitude='sudo aptitude' \
+	pacman='sudo pacman';
 
 # useful containers
 alias \
@@ -43,11 +44,12 @@ alias \
 alias \
 	s='systemctl' \
 	sa='systemctl status' \
-	st='systemctl start' \
-	sp='systemctl stop' \
-	se='systemctl enable --now' \
-	sd='systemctl disable' \
-	sr='systemctl daemon-reload' \
+	st='sudo systemctl start' \
+	sr='sudo systemctl restart' \
+	sp='sudo systemctl stop' \
+	se='sudo systemctl enable --now' \
+	sd='sudo systemctl disable' \
+	sl='sudo systemctl daemon-reload' \
 	j='journalctl -xe' \
 	ju='journalctl -xeu';
 

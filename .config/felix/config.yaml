@@ -2,9 +2,9 @@ default: nvim
 
 exec:
   sxiv:
-    [jpg, jpeg, png, gif, svg]
+    [jpg, jpeg, png, gif, svg, webp]
   zathura:
-    [pdf]
+    [pdf, djvu, epub, ps]
 
 syntax_highlight: true
 

@@ -1,7 +1,8 @@
-PROMPT='%F{cyan}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
-PROMPT_EOL_MARK=""
-WORDCHARS=${WORDCHARS//\/}
-TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
+export PROMPT='%F{cyan}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+export PROMPT_EOL_MARK=""
+export WORDCHARS=${WORDCHARS//\/}
+export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
+export KEYTIMEOUT=1
 autoload -Uz vcs_info
 setopt PROMPT_SUBST
 
@@ -22,9 +23,9 @@ setopt notify
 setopt numericglobsort
 setopt promptsubst
 
-[ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
-[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
-[ -e $HOME/.local/bin/autosuggestions.zsh ] && source $HOME/.local/bin/autosuggestions.zsh
+[ -e ~/.config/shell/aliasrc ] && source ~/.config/shell/aliasrc
+[ -e ~/.config/shell/proxyrc ] && source ~/.config/shell/proxyrc
+[ -e ~/.local/bin/autosuggestions.zsh ] && source ~/.local/bin/autosuggestions.zsh
 
 function zle-keymap-select () {
     case $KEYMAP in
