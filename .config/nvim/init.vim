@@ -3,10 +3,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'folke/which-key.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'jghauser/mkdir.nvim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'mhinz/vim-startify'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'qtc-de/vve'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -31,12 +33,19 @@ set mouse=a
 
 let mapleader = " "
 nnoremap <leader>q :q<cr>
-noremap <leader>t :tabnew<cr>:e 
+noremap <leader><cr> :tabnew<cr>:e 
 noremap <leader>n :tabnext<cr>
-noremap <leader>p :tabprev<cr> 
+noremap <leader>N :tabprev<cr> 
+noremap <leader>h :wincmd h<cr>
+noremap <leader>j :wincmd j<cr>
+noremap <leader>k :wincmd k<cr>
+noremap <leader>l :wincmd l<cr>
+noremap <leader>i :vsplit<cr>
+noremap <leader>o :split<cr>
 
 vnoremap YY "+y
 nnoremap YY "+yy
+noremap ù :NvimTreeToggle<cr>
 noremap j gj
 noremap k gk
 noremap ç 0
@@ -50,9 +59,10 @@ set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
 if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
 set background=dark
-colorscheme PaperColor
+colorscheme kanagawa
 
 lua << EOF
-  require("which-key").setup {
-  }
+  require("which-key").setup()
+  require("nvim-tree").setup()
 EOF
+
