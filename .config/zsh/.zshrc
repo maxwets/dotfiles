@@ -6,8 +6,10 @@ export KEYTIMEOUT=1
 autoload -Uz vcs_info
 setopt PROMPT_SUBST
 
-HISTSIZE=99999
-SAVEHIST=99999
+
+export HISTSIZE=99999
+export SAVEHIST=99999
+export HISTFILE="$HOME/.local/share/history"
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -23,9 +25,9 @@ setopt notify
 setopt numericglobsort
 setopt promptsubst
 
-[ -e ~/.config/shell/aliasrc ] && source ~/.config/shell/aliasrc
-[ -e ~/.config/shell/proxyrc ] && source ~/.config/shell/proxyrc
-[ -e ~/.local/bin/autosuggestions.zsh ] && source ~/.local/bin/autosuggestions.zsh
+[ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
+[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
+[ -e $HOME/.local/bin/autosuggestions.zsh ] && source $HOME/.local/bin/autosuggestions.zsh
 
 function zle-keymap-select () {
     case $KEYMAP in

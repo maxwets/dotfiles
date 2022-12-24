@@ -9,16 +9,16 @@ client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-workspace 1  output DP-1-8
-workspace 2  output DP-1-8
-workspace 3  output DP-1-8
-workspace 4  output DP-1-8
-workspace 5  output DP-1-8
-workspace 6  output DP-1-9
-workspace 7  output DP-1-9
-workspace 8  output DP-1-9
-workspace 9  output DP-1-9
-workspace 10 output DP-1-9
+workspace 1  output DP-1-8 eDP-1
+workspace 2  output DP-1-8 eDP-1
+workspace 3  output DP-1-8 eDP-1
+workspace 4  output DP-1-8 eDP-1
+workspace 5  output DP-1-8 eDP-1
+workspace 6  output DP-1-9 eDP-1
+workspace 7  output DP-1-9 eDP-1
+workspace 8  output DP-1-9 eDP-1
+workspace 9  output DP-1-9 eDP-1
+workspace 10 output DP-1-9 eDP-1
 
 font pango:monospace 18
 
@@ -28,9 +28,15 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 exec_always --no-startup-id /usr/bin/nm-applet
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+bindsym $mod+F1 exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 
+bindsym $mod+F2 exec --no-startup-id xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
+bindsym $mod+F3 exec --no-startup-id arandr
+
+
 gaps inner 5
 gaps outer 0
 smart_gaps on
+smart_borders on
 hide_edge_borders smart
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
@@ -41,7 +47,6 @@ bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
 bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
-bindsym $mod+n       exec --no-startup-id /usr/bin/nautilus --new-window
 bindsym $mod+m       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt 
 bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/irssi
 bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc ~/.local/share/vault
@@ -51,11 +56,9 @@ bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window ht
 bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
 bindsym $mod+t       exec --no-startup-id ~/.local/bin/mansplain
-bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/rofi-nordvpn
 bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/keepmenu
-bindsym $mod+x       exec --no-startup-id ~/.local/bin/rofi-rdp-htb
 bindsym $mod+e       exec --no-startup-id ~/.local/bin/insert-emoji
-bindsym $mod+c       exec --no-startup-id ~/.local/bin/start-bluetooth
+bindsym $mod+c       exec --no-startup-id /usr/bin/morc_menu
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
@@ -64,8 +67,10 @@ bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+r   restart
 
 bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
-bindsym $mod+Shift+Escape exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
+
+bindsym $mod+$alt+Shift+Escape exec --no-startup-id systemctl poweroff
+bindsym $mod+Shift+Escape      exec --no-startup-id /usr/bin/blurlock
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -91,11 +96,11 @@ bindsym $mod+Tab        workspace next
 bindsym $mod+Shift+Tab  workspace previous
 
 bindsym $mod+Shift+ampersand  move container to workspace 1
-bindsym $mod+Shift+eacute 	  move container to workspace 2
+bindsym $mod+Shift+eacute     move container to workspace 2
 bindsym $mod+Shift+quotedbl   move container to workspace 3
 bindsym $mod+Shift+apostrophe move container to workspace 4
 bindsym $mod+Shift+parenleft  move container to workspace 5
-bindsym $mod+Shift+section	  move container to workspace 6
+bindsym $mod+Shift+section    move container to workspace 6
 bindsym $mod+Shift+egrave     move container to workspace 7
 bindsym $mod+Shift+exclam     move container to workspace 8
 bindsym $mod+Shift+ccedilla   move container to workspace 9
