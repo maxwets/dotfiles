@@ -32,6 +32,11 @@ bindsym $mod+F1 exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920
 bindsym $mod+F2 exec --no-startup-id xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
 bindsym $mod+F3 exec --no-startup-id arandr
 
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 gaps inner 5
 gaps outer 0
