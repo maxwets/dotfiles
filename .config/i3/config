@@ -28,16 +28,6 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 exec_always --no-startup-id /usr/bin/nm-applet
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-bindsym $mod+F1 exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 
-bindsym $mod+F2 exec --no-startup-id xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
-bindsym $mod+F3 exec --no-startup-id arandr
-
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
-bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
-
 gaps inner 5
 gaps outer 0
 smart_gaps on
@@ -49,14 +39,23 @@ focus_follows_mouse yes
 
 bindsym $mod+Return  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/zsh
 bindsym $mod+space   exec --no-startup-id /usr/bin/rofi -show-icons -show drun
-bindsym $mod+o       exec --no-startup-id /usr/bin/rofi -show-icons -show window
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
-bindsym $mod+m       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt 
-bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/irssi
+bindsym $mod+m       exec --no-startup-id /usr/bin/thunderbird
 bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc ~/.local/share/vault
-bindsym $mod+s       exec --no-startup-id /usr/bin/regolith-control-center --class=floating_window
 bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window https://discord.com/channels/@me
+bindsym $mod+a       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/pulsemixer
+bindsym $mod+v       exec --no-startup-id /usr/bin/arandr
+bindsym $mod+n       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/nmtui
+bindsym $mod+i       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
+bindsym $mod+F1      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --primary --mode 1920x1080
+bindsym $mod+F2      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
+
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86AudioRaiseVolume  exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume  exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute         exec "amixer -q sset Master,0 toggle"
 
 bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
@@ -73,9 +72,7 @@ bindsym $mod+Shift+r   restart
 
 bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
 bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
-
-bindsym $mod+$alt+Shift+Escape exec --no-startup-id systemctl poweroff
-bindsym $mod+Shift+Escape      exec --no-startup-id /usr/bin/blurlock
+bindsym $mod+Shift+Escape exec --no-startup-id /usr/bin/blurlock
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

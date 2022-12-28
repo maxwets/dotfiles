@@ -20,9 +20,7 @@ alias \
 	
 # sudo
 alias \
-	apt-get='sudo apt-get' \
-	apt='sudo apt' \
-	aptitude='sudo aptitude' \
+	p='sudo pacman' \
 	pacman='sudo pacman';
 
 # useful containers
@@ -38,18 +36,18 @@ alias \
 	nnn='nnn -HSadeor .' \
 	vim='nvim' \
 	vi='nvim' \
-	clip="xclip -selection 'clip'";
+	clip="xclip -selection 'clip'" \
+	tb="taskbook";
 
 # systemd
 alias \
-	s='systemctl' \
-	sa='systemctl status' \
+	s='sudo systemctl' \
+	sa='sudo systemctl status' \
 	st='sudo systemctl start' \
-	sr='sudo systemctl restart' \
 	sp='sudo systemctl stop' \
 	se='sudo systemctl enable --now' \
 	sd='sudo systemctl disable' \
-	sl='sudo systemctl daemon-reload' \
+	sr='sudo systemctl daemon-reload' \
 	j='journalctl -xe' \
 	ju='journalctl -xeu';
 
