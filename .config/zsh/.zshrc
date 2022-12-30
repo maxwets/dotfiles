@@ -1,21 +1,19 @@
+autoload -U colors && colors
+stty stop undef
 export PROMPT='%F{cyan}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 export PROMPT_EOL_MARK=""
-export WORDCHARS=${WORDCHARS//\/}
-export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-export KEYTIMEOUT=1
-autoload -Uz vcs_info
-setopt PROMPT_SUBST
 
+export HISTSIZE=999999
+export SAVEHIST=999999
+export HISTFILE="$HOME/.cache/zsh/history"
+alias history="history 0"
 
-export HISTSIZE=99999
-export SAVEHIST=99999
-export HISTFILE="$HOME/.local/share/history"
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
-alias history="history 0"
-
+setopt PROMPT_SUBST
+setopt interactive_comments
 setopt autocd
 setopt correct
 setopt interactivecomments
@@ -25,9 +23,16 @@ setopt notify
 setopt numericglobsort
 setopt promptsubst
 
-[ -e $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
-[ -e $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
-[ -e $HOME/.local/bin/autosuggestions.zsh ] && source $HOME/.local/bin/autosuggestions.zsh
+[ -f $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
+[ -f $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
+
+[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh;
+[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
+
+bindkey -v
+export KEYTIMEOUT=1
+autoload -Uz vcs_info
 
 function zle-keymap-select () {
     case $KEYMAP in
@@ -43,29 +48,3 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
-
-bindkey -v
-bindkey "^?" backward-delete-char
-autoload -U compinit
-zstyle ':vcs_info:git:*' formats '%b '
-zmodload zsh/complist
-zstyle ':completion:*' menu select
-compinit
-_comp_options+=(globdots)
-precmd() { vcs_info }
-autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' rehash true
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-

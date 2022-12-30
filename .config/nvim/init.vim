@@ -1,12 +1,12 @@
 call plug#begin()
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'folke/which-key.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'jghauser/mkdir.nvim'
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'qtc-de/vve'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'tpope/vim-fugitive'
@@ -33,7 +33,7 @@ set mouse=a
 
 let mapleader = " "
 nnoremap <leader>q :q<cr>
-noremap <leader><cr> :tabnew<cr>:e 
+noremap <leader><cr> :tabnew<cr>:FZF .<cr>
 noremap <leader>n :tabnext<cr>
 noremap <leader>N :tabprev<cr> 
 noremap <leader>h :wincmd h<cr>
@@ -42,6 +42,7 @@ noremap <leader>k :wincmd k<cr>
 noremap <leader>l :wincmd l<cr>
 noremap <leader>i :vsplit<cr>
 noremap <leader>o :split<cr>
+noremap <leader>f :FZF .<cr>
 
 vnoremap YY "+y
 nnoremap YY "+yy
