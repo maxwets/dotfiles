@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-function fail () { dunstify "Could not start the RDP session :("; }
-
-ip=$(rofi -dmenu)
-[[ ! -z "$ip" ]] && xfreerdp /v:"$ip" /u:htb-student /p:Academy_WinFun! /cert:ignore || fail

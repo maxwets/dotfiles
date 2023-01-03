@@ -1,2 +1,2 @@
-exec bspwm
+exec i3
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
