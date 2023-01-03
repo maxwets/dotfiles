@@ -10,6 +10,9 @@ make -C ./dotfiles
 
 ## Programs that I use
 - i3
+- dunst
+- i3lock
+- picom
 - rofi
 - alacritty
 - felix
@@ -18,16 +21,16 @@ make -C ./dotfiles
 - neovim
 
 ### Distro
-My current Linux distro is currently [Manjaro](https://manjaro.org).
+I use [Arch Linux](https://archlinux.org).
 
 ### Window Manager
-My tiling window manager is [i3](https://github.com/baskerville/bspwm).
+My tiling window manager is [i3](https://i3wm.org).
 - [dunst](https://github.com/dunst-project/dunst) to manage notifications;
-- `blurlock` which is a fork of [i3lock](https://github.com/Raymo111/i3lock-color)and comes by default with Manjaro-i3;
+- [i3lock](https://github.com/Raymo111/i3lock-color) together with [xss-lock](https://bitbucket.org/raymonad/xss-lock) to lock my session;
 - [picom](https://github.com/yshui/picom) as a compositor.
 
 ### Launcher
-[rofi](https://github.com/davatorium/rofi) is an alternative for [dmenu](https://github.com/maxwets/dmenu) that is easy to configure, good looking and powerful !
+[rofi](https://github.com/davatorium/rofi) is an alternative for `dmenu` that is easy to configure, good looking and powerful !
 
 ### Shell
 I use [zsh](https://www.zsh.org/).
@@ -54,7 +57,7 @@ I use the following plugins:
 - `rebelot/kanagawa.nvim`: kanagawa theme.
 
 ### Browser
-I use the [firefox](https://www.mozilla.org/) browser with the [Vimium](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/) extension.
+I use the [firefox](https://www.mozilla.org/) browser with the [Vimium-FF](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/) extension.
 
 ## Key bindings
 

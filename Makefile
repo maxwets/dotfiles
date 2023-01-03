@@ -1,7 +1,7 @@
 CONFIG=$(HOME)/.config
 LOCAL=$(HOME)/.local
 
-all: backup config
+all: 
 
 backup:
 	zip -r $(HOME)/backup.zip $(HOME)/{.local,.config,.profile}

@@ -5,7 +5,9 @@ export PROMPT_EOL_MARK=""
 
 export HISTSIZE=999999
 export SAVEHIST=999999
-export HISTFILE="$HOME/.cache/zsh/history"
+export HISTFILE="$HOME/.cache/history"
+export WORDCHARS=${WORDCHARS//\/}
+export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 alias history="history 0"
 
 setopt hist_expire_dups_first
@@ -33,6 +35,11 @@ setopt promptsubst
 bindkey -v
 export KEYTIMEOUT=1
 autoload -Uz vcs_info
+bindkey "^?" backward-delete-char
+autoload -U compinit
+zstyle ':vcs_info:git:*' formats '%b '
+zmodload zsh/complist
+zstyle ':completion:*' menu select
 
 function zle-keymap-select () {
     case $KEYMAP in

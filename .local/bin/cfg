@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find ~/.local/bin ~/.config/ -type f | fzf | xargs -r $EDITOR
