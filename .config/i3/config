@@ -10,6 +10,8 @@ client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
+workspace_layout stacking
+
 workspace 1  output DP-1-8 eDP-1
 workspace 2  output DP-1-8 eDP-1
 workspace 3  output DP-1-8 eDP-1
@@ -67,7 +69,7 @@ bindsym $mod+F2      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --off -
 bindsym $mod+a       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/pulsemixer
 bindsym $mod+i       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
 bindsym $mod+n       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/nmtui
-bindsym $mod+t       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/vit
+bindsym $mod+t       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/taskwarrior-tui
 bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/irssi
 
 bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
@@ -86,6 +88,9 @@ bindsym $mod+Shift+h move container left
 bindsym $mod+Shift+j move container down
 bindsym $mod+Shift+k move container up
 bindsym $mod+Shift+l move container right
+
+bindsym $mod+Shift+g move scratchpad
+bindsym $mod+g       scratchpad show
 
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2
