@@ -51,11 +51,18 @@ bindsym $mod+BackSpace split      toggle
 bindsym $mod+Shift+r   restart
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-bindsym XF86AudioRaiseVolume  exec --no-startup-id "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioLowerVolume  exec --no-startup-id "amixer -q sset Master,0 1- unmute"
-bindsym XF86AudioMute         exec --no-startup-id "amixer -q sset Master,0 toggle"
+bindsym XF86AudioLowerVolume  exec --no-startup-id "amixer -q sset Master,0 5%-"
+bindsym XF86AudioMute         exec --no-startup-id "amixer -q sset Master toggle"
+bindsym XF86AudioBack         exec --no-startup-id /usr/bin/mpc next
+bindsym XF86AudioForward      exec --no-startup-id /usr/bin/mpc prev
+bindsym XF86AudioPlay         exec --no-startup-id /usr/bin/mpc toggle
+bindsym XF86AudioRaiseVolume  exec --no-startup-id "amixer -q sset Master,0 5%+"
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/brightnessctl set 5%-
+bindsym XF86MonBrightnessUp   exec --no-startup-id /usr/bin/brightnessctl set 5%+
+bindsym XF86Calculator        exec --no-startup-id /usr/bin/xcalc
+bindsym XF86HomePage          exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
+bindsym XF86Mail              exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt
+bindsym XF86Tools             exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
 
 bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window https://discord.com/channels/@me
 bindsym $mod+m       exec --no-startup-id /usr/bin/thunderbird
@@ -67,17 +74,17 @@ bindsym $mod+F1      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --prima
 bindsym $mod+F2      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
 
 bindsym $mod+a       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/pulsemixer
-bindsym $mod+i       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
 bindsym $mod+n       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/nmtui
 bindsym $mod+t       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/taskwarrior-tui
-bindsym $mod+z       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/irssi
 
 bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
 bindsym $mod+c       exec --no-startup-id /usr/bin/morc_menu
 bindsym $mod+e       exec --no-startup-id ~/.local/bin/insert-emoji
 bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/mansplain
-bindsym $mod+Shift+u exec --no-startup-id ~/.local/bin/keepmenu
+bindsym $mod+Shift+u exec --no-startup-id /usr/bin/keepmenu
+bindsym $mod+s       exec --no-startup-id ~/.local/bin/slipbox add
+bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/slipbox edit
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

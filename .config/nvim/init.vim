@@ -15,7 +15,7 @@ call plug#end()
 
 filetype plugin indent on
 syntax enable
-autocmd BufEnter * COQnow
+"autocmd BufEnter * COQnow
 
 set number
 set relativenumber

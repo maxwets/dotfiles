@@ -1,6 +1,6 @@
 autoload -U colors && colors
 stty stop undef
-export PROMPT='%F{cyan}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+export PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 export PROMPT_EOL_MARK=""
 
 export HISTSIZE=999999
@@ -25,12 +25,8 @@ setopt notify
 setopt numericglobsort
 setopt promptsubst
 
-[ -f $HOME/.config/shell/aliasrc ] && source $HOME/.config/shell/aliasrc
-[ -f $HOME/.config/shell/proxyrc ] && source $HOME/.config/shell/proxyrc
-
-[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh;
-[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
-	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
+for f in $(find ~/.config/shell/ -type f); do source "$f"; done
+for f in $(find /usr/share/zsh/plugins/ -type f -name '*.zsh'); do source "$f"; done
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -38,8 +34,8 @@ autoload -Uz vcs_info
 bindkey "^?" backward-delete-char
 autoload -U compinit
 zstyle ':vcs_info:git:*' formats '%b '
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}+l:|?=** r:|?=**'
 zmodload zsh/complist
-zstyle ':completion:*' menu select
 
 function zle-keymap-select () {
     case $KEYMAP in

@@ -37,7 +37,7 @@ alias \
 	vim='nvim' \
 	vi='nvim' \
 	clip="xclip -selection 'clip'" \
-	tb="taskbook";
+	less="$PAGER";
 
 # systemd
 alias \

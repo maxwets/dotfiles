@@ -1,7 +1,7 @@
 [global]
 monitor = 0
 follow = keyboard
-width = (300, 600)
+width = (400, 800)
 offset = 0x45
 scale = 1
 indicate_hidden = yes
@@ -15,7 +15,7 @@ frame_color = "#282c34"
 separator_color = frame
 sort = yes
 idle_threshold = 120
-font = Noto Sans 11
+font = Noto Sans 14
 line_height = 0
 markup = full
 format = "<b>%s</b>\n%b"
@@ -37,8 +37,6 @@ title = Dunst
 class = Dunst
 mouse_left_click = do_action
 corner_radius = 10
-[experimental]
-per_monitor_dpi = true
 
 [urgency_low]
 background = "#24272e"

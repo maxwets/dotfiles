@@ -9,3 +9,4 @@ configuration {
   kb-row-down:      "Alt+j,Down";
   modi:             "drun,run";
 }
+@theme "/usr/share/rofi/themes/sidebar.rasi"
