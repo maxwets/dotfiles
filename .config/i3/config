@@ -1,7 +1,7 @@
 set $mod Mod4
 set $alt Mod1
 floating_modifier $mod
-font pango:monospace 18
+font pango:monospace 20
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
 client.focused_inactive #282828 #5f676a #ffffff #484e50   #5f676a
@@ -41,8 +41,8 @@ focus_follows_mouse yes
 
 bindsym $mod+Return       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/zsh
 bindsym $mod+space        exec --no-startup-id /usr/bin/rofi -show-icons -show drun
-bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
 bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
+bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/nautilus --new-window
 bindsym $mod+Shift+Escape exec --no-startup-id ~/.local/bin/lock
 
 bindsym $mod+f         fullscreen toggle
@@ -60,11 +60,11 @@ bindsym XF86AudioRaiseVolume  exec --no-startup-id "amixer -q sset Master,0 5%+"
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/brightnessctl set 5%-
 bindsym XF86MonBrightnessUp   exec --no-startup-id /usr/bin/brightnessctl set 5%+
 bindsym XF86Calculator        exec --no-startup-id /usr/bin/xcalc
-bindsym XF86HomePage          exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/fx
+bindsym XF86HomePage          exec --no-startup-id /usr/bin/nautilus --new-window
 bindsym XF86Mail              exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt
 bindsym XF86Tools             exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
 
-bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome --new-window https://discord.com/channels/@me
+bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome-stable --new-window https://discord.com/channels/@me
 bindsym $mod+m       exec --no-startup-id /usr/bin/thunderbird
 bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
@@ -74,12 +74,12 @@ bindsym $mod+F1      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --prima
 bindsym $mod+F2      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
 
 bindsym $mod+a       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/pulsemixer
+bindsym $mod+Shift+a exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
 bindsym $mod+n       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/nmtui
-bindsym $mod+t       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/local/bin/taskwarrior-tui
+
 
 bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
-bindsym $mod+c       exec --no-startup-id /usr/bin/morc_menu
 bindsym $mod+e       exec --no-startup-id ~/.local/bin/insert-emoji
 bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/mansplain
 bindsym $mod+Shift+u exec --no-startup-id /usr/bin/keepmenu
