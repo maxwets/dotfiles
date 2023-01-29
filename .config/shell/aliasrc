@@ -33,7 +33,7 @@ alias \
 	cd..='cd ..' \
 	la='ls -lA' \
 	ll='ls -l' \
-	nnn='nn -Udor -Td .' \
+	nnn='nn -Ucdor -Td .' \
 	vim='nvim' \
 	vi='nvim' \
 	clip="xclip -selection 'clip'" \

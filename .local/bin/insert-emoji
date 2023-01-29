@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-function fail () { dunstify "Failed to insert Emoji :("; }
+function fail () { dunstify "Failed to insert Emoji..."; }
 
-emoji=$(cat ~/.local/share/emoji | rofi -dmenu | cut -d' ' -f1)
+emoji=$(cat ~/.local/share/emoji | rofi -dmenu -p 'Choose emoji ' | cut -d' ' -f1)
 [[ -z "$emoji" ]] && fail;
-[[ ! -z "$emoji" ]] && xdotool type "$emoji" && dunstify "$emoji inserted !";
+[[ ! -z "$emoji" ]] && xdotool type "$emoji" && dunstify "$emoji inserted !" || fail;

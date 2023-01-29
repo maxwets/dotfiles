@@ -6,6 +6,6 @@ fail () { dunstify 'Failed to add bookmark !'; exit; }
 add () { echo "$1,$2" >> "$DB"; sort -o "$DB" "$DB"; }
 succeed () { dunstify 'Bookmark added !'; }
 
-name="$(rofi -dmenu)"
-[[ ! -z "$name" ]] && link="$(rofi -dmenu)" || fail
+name="$(rofi -dmenu -p 'Enter name ')"
+[[ ! -z "$name" ]] && link="$(rofi -dmenu -p 'Enter link ')" || fail
 [[ ! -z "$link" ]] && add "$name" "$link" && succeed || fail
