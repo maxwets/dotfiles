@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'dense-analysis/ale'
 Plug 'folke/which-key.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'jghauser/mkdir.nvim'
@@ -15,7 +16,7 @@ call plug#end()
 
 filetype plugin indent on
 syntax enable
-"autocmd BufEnter * COQnow
+autocmd BufEnter * COQnow
 
 set number
 set relativenumber

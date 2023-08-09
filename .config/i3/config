@@ -1,7 +1,20 @@
 set $mod Mod4
 set $alt Mod1
+set $launcher rofi
+set $terminal alacritty
+set $browser firefox
 floating_modifier $mod
-font pango:monospace 20
+font pango:monospace 14
+workspace_layout stacking
+
+gaps inner 5
+gaps outer 0
+smart_gaps on
+smart_borders on
+hide_edge_borders smart
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+focus_follows_mouse yes
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
 client.focused_inactive #282828 #5f676a #ffffff #484e50   #5f676a
@@ -9,8 +22,6 @@ client.unfocused        #3c3836 #3c3836 #a89984 #292d2e   #222222
 client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
-
-workspace_layout stacking
 
 workspace 1  output DP-1-8 eDP-1
 workspace 2  output DP-1-8 eDP-1
@@ -23,68 +34,55 @@ workspace 8  output DP-1-9 eDP-1
 workspace 9  output DP-1-9 eDP-1
 workspace 10 output DP-1-9 eDP-1
 
-exec_always --no-startup-id /usr/bin/feh --no-fehbg --bg-fill ~/.local/share/wallpaper
-exec_always --no-startup-id /usr/bin/picom -bcf
-exec_always --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
-exec_always --no-startup-id /usr/bin/nm-applet
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id /usr/bin/xss-lock -- ~/.local/bin/lock
+exec_always feh --no-fehbg --bg-fill ~/.local/share/wallpaper
+exec_always picom -bcf
+exec_always setxkbmap -option "caps:swapescape"
+exec_always nm-applet
+exec_always ~/.local/bin/polystart
+exec_always xss-lock -- ~/.local/bin/lock
 
-gaps inner 5
-gaps outer 0
-smart_gaps on
-smart_borders on
-hide_edge_borders smart
-floating_maximum_size -1 x -1
-for_window [class="floating_window"] floating enable
-focus_follows_mouse yes
-
-bindsym $mod+Return       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/zsh
-bindsym $mod+space        exec --no-startup-id /usr/bin/rofi -show-icons -show drun
-bindsym $mod+Shift+Return exec --no-startup-id /usr/bin/x-www-browser
-bindsym $mod+Shift+space  exec --no-startup-id /usr/bin/nautilus --new-window
-bindsym $mod+Shift+Escape exec --no-startup-id ~/.local/bin/lock
+bindsym $mod+Return       exec $terminal -e zsh
+bindsym $mod+Shift+Return exec $browser
+bindsym $mod+space        exec $launcher -show-icons -show drun
+bindsym $mod+Shift+space  exec thunar
+bindsym $mod+Escape       exec ~/.local/bin/lock
+bindsym $mod+Shift+Escape exec pkill -15 Xorg
+bindsym $mod+BackSpace    exec $terminal -e cfiles
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
-bindsym $mod+BackSpace split      toggle
 bindsym $mod+Shift+r   restart
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
-bindsym XF86AudioLowerVolume  exec --no-startup-id "amixer -q sset Master,0 5%-"
-bindsym XF86AudioMute         exec --no-startup-id "amixer -q sset Master toggle"
-bindsym XF86AudioBack         exec --no-startup-id /usr/bin/mpc next
-bindsym XF86AudioForward      exec --no-startup-id /usr/bin/mpc prev
-bindsym XF86AudioPlay         exec --no-startup-id /usr/bin/mpc toggle
-bindsym XF86AudioRaiseVolume  exec --no-startup-id "amixer -q sset Master,0 5%+"
-bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/brightnessctl set 5%-
-bindsym XF86MonBrightnessUp   exec --no-startup-id /usr/bin/brightnessctl set 5%+
-bindsym XF86Calculator        exec --no-startup-id /usr/bin/xcalc
-bindsym XF86HomePage          exec --no-startup-id /usr/bin/nautilus --new-window
-bindsym XF86Mail              exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/neomutt
-bindsym XF86Tools             exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
+bindsym XF86AudioLowerVolume  exec "amixer -q sset Master,0 5%-"
+bindsym XF86AudioMute         exec "amixer -q sset Master toggle"
+bindsym XF86AudioBack         exec mpc next
+bindsym XF86AudioForward      exec mpc prev
+bindsym XF86AudioPlay         exec mpc toggle
+bindsym XF86AudioRaiseVolume  exec "amixer -q sset Master,0 5%+"
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
+bindsym XF86Calculator        exec xcalc
+bindsym XF86HomePage          exec thunar
+bindsym XF86Mail              exec $browser --new-window https://mail.google.com/
+bindsym XF86Tools             exec $terminal -e /usr/bin/ncmpcpp
 
-bindsym $mod+d       exec --no-startup-id /usr/bin/google-chrome-stable --new-window https://discord.com/channels/@me
-bindsym $mod+m       exec --no-startup-id /usr/bin/thunderbird
-bindsym $mod+p       exec --no-startup-id /usr/bin/maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+p exec --no-startup-id /usr/bin/maim --select ~/pics/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
-bindsym $mod+u       exec --no-startup-id /usr/bin/keepassxc ~/.local/share/vault
-bindsym $mod+v       exec --no-startup-id /usr/bin/arandr
-bindsym $mod+F1      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --primary --mode 1920x1080
-bindsym $mod+F2      exec --no-startup-id /usr/bin/xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
+bindsym $mod+F1 exec xrandr --output eDP-1 --primary --mode 1920x1080
+bindsym $mod+F2 exec xrandr --output eDP-1 --off --output DP-1-8 --primary --mode 1920x1080 --output DP-1-9 --mode 1920x1080 --right-of DP-1-8
+bindsym $mod+a  exec $terminal -e pulsemixer --color 1
+bindsym $mod+d  exec $browser --new-window https://discord.com/channels/@me
+bindsym $mod+m  exec arandr
+bindsym $mod+n  exec $terminal -e nmtui
+bindsym $mod+u  exec keepassxc ~/.local/share/vault
 
-bindsym $mod+a       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/pulsemixer
-bindsym $mod+Shift+a exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/ncmpcpp
-bindsym $mod+n       exec --no-startup-id /usr/bin/x-terminal-emulator -e /usr/bin/nmtui
-
-
-bindsym $mod+b       exec --no-startup-id ~/.local/bin/bookmarks
-bindsym $mod+Shift+b exec --no-startup-id ~/.local/bin/add-bookmark
-bindsym $mod+e       exec --no-startup-id ~/.local/bin/insert-emoji
-bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/mansplain
-bindsym $mod+Shift+u exec --no-startup-id /usr/bin/keepmenu
-bindsym $mod+s       exec --no-startup-id ~/.local/bin/slipbox add
-bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/slipbox edit
+bindsym $mod+b       exec ~/.local/bin/bookmarks
+bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
+bindsym $mod+e       exec ~/.local/bin/insert-emoji
+bindsym $mod+Shift+t exec ~/.local/bin/mansplain
+bindsym $mod+s       exec ~/.local/bin/slipbox add
+bindsym $mod+Shift+s exec ~/.local/bin/slipbox edit
+bindsym $mod+p       exec maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+p exec maim --select ~/Pictures/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

@@ -25,16 +25,15 @@ setopt notify
 setopt numericglobsort
 setopt promptsubst
 
-for f in $(find ~/.config/shell/ -type f); do source "$f"; done
-for f in $(find /usr/share/zsh/plugins/ -type f -name '*.zsh'); do source "$f"; done
+for f in $(find ~/.config/shell/ -type f); do source "$f" 2&> /dev/null; done
+for f in $(find /usr/share/zsh/plugins/zsh-*/ -type f -name '*.zsh'); do source "$f" 2&> /dev/null; done
 
 bindkey -v
 export KEYTIMEOUT=1
-autoload -Uz vcs_info
+autoload -Uz compinit && compinit
 bindkey "^?" backward-delete-char
-autoload -U compinit
 zstyle ':vcs_info:git:*' formats '%b '
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}+l:|?=** r:|?=**'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zmodload zsh/complist
 
 function zle-keymap-select () {
