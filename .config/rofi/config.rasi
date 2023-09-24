@@ -1,7 +1,7 @@
 configuration {
   sidebar-mode:     true;
   hide-scrollbar:   true;
-  font: 			"Inconsolata 18";
+  font:             "Inconsolata 18";
   kb-cancel:        "Escape";
   kb-mode-next:     "Alt+l,Alt+n";
   kb-mode-previous: "Alt+h,Alt+N";
@@ -9,4 +9,4 @@ configuration {
   kb-row-down:      "Alt+j,Down";
   modi:             "drun,run";
 }
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"

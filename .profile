@@ -1,5 +1,8 @@
 #!/bin/sh
 
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+[[ $XDG_SESSION_TYPE == "x11" ]] && setxkbmap -option "caps:swapescape"
+
 export TERM="xterm-256color"
 export TERMINAL="xterm-256color"
 export EDITOR="nvim"
@@ -34,7 +37,4 @@ export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 export WORKON_HOME="$XDG_DATA_HOME"/virtualenvs
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-
-[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-[[ $XDG_SESSION_TYPE == "x11" ]] && setxkbmap -option "caps:swapescape"
 

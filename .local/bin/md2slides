@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+[[ ! -z "$1" ]] && [[ ! -z "$2"  ]] || \
+	echo "Usage: $0 <in.md> <out.pdf>" || \
+	exit
+
+pandoc \
+	-t beamer \
+	--slide-level 4 \
+	--pdf-engine xelatex \
+	-V theme:Copenhagen \
+	$1 -o $2
