@@ -1,32 +1,26 @@
 # dotfiles
 Maxime Wets
 ---
-## How to install ?
-You can easily copy my config files to your $HOME by doing
-```bash
-git clone https://github.com/maxwets/dotfiles.git
-make -C ./dotfiles
-```
 
 ## Programs that I use
 - i3
 - dunst
-- i3lock
+- polybar
 - picom
 - rofi
 - alacritty
-- felix
-- tmux
+- tmux / screen
 - zsh
 - neovim
 
 ### Distro
-I use [Arch Linux](https://archlinux.org).
+I use [Debian](https://debian.org).
 
 ### Window Manager
 My tiling window manager is [i3](https://i3wm.org).
 - [dunst](https://github.com/dunst-project/dunst) to manage notifications;
-- [i3lock](https://github.com/Raymo111/i3lock-color) together with [xss-lock](https://bitbucket.org/raymonad/xss-lock) to lock my session;
+- [polybar](https://github.com/polybar/polybar) to display the status bar;
+- [xss-lock](https://bitbucket.org/raymonad/xss-lock) to lock my session;
 - [picom](https://github.com/yshui/picom) as a compositor.
 
 ### Launcher
@@ -36,10 +30,7 @@ My tiling window manager is [i3](https://i3wm.org).
 I use [zsh](https://www.zsh.org/).
 
 ### Terminal Multiplexer
-I use [tmux](https://github.com/tmux/tmux).
-
-### Terminal File Browser
-I use [felix](https://github.com/kyoheiu/felix) which is a TUI file browser written in Rust.
+I use [tmux](https://github.com/tmux/tmux) and [screen](https://www.gnu.org/software/screen/).
 
 ### Editor
 [neovim](https://neovim.io) is my text editor.
@@ -90,24 +81,6 @@ I use the following custom `<leader>` key bindings:
 - `<leader>l :wincmd l<cr>`
 - `<leader>i :vsplit<cr>`
 - `<leader>o :split<cr>`
-
-### tmux
-The Modifier I use is the `Alt` key.
-- `M-Space` : Prefix.
-
-#### window management
-I use `Alt+Vi` keys to move through to change the focus on the pane.
-Copy pasting with the mouse is enabled.
-- `Alt-Enter`: spawn new window;
-- `Alt-n`: go to next window;
-- `Alt-N`: go to previous window;
-- `Alt-q`: kill window;
-- `Alt-w`: kill pane.
-
-#### visual mode
-- `Escape` : enter visual mode;
-- `y` : copy;
-- `p` : paste.
 
 ## LICENCE
 MIT Licence
