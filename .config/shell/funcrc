@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+function sgrep () {
+	cat $@ | cut -d ':' -f4- | cut -c2-
+}
