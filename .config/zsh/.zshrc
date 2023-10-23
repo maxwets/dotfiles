@@ -1,27 +1,25 @@
 autoload -U colors && colors
 stty stop undef
-
 export PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 export PROMPT_EOL_MARK=""
 export TERM="xterm-256color"
-export G_MESSAGES_DEBUG=all
+#export G_MESSAGES_DEBUG=all
 
 export HISTSIZE=65535
 export SAVEHIST=65535
 export HISTFILE="$HOME/.cache/history"
 export WORDCHARS=${WORDCHARS//\/}
 export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-
 alias history="history 0"
 
-setopt PROMPT_SUBST
-setopt autocd
-setopt correct
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
+setopt PROMPT_SUBST
 setopt interactive_comments
+setopt autocd
+setopt correct
 setopt interactivecomments
 setopt magicequalsubst
 setopt nonomatch

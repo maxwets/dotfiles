@@ -23,23 +23,23 @@ client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-workspace 1  output eDP-1 DP2 DP1   eDP-1
-workspace 2  output eDP-1 DP2 DP1   eDP-1
-workspace 3  output eDP-1 DP2 DP1   eDP-1
-workspace 4  output eDP-1 DP2 DP1   eDP-1
-workspace 5  output eDP-1 DP2 DP1   eDP-1
-workspace 6  output DP2 HDMI1 eDP-1
-workspace 7  output DP2 HDMI1 eDP-1
-workspace 8  output DP2 HDMI1 eDP-1
-workspace 9  output DP2 HDMI1 eDP-1
-workspace 10 output DP2 HDMI1 eDP-1
+workspace 1  output eDP-1
+workspace 2  output eDP-1
+workspace 3  output eDP-1
+workspace 4  output eDP-1
+workspace 5  output eDP-1
+workspace 6  output eDP-1
+workspace 7  output eDP-1
+workspace 8  output eDP-1
+workspace 9  output eDP-1
+workspace 10 output eDP-1
 
 exec_always feh --no-fehbg --bg-center ~/.local/share/wallpaper --image-bg white
 exec_always picom -bcf
 exec_always nm-applet
 exec_always ~/.config/polybar/launch.sh
 exec_always keepassxc ~/.local/share/vault
-exec_always remmina
+exec_always numlockx
 
 bindsym $mod+Return       exec $terminal -e zsh
 bindsym $mod+Shift+Return exec $browser
@@ -53,6 +53,7 @@ bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
 bindsym $mod+Shift+r   restart
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+g         scratchpad show
 
 bindsym XF86AudioLowerVolume  exec "pactl set-sink-volume 0 -5%"
 bindsym XF86AudioMute         exec "pactl set-sink-mute 0 toggle"
@@ -79,7 +80,6 @@ bindsym $mod+p  exec remmina
 bindsym $mod+b       exec ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
 bindsym $mod+e       exec ~/.local/bin/insert-emoji
-bindsym $mod+Shift+t exec ~/.local/bin/mansplain
 bindsym $mod+s       exec maim --select ~/Pictures/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+Shift+s exec maim --select | xclip -selection clipboard -t image/png
 
@@ -93,10 +93,9 @@ bindsym $mod+Shift+j move container down
 bindsym $mod+Shift+k move container up
 bindsym $mod+Shift+l move container right
 
-bindsym $mod+g       scratchpad show
-
 for_window [class="KeePassXC"] move scratchpad,scratchpad show
 for_window [class="Remmina"] move workspace 6
+for_window [title="VMware"] move workspace 4
 
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2

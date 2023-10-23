@@ -7,28 +7,31 @@ alias \
 
 # colors
 alias \
-	diff='diff --color=auto' \
+	ls='ls -hNSv -1 --color=auto --group-directories-first --classify' \
 	grep='grep --color=auto' \
+	diff='diff --color=auto' \
 	ip='ip -color=auto' \
-	ls='ls -hNSv --size -1 --color=auto --group-directories-first --classify';
+	tshark='tshark --color';
 
 # security
 alias \
 	chmod='chmod --preserve-root' \
 	chown='chown --preserve-root' \
 	rm='rm --preserve-root';
-	
+
 # convenience
 alias \
 	cd..='cd ..' \
-	clip="xclip -selection 'clip'" \
 	la='ls -lA' \
-	ll='ls -l';
+	ll='ls -l' \
+	clip="xclip -selection 'clip'" \
+	less="$PAGER" \
+	rsync='rsync -ahv --info=progress2';
 
 # xdg-cleaning
 alias \
 	mitmproxy='mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
 	mitmweb='mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
 	irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi" \
-	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
+	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts';
 
