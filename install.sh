@@ -97,4 +97,6 @@ else
 	cp -r .config/* "$HOME/.config/.";
 	cp .local/bin/* "$HOME/local/bin/.";
 	cp .local/share/* "$HOME/local/share/.";
+	echo -e "Creating home directories";
+	mkdir -p ~/Git ~/Admin ~/Notes ~/Tools ~/Games ~/Torrent
 fi

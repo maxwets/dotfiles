@@ -1,16 +1,13 @@
 call plug#begin()
-Plug 'dense-analysis/ale'
+Plug 'echasnovski/mini.nvim'
 Plug 'folke/which-key.nvim'
-Plug 'itchyny/lightline.vim'
 Plug 'jghauser/mkdir.nvim'
-Plug 'mhinz/vim-startify'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lualine/lualine.nvim/'
 Plug 'qtc-de/vve'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
+colorscheme gruvbox-material
 filetype plugin indent on
 syntax enable
 
@@ -29,16 +26,14 @@ set shiftwidth=2
 set smartcase
 set smartindent
 set tabstop=2
+set noshowmode
 
 let mapleader = " "
-nnoremap <leader>q :q<cr>
-noremap <leader><leader> :tabnew<cr>:e <cr>
+noremap <leader><leader> :tabnew<cr>:lua MiniStarter.open()<cr>
 noremap <leader>n :tabnext<cr>
-noremap <leader>N :tabprev<cr> 
-
-vnoremap YY "+y
-nnoremap YY "+yy
-noremap ù :NvimTreeToggle<cr>
+noremap <leader>p :tabprev<cr>
+noremap <leader>h :lua MiniFiles.open()<cr>
+noremap <leader>g :lua MiniFiles.close()<cr>
 
 set runtimepath^=$XDG_CONFIG_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim
@@ -47,10 +42,12 @@ set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
 set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
 if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
-colorscheme slate
-
 lua << EOF
-  require("which-key").setup()
-  require("nvim-tree").setup()
+  require('which-key').setup()
+	require('mini.starter').setup()
+	require('mini.trailspace').setup()
+	require('mini.files').setup()
+	require('mini.completion').setup()
+	require('lualine').setup { options = { theme = 'gruvbox-material', icons_enabled = false, section_separators = { left = '', right = '' }, component_separators = { left = '', right = '' } } }
 EOF
 
