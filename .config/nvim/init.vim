@@ -5,6 +5,7 @@ Plug 'jghauser/mkdir.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'qtc-de/vve'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 filetype plugin indent on
@@ -34,8 +35,7 @@ let mapleader = " "
 noremap <leader><leader> :tabnew<cr>:lua MiniStarter.open()<cr>
 noremap <leader>n :tabnext<cr>
 noremap <leader>p :tabprev<cr>
-noremap <leader>h :lua MiniFiles.open()<cr>
-noremap <leader>g :lua MiniFiles.close()<cr>
+noremap ù :NvimTreeToggle<cr>
 
 set runtimepath^=$XDG_CONFIG_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim
@@ -44,13 +44,13 @@ set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
 set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
 if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
-colorscheme slate
+colorscheme gruvbox-material
 
 lua << EOF
-  require('which-key').setup()
+	require('which-key').setup()
+	require('nvim-tree').setup()
 	require('mini.starter').setup()
 	require('mini.trailspace').setup()
-	require('mini.files').setup()
 	require('mini.completion').setup()
 EOF
 
