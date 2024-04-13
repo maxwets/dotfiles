@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
-function sgrep () {
+sgrep () {
 	cat $@ | cut -d ':' -f4- | cut -c2-
+}
+
+objdump-iat () {
+	objdump -x $1 | sed -n '/DLL Name:/,/^$/p' | sed -E 's/^.*DLL\sName:\s//g' | grep -vF 'vma:  Hint/Ord Member-Name Bound-To' || echo "No IAT symbols"
+}
+
+epoch () {
+	date -u -d $1 +"%Y/%m/%d-%H:%M:%S.%N"
 }

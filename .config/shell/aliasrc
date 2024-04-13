@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # verbosity
 alias \
 	cp='cp -iv' \
@@ -7,10 +9,10 @@ alias \
 
 # colors
 alias \
-	ls='ls -hNSv -1 --color=auto --group-directories-first --classify' \
+	ls='ls -hNSv1 --color=auto --group-directories-first --classify' \
 	grep='grep --color=auto' \
 	diff='diff --color=auto' \
-	ip='ip -color=auto' \
+	ip='ip -color=always' \
 	tshark='tshark --color';
 
 # security
@@ -24,9 +26,9 @@ alias \
 	cd..='cd ..' \
 	la='ls -lA' \
 	ll='ls -l' \
-	clip="xclip -selection 'clip'" \
-	less="$PAGER" \
-	rsync='rsync -ahv --info=progress2';
+	less="less -RS" \
+	rsync='rsync -ahv --info=progress2' \
+	reload='source ~/.config/zsh/.zshrc';
 
 # xdg-cleaning
 alias \
@@ -34,4 +36,22 @@ alias \
 	mitmweb='mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
 	irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi" \
 	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts';
+
+# docker containers
+alias \
+	excalidraw='sudo docker run --rm -dit --name="excalidraw" -p 5000:80 excalidraw/excalidraw:latest' \
+	drawio='sudo docker run -dit --rm --name="drawio" -p 5001:8080 jgraph/drawio'
+
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 4)
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 16)
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
 

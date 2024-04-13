@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-function fail () { dunstify 'Failed to load the manual page !'; exit; }
-
-pdf=$(man -k . | sort | rofi -dmenu 'man ' | awk '{print $1}' | xargs -r man -t)
-[[ ! -z "$pdf" ]] && echo "$pdf" | ps2pdf - | zathura - || fail

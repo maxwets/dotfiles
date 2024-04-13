@@ -5,15 +5,17 @@ set $terminal alacritty
 set $browser google-chrome
 floating_modifier $mod
 font pango:monospace 14
-workspace_layout stacking
+workspace_layout tabbed
+title_align center
 
-gaps inner 5
+gaps inner 0
 gaps outer 0
 smart_gaps on
 smart_borders on
 hide_edge_borders smart
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
+for_window [title="zoom"] floating enable
 focus_follows_mouse yes
 
 client.focused          #665c54 #665c54 #eddbb2 #2e9ef4   #665c54
@@ -23,58 +25,55 @@ client.urgent           #cc241d #cc241d #ebdbb2 #cc241d   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-workspace 1  output DP2 DP1   eDP-1
-workspace 2  output DP2 DP1   eDP-1
-workspace 3  output DP2 DP1   eDP-1
-workspace 4  output DP2 DP1   eDP-1
-workspace 5  output DP2 DP1   eDP-1
-workspace 6  output DP2 HDMI1 eDP-1
-workspace 7  output DP2 HDMI1 eDP-1
-workspace 8  output DP2 HDMI1 eDP-1
-workspace 9  output HDMI1 eDP-1
-workspace 10 output HDMI1 eDP-1
+workspace 1  output DP-1 DP-2 eDP-1
+workspace 2  output DP-1 DP-2 eDP-1
+workspace 3  output DP-1 DP-2 eDP-1
+workspace 4  output DP-1 DP-2 eDP-1
+workspace 5  output DP-1 DP-2 eDP-1
+workspace 6  output HDMI-1 DP-2 eDP-1
+workspace 7  output HDMI-1 DP-2 eDP-1
+workspace 8  output HDMI-1 DP-2 eDP-1
+workspace 9  output HDMI-1 DP-2 eDP-1
+workspace 10 output HDMI-1 DP-2 eDP-1
 
-exec_always feh --no-fehbg --bg-center ~/.local/share/wallpaper --image-bg white
-exec_always picom -bcf
+exec_always feh --no-fehbg --bg-fill ~/.local/share/wallpaper
+exec_always picom -b
 exec_always nm-applet
 exec_always ~/.config/polybar/launch.sh
-exec_always keepassxc ~/.local/share/vault
+exec_always keepassxc ~/.local/share/personal-vault.kdbx ~/.local/share/cert-vault.kdbx
 exec_always numlockx
+exec_always setxkbmap -option "caps:swapescape"
 
 bindsym $mod+Return       exec $terminal
 bindsym $mod+Shift+Return exec $browser
 bindsym $mod+space        exec $launcher -show-icons -show drun
-bindsym $mod+Shift+space  exec nautilus
-bindsym $mod+Escape       exec i3lock-fancy
-bindsym $mod+Shift+Escape exec i3-msg exit
+bindsym $mod+Shift+space  exec 4pane
+bindsym $mod+Escape       exec i3lock
+bindsym $mod+Shift+Escape exec dm-tool lock
 bindsym $mod+BackSpace    exec $terminal -e cfiles
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
-bindsym $mod+Shift+r   reload
+bindsym $mod+Shift+r   restart
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
-bindsym XF86AudioLowerVolume  exec "pactl set-sink-volume 0 -5%"
-bindsym XF86AudioMute         exec "pactl set-sink-mute 0 toggle"
+bindsym XF86AudioLowerVolume  exec "amixer set 'Master' 5%-"
+bindsym XF86AudioMute         exec "amixer set 'Master' toggle"
 bindsym XF86AudioBack         exec mpc next
 bindsym XF86AudioForward      exec mpc prev
 bindsym XF86AudioPlay         exec mpc toggle
-bindsym XF86AudioRaiseVolume  exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioRaiseVolume  exec "amixer set 'Master' 5%+"
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
 bindsym XF86Calculator        exec xcalc
-bindsym XF86HomePage          exec thunar
+bindsym XF86HomePage          exec 4pane
 bindsym XF86Mail              exec $browser --new-window https://mail.google.com/
 bindsym XF86Tools             exec $terminal -e /usr/bin/ncmpcpp
 
-bindsym $mod+F1 exec xrandr --output eDP1 --primary --mode 1920x1080 && i3-msg reload
-bindsym $mod+F2 exec autorandr -l home && i3-msg reload
-bindsym $mod+F3 exec autorandr -l office && i3-msg reload
 
-bindsym $mod+a  exec $terminal -e pulsemixer --color 1
-bindsym $mod+m  exec arandr
-bindsym $mod+n  exec $terminal -e nmtui
-bindsym $mod+p  exec remmina
+bindsym $mod+a       exec $terminal -e pulsemixer --color 1
+bindsym $mod+m       exec arandr
+bindsym $mod+Shift+m exec ~/.local/bin/display
 
 bindsym $mod+b       exec ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
@@ -95,7 +94,7 @@ bindsym $mod+Shift+l move container right
 
 for_window [class="KeePassXC"] move scratchpad,scratchpad show
 bindsym $mod+g             scratchpad show
-bindsym $mod+Shift+g       scratchpad show
+bindsym $mod+Shift+g       move scratchpad
 
 bindsym $mod+ampersand  workspace 1
 bindsym $mod+eacute     workspace 2
@@ -109,6 +108,8 @@ bindsym $mod+ccedilla   workspace 9
 bindsym $mod+agrave     workspace 10
 bindsym $mod+Tab        workspace next
 bindsym $mod+Shift+Tab  workspace prev
+bindsym $mod+n  		focus next
+bindsym $mod+p  		focus prev
 
 bindsym $mod+Shift+ampersand  move container to workspace 1
 bindsym $mod+Shift+eacute     move container to workspace 2
@@ -122,10 +123,10 @@ bindsym $mod+Shift+ccedilla   move container to workspace 9
 bindsym $mod+Shift+agrave     move container to workspace 10
 
 mode "resize" {
-        bindsym h resize shrink width  10 px
-        bindsym j resize grow   height 10 px
-        bindsym k resize shrink height 10 px
-        bindsym l resize grow   width  10 px
+        bindsym h resize shrink width  25 px
+        bindsym j resize grow   height 25 px
+        bindsym k resize shrink height 25 px
+        bindsym l resize grow   width  25 px
         bindsym Return mode "default"
         bindsym Escape mode "default"
 		bindsym $mod+r mode "default"
