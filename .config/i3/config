@@ -40,22 +40,54 @@ exec_always feh --no-fehbg --bg-fill ~/.local/share/wallpaper
 exec_always picom -b
 exec_always nm-applet
 exec_always ~/.config/polybar/launch.sh
-exec_always keepassxc ~/.local/share/personal-vault.kdbx ~/.local/share/cert-vault.kdbx
+exec_always keepassxc
 exec_always numlockx
-exec_always setxkbmap -option "caps:swapescape"
-
-bindsym $mod+Return       exec $terminal
-bindsym $mod+Shift+Return exec $browser
-bindsym $mod+space        exec $launcher -show-icons -show drun
-bindsym $mod+Shift+space  exec 4pane
-bindsym $mod+Escape       exec i3lock
-bindsym $mod+Shift+Escape exec dm-tool lock
-bindsym $mod+BackSpace    exec $terminal -e cfiles
+exec_always setxkbmap -layout fr -variant us -option "caps:swapescape"
 
 bindsym $mod+f         fullscreen toggle
 bindsym $mod+Shift+f   floating   toggle
 bindsym $mod+Shift+r   restart
 bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+
+bindsym $mod+1          workspace 1
+bindsym $mod+2          workspace 2
+bindsym $mod+3          workspace 3
+bindsym $mod+4          workspace 4
+bindsym $mod+5          workspace 5
+bindsym $mod+6          workspace 6
+bindsym $mod+7          workspace 7
+bindsym $mod+8          workspace 8
+bindsym $mod+9          workspace 9
+bindsym $mod+0          workspace 10
+bindsym $mod+Tab        workspace next
+bindsym $mod+Shift+Tab  workspace prev
+bindsym $mod+n  		focus next
+bindsym $mod+p  		focus prev
+
+bindsym $mod+Shift+1    move container to workspace 1
+bindsym $mod+Shift+2    move container to workspace 2
+bindsym $mod+Shift+3    move container to workspace 3
+bindsym $mod+Shift+4    move container to workspace 4
+bindsym $mod+Shift+5    move container to workspace 5
+bindsym $mod+Shift+6    move container to workspace 6
+bindsym $mod+Shift+7    move container to workspace 7
+bindsym $mod+Shift+8    move container to workspace 8
+bindsym $mod+Shift+9    move container to workspace 9
+bindsym $mod+Shift+0    move container to workspace 10
+
+
+bindsym $mod+g          scratchpad show
+bindsym $mod+Shift+g    move scratchpad
+
+bindsym $mod+h          focus left
+bindsym $mod+j          focus down
+bindsym $mod+k          focus up
+bindsym $mod+l          focus right
+
+bindsym $mod+Shift+h    move container left
+bindsym $mod+Shift+j    move container down
+bindsym $mod+Shift+k    move container up
+bindsym $mod+Shift+l    move container right
 
 bindsym XF86AudioLowerVolume  exec "amixer set 'Master' 5%-"
 bindsym XF86AudioMute         exec "amixer set 'Master' toggle"
@@ -70,57 +102,27 @@ bindsym XF86HomePage          exec 4pane
 bindsym XF86Mail              exec $browser --new-window https://mail.google.com/
 bindsym XF86Tools             exec $terminal -e /usr/bin/ncmpcpp
 
+bindsym $mod+Return           exec $terminal
+bindsym $mod+Shift+Return     exec $browser
+bindsym $mod+space            exec $launcher -show-icons -show drun
+bindsym $mod+Shift+space      exec 4pane
+bindsym $mod+Escape           exec i3lock
+bindsym $mod+Shift+Escape     exec dm-tool lock
+bindsym $mod+BackSpace        exec $terminal -e cfiles
 
-bindsym $mod+a       exec $terminal -e pulsemixer --color 1
-bindsym $mod+m       exec arandr
-bindsym $mod+Shift+m exec ~/.local/bin/display
+bindsym $mod+a                exec $terminal -e pulsemixer --color 1
+bindsym $mod+m                exec arandr
+bindsym $mod+Shift+m          exec ~/.local/bin/display
 
-bindsym $mod+b       exec ~/.local/bin/bookmarks
-bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
-bindsym $mod+e       exec ~/.local/bin/insert-emoji
-bindsym $mod+Shift+t exec ~/.local/bin/mansplain
-bindsym $mod+s       exec maim --select ~/Pictures/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
-bindsym $mod+Shift+s exec maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+b                exec ~/.local/bin/bookmarks
+bindsym $mod+Shift+b          exec ~/.local/bin/add-bookmark
+bindsym $mod+e                exec ~/.local/bin/insert-emoji
+bindsym $mod+Shift+t          exec ~/.local/bin/mansplain
+bindsym $mod+s                exec maim --select ~/Pictures/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png
+bindsym $mod+Shift+s          exec maim --select | xclip -selection clipboard -t image/png
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Shift+h move container left
-bindsym $mod+Shift+j move container down
-bindsym $mod+Shift+k move container up
-bindsym $mod+Shift+l move container right
 
 for_window [class="KeePassXC"] move scratchpad,scratchpad show
-bindsym $mod+g             scratchpad show
-bindsym $mod+Shift+g       move scratchpad
-
-bindsym $mod+ampersand  workspace 1
-bindsym $mod+eacute     workspace 2
-bindsym $mod+quotedbl   workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft  workspace 5
-bindsym $mod+section    workspace 6
-bindsym $mod+egrave     workspace 7
-bindsym $mod+exclam     workspace 8
-bindsym $mod+ccedilla   workspace 9
-bindsym $mod+agrave     workspace 10
-bindsym $mod+Tab        workspace next
-bindsym $mod+Shift+Tab  workspace prev
-bindsym $mod+n  		focus next
-bindsym $mod+p  		focus prev
-
-bindsym $mod+Shift+ampersand  move container to workspace 1
-bindsym $mod+Shift+eacute     move container to workspace 2
-bindsym $mod+Shift+quotedbl   move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+parenleft  move container to workspace 5
-bindsym $mod+Shift+section    move container to workspace 6
-bindsym $mod+Shift+egrave     move container to workspace 7
-bindsym $mod+Shift+exclam     move container to workspace 8
-bindsym $mod+Shift+ccedilla   move container to workspace 9
-bindsym $mod+Shift+agrave     move container to workspace 10
 
 mode "resize" {
         bindsym h resize shrink width  25 px
