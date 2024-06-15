@@ -43,4 +43,4 @@ colors:
     - { index: 17, color: '0xff5d62' }
 
 window:
-  opacity: 0.95
+  opacity: 1
