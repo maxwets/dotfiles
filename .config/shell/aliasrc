@@ -28,13 +28,12 @@ alias \
 	ll='ls -l' \
 	less="less -RS" \
 	rsync='rsync -ahv --info=progress2' \
+	vi='nvim' \
+	v='nvim' \
 	reload='source ~/.config/zsh/.zshrc';
 
 # xdg-cleaning
 alias \
-	mitmproxy='mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
-	mitmweb='mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
-	irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi" \
 	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts';
 
 # docker containers

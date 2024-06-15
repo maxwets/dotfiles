@@ -3,6 +3,8 @@
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [[ $XDG_SESSION_TYPE == "x11" ]] && setxkbmap -option "caps:swapescape"
 
+export LC_ALL="en_US.UTF8"
+
 export TERM="xterm-256color"
 export TERMINAL="xterm-256color"
 export EDITOR="nvim"
