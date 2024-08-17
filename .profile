@@ -1,7 +1,6 @@
 #!/bin/sh
 
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-[[ $XDG_SESSION_TYPE == "x11" ]] && setxkbmap -option "caps:swapescape"
 
 export LC_ALL="en_US.UTF8"
 

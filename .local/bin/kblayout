@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+FILE=/tmp/.xkbd
+
+[[ -f "$FILE" ]] || echo "us" > $FILE
+
+DISPOSITION=$(cat "$FILE")
+
+if [[ "$DISPOSITION" = "lafayette" ]]; then
+	setxkbmap -layout "us" -variant "intl" -option "caps:escape"
+	echo "intl" > $FILE
+	dunstify "Changed keyboard layout to QWERTY-INTL"
+elif [[ "$DISPOSITION" = "intl" ]]; then
+	setxkbmap -layout "us" -option "caps:escape"
+	echo "us" > $FILE
+	dunstify "Changed keyboard layout to QWERTY-US"
+else
+	setxkbmap -layout "lafayette" -option "caps:escape"
+	echo "lafayette" > $FILE
+	dunstify "Changed keyboard layout to QWERTY-LAFAYETTE"
+fi

@@ -94,4 +94,5 @@ vim.api.nvim_set_keymap('n', 'ù',                ':Lexplore<cr>',   { noremap =
 vim.api.nvim_set_keymap('n', '<C-m>',            ':<C-u>marks<cr>', { noremap = true })
 
 require('plugins')
+require('lsp')
 
