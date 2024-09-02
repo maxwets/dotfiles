@@ -21,6 +21,14 @@ alias \
 	chown='chown --preserve-root' \
 	rm='rm --preserve-root';
 
+# git
+alias \
+	gd='git diff' \
+	gc='git commit' \
+	ga='git add' \
+	gss='git status';
+
+
 # convenience
 alias \
 	cd..='cd ..' \
@@ -30,10 +38,14 @@ alias \
 	rsync='rsync -ahv --info=progress2' \
 	vi='nvim' \
 	v='nvim' \
+	t='tmux' \
 	reload='source ~/.config/zsh/.zshrc';
 
 # xdg-cleaning
 alias \
+	mitmproxy='mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
+	mitmweb='mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
+	irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi" \
 	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts';
 
 # docker containers
