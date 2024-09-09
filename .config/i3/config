@@ -42,7 +42,7 @@ exec_always nm-applet
 exec_always ~/.config/polybar/launch.sh
 exec_always keepassxc ~/.local/share/personal-vault.kdbx ~/.local/share/cert-vault.kdbx
 exec_always numlockx
-exec_always setxkbmap -layout "fr" -variant "us" -option "caps:escape"
+exec_always setxkbmap -layout "us" -variant "basic" -option "caps:escape"
 
 bindsym $mod+Return       exec $terminal
 bindsym $mod+w            exec $browser
@@ -50,7 +50,7 @@ bindsym $mod+Shift+w      exec $browser --incognito
 bindsym $mod+d            exec $launcher -show-icons -show drun
 bindsym $mod+x            exec thunar
 bindsym $mod+space        exec ~/.local/bin/kblayout
-bindsym $mod+Escape       exec setxkbmap -layout "fr" -variant "us" && i3lock
+bindsym $mod+Escape       exec setxkbmap -layout "lafayette" && i3lock
 bindsym $mod+Shift+Escape exec dm-tool lock
 
 bindsym $mod+f         fullscreen toggle
