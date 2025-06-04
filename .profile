@@ -18,7 +18,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export ANSIBLE_CONFIG="$XDG_CONFIG_HOME"/ansible/ansible.cfg
 export AZURE_CONFIG_DIR="$XDG_CONFIG_HOME"/azure
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -33,9 +32,6 @@ export LESSHISTFILE="-"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/password-store
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export WEECHAT_HOME="${XDG_CONFIG_HOME}"/weechat
 export WGETRC="$XDG_CONFIG_HOME"/wget/wgetrc
 export WORKON_HOME="$XDG_DATA_HOME"/virtualenvs
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-
