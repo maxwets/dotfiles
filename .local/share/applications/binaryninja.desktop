@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Binary Ninja
+Path=/opt/binaryninja/
+Exec=/opt/binaryninja/binaryninja
+Icon=/opt/binaryninja/api-docs/cpp/logo.png
+Terminal=false
+

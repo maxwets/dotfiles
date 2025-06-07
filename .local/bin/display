@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-option=$(echo -e 'auto\nstandalone\nhome\noffice' | rofi -i -dmenu -p 'Switch to ')
+option=$(autorandr --list | rofi -i -dmenu -p 'Switch to ')
 if [[ ! -z "$option" ]]; then
-	if [[ "$option" = 'auto' ]]; then
-		xrandr --auto && i3-msg restart;
-	else
-		autorandr -l $option && i3-msg restart;
-	fi
+	autorandr --load $option && i3-msg restart;
 fi
