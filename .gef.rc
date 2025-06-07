@@ -1,0 +1,25 @@
+[aliases]
+
+dps = dereference
+dq = hexdump qword
+dd = hexdump dword
+dw = hexdump word
+dc = hexdump byte
+dt = pcustom
+ba = watch
+
+bp = break
+bl = info breakpoints
+be = enable breakpoints
+bd = disable breakpoints
+bc = delete breakpoints
+
+t = stepi
+p = nexti
+
+gu = finish
+uf = disassemble
+
+stack = dereference -l 10 $rsp
+kp = backtrace
+argv = info args
