@@ -69,7 +69,6 @@ bindsym $mod+a       exec $terminal -e pulsemixer --color 1
 bindsym $mod+m       exec arandr
 
 bindsym $mod+Shift+m exec ~/.local/bin/display
-bindsym $mod+Shift+m exec autorandr -s home
 
 bindsym $mod+b       exec ~/.local/bin/bookmarks
 bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
