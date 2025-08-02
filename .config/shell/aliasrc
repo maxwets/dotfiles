@@ -28,7 +28,6 @@ alias \
 	ga='git add' \
 	gss='git status';
 
-
 # convenience
 alias \
 	cd..='cd ..' \
@@ -37,9 +36,13 @@ alias \
 	less="less -RS" \
 	rsync='rsync -ahv --info=progress2' \
 	vi='nvim' \
+	vim='nvim' \
 	v='nvim' \
 	t='tmux' \
+	e="$EDITOR" \
+	v="$PAGER" \
 	reload='source ~/.config/zsh/.zshrc';
+
 
 # xdg-cleaning
 alias \
@@ -50,8 +53,9 @@ alias \
 
 # docker containers
 alias \
-	excalidraw='sudo docker run --rm -dit --name="excalidraw" -p 5000:80 excalidraw/excalidraw:latest' \
-	drawio='sudo docker run -dit --rm --name="drawio" -p 5001:8080 jgraph/drawio'
+	excalidraw='docker run --rm -dit --name="excalidraw" -p 5000:80 excalidraw/excalidraw:latest' \
+	drawio='docker run -dit --rm --name="drawio" -p 5001:8080 jgraph/drawio' \
+	kali='docker run --tty -v .:/mnt/ --interactive --rm kali /bin/zsh'
 
 export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_me=$(tput sgr0)

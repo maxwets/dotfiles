@@ -1,55 +1,42 @@
 [global]
-monitor = 0
-follow = keyboard
-width = (400, 800)
-offset = 0x45
-scale = 1
-indicate_hidden = yes
-shrink = no
-transparency = 5
-separator_height = 5
-padding = 12
-horizontal_padding = 8
-frame_width = 2
-frame_color = "#282c34"
-separator_color = frame
-sort = yes
-idle_threshold = 120
-font = Noto Sans 14
-line_height = 0
-markup = full
-format = "<b>%s</b>\n%b"
-alignment = left
-show_age_threshold = 60
-word_wrap = yes
-ignore_newline = no
-stack_duplicates = true
-hide_duplicate_count = false
-show_indicators = yes
-icon_position = right
-max_icon_size = 48
-sticky_history = yes
-history_length = 20
-dmenu = rofi -dmenu -p dunst
-browser = chromium
-always_run_script = true
-title = Dunst
-class = Dunst
-mouse_left_click = do_action
-corner_radius = 10
+    font = "Hack 8"
+    allow_markup = yes
+    format = "<b>%s</b>\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "200x5-6+30"
+    transparency = 0
+    idle_threshold = 120
+    monitor = 0
+    follow = mouse
+    sticky_history = yes
+    line_height = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    separator_color = "#585858"
+    startup_notification = false
+
+[frame]
+    width = 1
+    color = "#83a598"
 
 [urgency_low]
-background = "#24272e"
-foreground = "#abb2bf"
-timeout = 7
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 5
 
 [urgency_normal]
-background = "#24272e"
-foreground = "#abb2bf"
-timeout = 7
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 20
 
 [urgency_critical]
-background = "#24272e"
-foreground = "#abb2bf"
-frame_color = "#e06c75"
-timeout = 0
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 0

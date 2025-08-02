@@ -1,3 +1,3 @@
 #!/bin/sh
 . ~/.profile
-. ~/.xinitrc
+. ~/.config/X11/xinitrc
