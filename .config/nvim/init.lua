@@ -1,5 +1,8 @@
-local vim = vim
-local Plug = vim.fn['plug#']
+local vim    = vim
+local Plug   = vim.fn['plug#']
+local config = os.getenv('XDG_CONFIG_HOME')
+local data   = os.getenv('XDG_DATA_HOME')
+local state  = os.getenv('XDG_STATE_HOME')
 
 vim.call('plug#begin')
 Plug 'jghauser/mkdir.nvim'
@@ -7,10 +10,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'sainnhe/gruvbox-material'
 vim.call('plug#end')
-
-local config = os.getenv('XDG_CONFIG_HOME')
-local data   = os.getenv('XDG_DATA_HOME')
-local state  = os.getenv('XDG_STATE_HOME')
 
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax on'
@@ -80,4 +79,4 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-require('lualine').setup { options = {theme = 'gruvbox-material' } }
+require('lualine').setup { options = { theme = 'gruvbox-material' } }
