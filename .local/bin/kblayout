@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 
-FILE=/tmp/.xkbd
-
-[[ -f "$FILE" ]] || echo "us" > $FILE
-
-DISPOSITION=$(cat "$FILE")
-
-if [[ "$DISPOSITION" = "us" ]]; then
-	setxkbmap -layout "us" -variant "intl" -option "caps:escape"
-	echo "intl" > $FILE
-	dunstify "Changed keyboard layout to QWERTY-INTL"
-elif [[ "$DISPOSITION" = "intl" ]]; then
-	setxkbmap -layout "us" -option "caps:escape"
-	echo "us" > $FILE
-	dunstify "Changed keyboard layout to QWERTY-US"
-fi
+setxkbmap -query | grep variant | grep basic \
+	&& setxkbmap -layout us -variant intl -option "caps:escape" && dunstify "Changed keyboard layout to QWERTY-INTL" \
+	|| setxkbmap -layout us -variant basic -option "caps:escape" && dunstify "Changed keyboard layout to QWERTY-US";

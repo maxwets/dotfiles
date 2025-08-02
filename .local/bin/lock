@@ -1,5 +1,6 @@
 #!/bin/sh
 
+setxkbmap -layout us -variant basic -option "caps:escape" 
 set -e
 xset s off dpms 0 10 0
 /usr/bin/keepassxc --lock &
