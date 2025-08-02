@@ -2,16 +2,10 @@ local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-Plug 'echasnovski/mini.nvim'
-Plug 'folke/which-key.nvim'
 Plug 'jghauser/mkdir.nvim'
 Plug 'kshenoy/vim-signature'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'qtc-de/vve'
 Plug 'sainnhe/gruvbox-material'
-Plug 'rktjmp/lush.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'kyazdani42/nvim-web-devicons'
 vim.call('plug#end')
 
 local config = os.getenv('XDG_CONFIG_HOME')
@@ -62,14 +56,6 @@ vim.opt.textwidth           = 0
 vim.opt.wrapmargin          = 0
 vim.opt.undofile            = true
 
-vim.api.nvim_create_autocmd("VimLeave", {
-    pattern = "*",
-    callback = function()
-        local register_content = vim.fn.getreg('+')
-        vim.fn.system('xsel --clipboard --input', register_content)
-    end,
-})
-
 vim.g.gruvbox_italic = 1
 vim.g.gruvbox_bold = 1
 vim.g.gruvbox_termcolors = 256
@@ -77,11 +63,21 @@ vim.g.gruvbox_contrast_dark = 'medium'
 vim.g.gruvbox_contrast_light = 'hard'
 vim.g.gruvbox_invert_selection = 0
 
-vim.api.nvim_set_keymap('n', '<leader><leader>', 'o```<esc><cr>',   { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>n',        ':tabnext<cr>',    { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>p',        ':tabprev<cr>',    { noremap = true })
-vim.api.nvim_set_keymap('n', 'ù',                ':Lexplore<cr>',   { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-m>',            ':<C-u>marks<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<cr>',      ':noh<cr>',     { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-m>',     ':marks<cr>',   { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>n', ':tabnext<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>p', ':tabprev<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>s', ':split<cr>',   { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>v', ':splitv<cr>',  { noremap = true })
 
-require('plugins')
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    local lcount = vim.api.nvim_buf_line_count(0)
+    if mark[1] > 0 and mark[1] <= lcount then
+      vim.api.nvim_win_set_cursor(0, mark)
+    end
+  end,
+})
 
+require('lualine').setup { options = {theme = 'gruvbox-material' } }
