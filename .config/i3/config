@@ -38,87 +38,6 @@ workspace 10 output eDP-1 HDMI-2
 workspace 11 output eDP-1 HDMI-2
 workspace 12 output eDP-1 HDMI-2
 
-exec_always feh --no-fehbg --bg-center ~/.local/share/wallpaper
-exec_always nm-applet
-exec_always killall polybar ; polybar
-exec_always keepassxc ~/.local/share/*.kdbx
-exec_always numlockx
-exec_always setxkbmap -layout "us" -variant "basic" -option "caps:escape"
-
-bindsym $mod+Return       exec $terminal
-bindsym $mod+w            exec $browser
-bindsym $mod+Shift+w      exec $browser --private-window
-bindsym $mod+d            exec $launcher -show-icons -show drun
-bindsym $mod+x            exec thunar
-bindsym $mod+space        exec ~/.local/bin/kblayout
-bindsym $mod+Escape       exec ~/.local/bin/lock
-bindsym $mod+Shift+Escape exec dm-tool lock
-
-bindsym $mod+f         fullscreen toggle
-bindsym $mod+Shift+f   floating   toggle
-bindsym $mod+Shift+r   restart
-bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
-
-bindsym XF86AudioLowerVolume  exec "amixer set 'Master' 5%-"
-bindsym XF86AudioMute         exec "amixer set 'Master' toggle"
-bindsym XF86AudioRaiseVolume  exec "amixer set 'Master' 5%+"
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
-
-bindsym $mod+a       exec $terminal -e pulsemixer --color 1
-bindsym $mod+m       exec arandr
-
-bindsym $mod+Shift+m exec ~/.local/bin/display
-
-bindsym $mod+b       exec ~/.local/bin/bookmarks
-bindsym $mod+Shift+b exec ~/.local/bin/add-bookmark
-bindsym $mod+s       exec flameshot gui
-bindsym $mod+Shift+s exec maim --select | xclip -selection clipboard -t image/png
-
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Shift+h move container left
-bindsym $mod+Shift+j move container down
-bindsym $mod+Shift+k move container up
-bindsym $mod+Shift+l move container right
-
-for_window [class="KeePassXC"] move scratchpad,scratchpad show
-bindsym $mod+g             scratchpad show
-bindsym $mod+Shift+g       move scratchpad
-
-bindsym $mod+1 			    workspace 1
-bindsym $mod+2 			    workspace 2
-bindsym $mod+3 			    workspace 3
-bindsym $mod+4 			    workspace 4
-bindsym $mod+5 			    workspace 5
-bindsym $mod+6 			    workspace 6
-bindsym $mod+7 			    workspace 7
-bindsym $mod+8 			    workspace 8
-bindsym $mod+9 			    workspace 9
-bindsym $mod+0 			    workspace 10
-bindsym $mod+minus     		workspace 11
-bindsym $mod+equal		    workspace 12
-bindsym $mod+i 			    workspace prev
-bindsym $mod+o 			    workspace next
-bindsym $mod+Tab 		    focus next
-bindsym $mod+Shift+Tab 	    focus prev
-
-bindsym $mod+Shift+1        move container to workspace 1
-bindsym $mod+Shift+2        move container to workspace 2
-bindsym $mod+Shift+3        move container to workspace 3
-bindsym $mod+Shift+4        move container to workspace 4
-bindsym $mod+Shift+5        move container to workspace 5
-bindsym $mod+Shift+6        move container to workspace 6
-bindsym $mod+Shift+7        move container to workspace 7
-bindsym $mod+Shift+8        move container to workspace 8
-bindsym $mod+Shift+9        move container to workspace 9
-bindsym $mod+Shift+0        move container to workspace 10
-bindsym $mod+Shift+minus    move container to workspace 11
-bindsym $mod+Shift+equal    move container to workspace 12
-
 mode "resize" {
         bindsym h resize shrink width  25 px
         bindsym j resize grow   height 25 px
@@ -128,5 +47,84 @@ mode "resize" {
         bindsym Escape mode "default"
 		bindsym $mod+r mode "default"
 }
-bindsym $mod+r mode "resize"
 
+exec_always feh --no-fehbg --bg-center ~/.local/share/wallpaper
+exec_always nm-applet
+exec_always killall polybar ; polybar
+exec_always keepassxc ~/.local/share/*.kdbx
+exec_always numlockx
+exec_always setxkbmap -layout "us" -variant "basic" -option "caps:escape"
+
+bindsym $mod+r                 mode "resize"
+bindsym $mod+Shift+r           restart
+bindsym $mod+q                 [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+f                 fullscreen toggle
+bindsym $mod+Shift+f           floating   toggle
+bindsym $mod+g                 scratchpad show
+bindsym $mod+Shift+g           move scratchpad
+
+bindsym $mod+Return            exec $terminal
+bindsym $mod+w                 exec $browser
+bindsym $mod+Shift+w           exec $browser --private-window
+bindsym $mod+d                 exec $launcher -show-icons -show drun
+bindsym $mod+x                 exec thunar
+bindsym $mod+space             exec ~/.local/bin/kblayout
+bindsym $mod+Escape            exec ~/.local/bin/lock
+bindsym $mod+Shift+Escape      exec dm-tool lock
+
+bindsym XF86AudioLowerVolume   exec "amixer set 'Master' 5%-"
+bindsym XF86AudioMute          exec "amixer set 'Master' toggle"
+bindsym XF86AudioRaiseVolume   exec "amixer set 'Master' 5%+"
+bindsym XF86MonBrightnessDown  exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp    exec brightnessctl set 5%+
+
+bindsym $mod+Shift+m           exec ~/.local/bin/display
+bindsym $mod+Shift+s           exec maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+a                 exec $terminal -e pulsemixer --color 1
+bindsym $mod+b                 exec obsidian
+bindsym $mod+m                 exec arandr
+bindsym $mod+n                 exec nordvpn-gui
+bindsym $mod+s                 exec flameshot gui
+bindsym $mod+s                 exec virtualbox
+
+bindsym $mod+h                 focus left
+bindsym $mod+j                 focus down
+bindsym $mod+k                 focus up
+bindsym $mod+l                 focus right
+
+bindsym $mod+Shift+h           move container left
+bindsym $mod+Shift+j           move container down
+bindsym $mod+Shift+k           move container up
+bindsym $mod+Shift+l           move container right
+
+bindsym $mod+1 			       workspace 1
+bindsym $mod+2 			       workspace 2
+bindsym $mod+3 			       workspace 3
+bindsym $mod+4 			       workspace 4
+bindsym $mod+5 			       workspace 5
+bindsym $mod+6 			       workspace 6
+bindsym $mod+7 			       workspace 7
+bindsym $mod+8 			       workspace 8
+bindsym $mod+9 			       workspace 9
+bindsym $mod+0 			       workspace 10
+bindsym $mod+minus     		   workspace 11
+bindsym $mod+equal		       workspace 12
+bindsym $mod+i 			       workspace prev
+bindsym $mod+o 			       workspace next
+bindsym $mod+Tab 		       focus next
+bindsym $mod+Shift+Tab 	       focus prev
+
+bindsym $mod+Shift+1           move container to workspace 1
+bindsym $mod+Shift+2           move container to workspace 2
+bindsym $mod+Shift+3           move container to workspace 3
+bindsym $mod+Shift+4           move container to workspace 4
+bindsym $mod+Shift+5           move container to workspace 5
+bindsym $mod+Shift+6           move container to workspace 6
+bindsym $mod+Shift+7           move container to workspace 7
+bindsym $mod+Shift+8           move container to workspace 8
+bindsym $mod+Shift+9           move container to workspace 9
+bindsym $mod+Shift+0           move container to workspace 10
+bindsym $mod+Shift+minus       move container to workspace 11
+bindsym $mod+Shift+equal       move container to workspace 12
+
+for_window [class="KeePassXC"] move scratchpad,scratchpad show

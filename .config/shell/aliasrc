@@ -21,13 +21,6 @@ alias \
 	chown='chown --preserve-root' \
 	rm='rm --preserve-root';
 
-# git
-alias \
-	gd='git diff' \
-	gc='git commit' \
-	ga='git add' \
-	gss='git status';
-
 # convenience
 alias \
 	cd..='cd ..' \
@@ -43,20 +36,13 @@ alias \
 	v="$PAGER" \
 	reload='source ~/.config/zsh/.zshrc';
 
-
-# xdg-cleaning
-alias \
-	mitmproxy='mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
-	mitmweb='mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy' \
-	irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi" \
-	wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts';
-
 # docker containers
 alias \
 	excalidraw='docker run --rm -dit --name="excalidraw" -p 5000:80 excalidraw/excalidraw:latest' \
 	drawio='docker run -dit --rm --name="drawio" -p 5001:8080 jgraph/drawio' \
 	kali='docker run --tty -v .:/mnt/ --interactive --rm kali /bin/zsh'
 
+# less colors
 export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
 export LESS_TERMCAP_me=$(tput sgr0)
 export LESS_TERMCAP_so=$(tput bold; tput setaf 4)
