@@ -85,7 +85,7 @@ bindsym $mod+b                 exec obsidian
 bindsym $mod+m                 exec arandr
 bindsym $mod+n                 exec nordvpn-gui
 bindsym $mod+s                 exec flameshot gui
-bindsym $mod+s                 exec virtualbox
+bindsym $mod+v                 exec virtualbox
 
 bindsym $mod+h                 focus left
 bindsym $mod+j                 focus down
