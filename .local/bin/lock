@@ -1,8 +1,8 @@
 #!/bin/sh
 
-setxkbmap -layout us -variant basic -option "caps:escape" 
+/usr/bin/setxkbmap -layout us -variant basic -option "caps:escape"
 set -e
-xset s off dpms 0 10 0
+/usr/bin/xset s off dpms 0 10 0
 /usr/bin/keepassxc --lock &
-/usr/bin/i3lock --color=4c7899 --nofork
-xset s off -dpms
+/usr/bin/i3lock --image ~/.local/share/wallpaper --nofork --ignore-empty-password --show-failed-attempts
+/usr/bin/xset s off -dpms
