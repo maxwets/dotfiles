@@ -4,5 +4,5 @@
 set -e
 /usr/bin/xset s off dpms 0 10 0
 /usr/bin/keepassxc --lock &
-/usr/bin/i3lock --image ~/.local/share/wallpaper --nofork --ignore-empty-password --show-failed-attempts
+/usr/bin/i3lock --image ~/.local/share/wallpaper --nofork --ignore-empty-password --show-failed-attempts --tiling
 /usr/bin/xset s off -dpms

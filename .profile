@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export LC_ALL="en_US.UTF8"
+export LC_ALL="C"
 
 export TERM="xterm-256color"
 export TERMINAL="xterm-256color"
