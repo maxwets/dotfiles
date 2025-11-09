@@ -35,6 +35,7 @@ sudo apt install \
     polybar \
     pulsemixer \
     python3 \
+    python3-pip \
     rofi \
     screen \
     sxiv \
@@ -70,6 +71,7 @@ ln -s ~/.config/environment.d/profile.conf ~/.profile
 cp .xsession ~/.xsession
 cp .gdbinit ~/.gdbinit
 cp .editrc ~/.editrc
+cp .binaryninja/* ~/.binaryninja/.
 ```
 
 ## Install neovim-plug
