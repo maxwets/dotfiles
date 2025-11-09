@@ -14,6 +14,8 @@ sudo apt install \
     cmake \
     curl \
     dunst \
+    entr \
+    etckeeper \
     feh \
     flameshot \
     gcc \
@@ -27,6 +29,7 @@ sudo apt install \
     make \
     mingw-w64 \
     mpv \
+    nasm \
     neovim \
     numlockx \
     picom \
@@ -37,6 +40,7 @@ sudo apt install \
     python3 \
     python3-pip \
     rofi \
+    rsync \
     screen \
     sxiv \
     thunar \
