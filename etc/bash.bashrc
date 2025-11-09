@@ -11,9 +11,6 @@ export HISTFILESIZE=65535
 export LESSHISTFILE="-"
 export HISTCONTROL=ignoredups
 
-
-for f in $(find ~/.config/shell/ -type f); do source "$f" 2&> /dev/null; done
-
 if [[ $EUID == 0 ]]; then
 	export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ \033[01;33m\](\033[01;33m\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)) \[\033[00m\]\\$ ';
 else
