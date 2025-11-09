@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ImHex
+Path=/usr/local/bin/
+Exec=/usr/local/bin/imhex
+Terminal=false
