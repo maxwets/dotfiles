@@ -25,6 +25,7 @@ sudo apt install \
     i3lock \
     keepassxc \
     linux-headers-amd64 \
+    locate \
     maim \
     make \
     mingw-w64 \
@@ -39,12 +40,14 @@ sudo apt install \
     pulsemixer \
     python3 \
     python3-pip \
+    rename \
     rofi \
     rsync \
     screen \
     sxiv \
     thunar \
     tmux \
+    tree \
     vim \
     wget \
     wireguard \
@@ -76,6 +79,12 @@ cp .xsession ~/.xsession
 cp .gdbinit ~/.gdbinit
 cp .editrc ~/.editrc
 cp .binaryninja/* ~/.binaryninja/.
+```
+
+## Misc 
+```bash
+sudo timedatectl set-timezone UTC
+sudo update-alternatives --set editor /usr/bin/nvim
 ```
 
 ## Install neovim-plug
