@@ -13,11 +13,13 @@ sudo apt install \
     brightnessctl \
     cmake \
     curl \
+    dialog \
     dunst \
     entr \
     etckeeper \
     feh \
     flameshot \
+    gawk \
     gcc \
     gdb \
     git \
