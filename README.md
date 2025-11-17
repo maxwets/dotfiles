@@ -49,11 +49,13 @@ sudo apt install \
     sxiv \
     thunar \
     tmux \
+    transmission-qt \
     tree \
     vim \
     wget \
     wireguard \
     xterm \
+    zathura \
     zsh \
     zsh-autosuggestions \
     zsh-syntax-highlighting
@@ -80,7 +82,7 @@ ln -s ~/.config/environment.d/profile.conf ~/.profile
 cp .xsession ~/.xsession
 cp .gdbinit ~/.gdbinit
 cp .editrc ~/.editrc
-cp .binaryninja/* ~/.binaryninja/.
+cp -r .binaryninja/* ~/.binaryninja/.
 ```
 
 ## Misc 
