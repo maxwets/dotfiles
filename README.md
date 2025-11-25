@@ -8,9 +8,12 @@ sudo apt upgrade
 sudo apt install \
     7zip \
     alacritty \
+    aptitude \
     arandr \
     autorandr \
     brightnessctl \
+    batcat \
+    btop \
     cmake \
     curl \
     dialog \
@@ -19,12 +22,15 @@ sudo apt install \
     etckeeper \
     feh \
     flameshot \
+    fzf \
     gawk \
     gcc \
     gdb \
     git \
+    glow \
     i3 \
     i3lock \
+    lnav \
     keepassxc \
     linux-headers-amd64 \
     locate \
@@ -89,6 +95,7 @@ cp -r .binaryninja/* ~/.binaryninja/.
 ```bash
 sudo timedatectl set-timezone UTC
 sudo update-alternatives --set editor /usr/bin/nvim
+sudo sed -i /usr/share/X11/locale/en_US.UTF-8/Compose -e 's/ć/ç/g' -e 's/Ć/Ç/g
 ```
 
 ## Install neovim-plug

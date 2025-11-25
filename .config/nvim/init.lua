@@ -7,6 +7,7 @@ local state  = os.getenv('XDG_STATE_HOME')
 vim.call('plug#begin')
 Plug 'jghauser/mkdir.nvim'
 Plug 'kshenoy/vim-signature'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'sainnhe/gruvbox-material'
 vim.call('plug#end')
@@ -75,14 +76,24 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
+vim.filetype.add({
+  extension = {
+    idc = "cpp",
+    cc  = "cpp",
+  },
 })
 
-require('lualine').setup { options = { theme = 'gruvbox-material' } }
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+  ensure_installed = {
+	   "c",
+	   "cpp",
+	   "go",
+	   "nasm",
+	   "python",
+  },
+}
 
+require('lualine').setup { options = { theme = 'gruvbox-material' } }
