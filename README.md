@@ -66,6 +66,12 @@ sudo apt install \
     zsh-autosuggestions \
     zsh-syntax-highlighting
 ```
+## Install LibreWolf
+```bash
+sudo apt update && sudo apt install extrepo -y
+sudo extrepo enable librewolf
+sudo apt update && sudo apt install librewolf -y
+```
 
 ## Configure system files
 ```bash
